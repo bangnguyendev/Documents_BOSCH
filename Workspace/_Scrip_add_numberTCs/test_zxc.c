@@ -20,59 +20,35 @@
 
 void test_()
 {
-		START TEST: "6: g45ey45hgesr"
+		START TEST: "test_w45645y45hrye4r"
 }
 void test_()
 {
-		START TEST: "7: 453645yergefsg"
+		START TEST: "test_dfgsdgdsfgsdfg"
 }
 void test_()
 {
-		START TEST: "8: 3w46gerytertyu45"
+		START TEST: "test_gsdfgsdfgdfgrtutgh"
 }
 void test_()
 {
-		START TEST: "1: w45645y45hrye4r"
+		START TEST: "test_fghjfghjfghjfj"
 }
 void test_()
 {
-		START TEST: "2: dfgsdgdsfgsdfg"
+		START TEST: "test_456345y3453"
 }
 void test_()
 {
-		START TEST: "6: g45ey45hgesr"
+		START TEST: "test_g45ey45hgesr"
 }
 void test_()
 {
-		START TEST: "7: 453645yergefsg"
+		START TEST: "test_453645yergefsg"
 }
 void test_()
 {
-		START TEST: "8: 3w46gerytertyu45"
-}
-void test_()
-{
-		START TEST: "3: gsdfgsdfgdfgrtutgh"
-}
-void test_()
-{
-		START TEST: "4: fghjfghjfghjfj"
-}
-void test_()
-{
-		START TEST: "5: 456345y3453"
-}
-void test_()
-{
-		START TEST: "6: g45ey45hgesr"
-}
-void test_()
-{
-		START TEST: "7: 453645yergefsg"
-}
-void test_()
-{
-		START TEST: "8: 3w46gerytertyu45"
+		START TEST: "test_3w46gerytertyu45"
 }
 
 
