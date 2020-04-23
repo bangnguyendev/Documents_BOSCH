@@ -7,10 +7,10 @@ temp_count=1
 echo -e 'Search for the word \e[30;48;5;82m"START_TEST("test_"    \e[0m'
 echo 'Search for the word "START_TEST("test_" ' >> log_change.txt
 # Search for the word "START_TEST("test_" 
-grep 'START_TEST(".*\_' $name_file.c| cut -d '_' -f2 > temp_out1
+grep 'START_TEST("test_*' $name_file.c| cut -d '_' -f2 > temp_out1
 # Search for [line numbers] containing the word "START_TEST("test_" 
 # [cut -d ':' -f1] >> Filter the line numbers
-grep -n 'START_TEST(".*\_' $name_file.c| cut -d ':' -f1 > temp_out2
+grep -n 'START_TEST("test_*' $name_file.c| cut -d ':' -f1 > temp_out2
 
 for i in `cat temp_out2`
 do
@@ -21,7 +21,6 @@ do
 	echo "===========> $Str_Replace" >> log_change.txt
 	echo Line $i: $Str_Pattern 
 	echo "===========> $Str_Replace"
-	echo thay tai dong $i
 	sed -i "$i s/$Str_Pattern/$Str_Replace/" $name_file.c
 	((temp_count++))
 	
