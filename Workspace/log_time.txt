@@ -1,5 +1,0 @@
-
-LOG FILE
-DAY LA 1 FILE RONGB NHa
-touch mkdir okok
-
