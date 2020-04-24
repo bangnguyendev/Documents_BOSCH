@@ -135,10 +135,11 @@ do
 			# copy file thu vien database
 			cp -r _Scrip_create_project/hdr Output_PSW/$name_Project
 			# tim file header source, tao file header
-			add_header=`cat $file |grep -i ^'#include'| sed 's/#include "//g'|sed 's/"//g'`
+			add_header=`cat $file |grep -i ^'#include'|  cut -d '"' -f2`
 			
 			for i_add_header in $add_header
 			do
+				#echo $add_header
 				create_header_h				
 			done
 			#####################################
