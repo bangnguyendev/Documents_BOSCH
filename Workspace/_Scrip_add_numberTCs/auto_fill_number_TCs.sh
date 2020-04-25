@@ -27,13 +27,13 @@ do
 done 
 echo ...
 temp_count=1
-echo -e 'Search for the word \e[30;48;5;82m"START_TEST("[0-9]*:"  \e[0m'
+echo -e 'Search for the word \e[30;48;5;82m"START_TEST("[0-9]\{1,\}:"  \e[0m'
 
-echo 'Search for the word "START_TEST("[0-9]*:" ' >> log_change.txt
-grep 'START_TEST("[0-9]' $name_file.c| cut -d ' ' -f5 > temp_out1
+echo 'Search for the word "START_TEST("[0-9]\{1,\}:" ' >> log_change.txt
+grep 'START_TEST("[0-9]\{1,\}:' $name_file.c| cut -d ' ' -f5 > temp_out1
 # Search for [line numbers] containing the word "START_TEST("[0-9]*:" 
 # [cut -d ':' -f1] >> Filter the line numbers
-grep -n 'START_TEST("[0-9]' $name_file.c| cut -d ':' -f1 > temp_out2
+grep -n 'START_TEST("[0-9]\{1,\}:' $name_file.c| cut -d ':' -f1 > temp_out2
 
 for i in `cat temp_out2`
 do
