@@ -27,7 +27,7 @@ function create_Stub_h()
 				echo "#ifndef $name_uppper" >> Output_PSW/$name_Project/hdr/project/stubs.h
 				echo "#define $name_uppper" >> Output_PSW/$name_Project/hdr/project/stubs.h
 				printf '\n#include "include.h"' >> Output_PSW/$name_Project/hdr/project/stubs.h
-				printf "\n\n\n" >> Output_PSW/$name_Project/hdr/project/stubs.h
+				printf "\n\n\n\n\n\n\n\n\n\n\n\n" >> Output_PSW/$name_Project/hdr/project/stubs.h
 				
 				echo "#endif /*  $name_uppper  */" >> Output_PSW/$name_Project/hdr/project/stubs.h
 }
@@ -58,7 +58,7 @@ function create_Stub_c()
 				echo "#ifndef $name_uppper" >> Output_PSW/$name_Project/Stubs.c
 				echo "#define $name_uppper" >> Output_PSW/$name_Project/Stubs.c
 				printf '\n#include "include.h"' >> Output_PSW/$name_Project/Stubs.c
-				printf "\n\n\n" >> Output_PSW/$name_Project/Stubs.c
+				printf "\n\n\n\n\n\n\n\n\n" >> Output_PSW/$name_Project/Stubs.c
 				
 				echo "#endif /*  $name_uppper  */" >> Output_PSW/$name_Project/Stubs.c
 }
@@ -103,14 +103,14 @@ mkdir -p Output_PSW
 rm -rf Output_PSW/log.txt
 touch Output_PSW/log.txt
 
-for i in $(cat _Scrip_create_project/list.h | tr -s '\t' '/')
+for i in $(cat _Scrip_create_project/list.h | tr -s '\t' '/') # chuyen Tab > / thi lenh cat in ra k dung y mong muon
 do
 	
 	name_DataBase=`echo $i | cut -d '/' -f1`
-	name_PATH=`echo $i | cut -d '/' -f2`
+	name_PATH=`echo $i | cut -d '/' -f2| tr '\\\\' '\.'` # tr '\\\\' '\.' thay the dau \ thanh dau .
 	name_var=`echo $i | cut -d '/' -f3`
 	echo "PATH_DATABASE:" $name_DataBase
-	echo "PATH_Folder  :" $name_PATH
+	echo "PATH_Folder  :" `echo $i | cut -d '/' -f2`
 	echo "File_Name    :" $name_var
 	echo ==================================
 
@@ -154,12 +154,17 @@ do
 			sed -i "s/Sample_Test/$name_Project/g" Output_PSW/$name_Project/.project			
 			# copy file source c
 			cp $file Output_PSW/$name_Project
-
+			echo "Database: $name_DataBase" >> ./Output_PSW/log.txt
+			echo "Project : $name_Project" >> ./Output_PSW/log.txt
+			echo "Function: $file" >> ./Output_PSW/log.txt
+			echo "===============================================" >> ./Output_PSW/log.txt
 			echo -e "\e[1;38;5;46m$file found. "
 			echo -e "\e[30;48;5;82m ===============Done============== \e[0m"
 
 		else
-			echo "$name_var not found." >> ./Output_PSW/log.txt
+			echo "Database: $name_DataBase" >> ./Output_PSW/log.txt
+			echo "Project : $name_Project" >> ./Output_PSW/log.txt
+			echo "Function: $name_var not found." >> ./Output_PSW/log.txt
 			echo "===========================================" >> ./Output_PSW/log.txt
 			echo -e "\e[91m$name_var not found."
 			echo -e "\e[30;48;5;9m ===FALSE=== \e[0m"
@@ -171,14 +176,18 @@ do
 		if [ $count -eq 0 ] # KHONG CO KET QUA
 		then
 			echo -e "\e[30;48;5;9m ===$name_var not found.=== \e[0m" 
-			echo "$name_var not found." >> ./Output_PSW/log.txt
-			echo "===========================================" >> ./Output_PSW/log.txt
+			echo "Database: $name_DataBase" >> ./Output_PSW/log.txt
+			echo "Project : $name_Project" >> ./Output_PSW/log.txt
+			echo "Function: $name_var not found." >> ./Output_PSW/log.txt
+			echo "===============================================" >> ./Output_PSW/log.txt
 			
 		else 				# QUA NHIEU KET QUA
 			echo -e "\e[30;48;5;9m ===Co Nhieu Ket Qua Giong Nhau=== \e[0m"
-			echo "$file" >> log.txt
-			echo "$name_var many files exist." >> ./Output_PSW/log.txt
-			echo "===========================================" >> ./Output_PSW/log.txt
+			echo "Database: $name_DataBase" >> ./Output_PSW/log.txt
+			echo "Project : $name_Project" >> ./Output_PSW/log.txt
+			echo "Function: $name_var many files exist." >> ./Output_PSW/log.txt
+			echo "$file" >> log.txt			
+			echo "===============================================" >> ./Output_PSW/log.txt
 		fi
 			echo -e "\e[30;48;5;9m ==============FALSE============== \e[0m"
 
