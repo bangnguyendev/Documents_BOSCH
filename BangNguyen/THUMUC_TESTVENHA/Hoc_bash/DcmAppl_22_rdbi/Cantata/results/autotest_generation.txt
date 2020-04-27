@@ -1,0 +1,24 @@
+===========================================================================
+= Cantata AutoTest Generation Report                                      =
+= (c) 2012 QA Systems GmbH                                                =
+=-------------------------------------------------------------------------=
+= Generation Date: Apr 22, 2020 4:38 PM                                   =
+===========================================================================
+0 functions fully tested.
+Files fully tested:
+  - NONE
+
+Files not fully tested:
+- DcmAppl_22_rdbi.c (1.8 seconds)
+  - DcmAppl_HighQuiescent_0xD005
+    - Full coverage not obtained
+    - Paths were abandoned for the following reasons:
+      - Value of variable "StatusFlag_b" cannot be determined as it has not been initialised. 
+
+    - Uninitialised variables used in test
+      - line 1308 : variable "StatusFlag_b"
+    - Non-constant function static variables are not supported.
+
+
+Files not tested:
+  - NONE
