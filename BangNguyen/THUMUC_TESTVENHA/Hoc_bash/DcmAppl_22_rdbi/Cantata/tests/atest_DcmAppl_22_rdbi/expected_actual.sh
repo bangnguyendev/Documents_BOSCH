@@ -1,9 +1,7 @@
 #!bin/bash
 file_c=`find |grep '\.c$'`
-cat $file_c
+#cat $file_c
 
-
-exit
 file=`find |grep '\.ctr$'`
 rm -rf line_TCs| touch line_TCs
 
@@ -32,22 +30,30 @@ do
 		
 			if [ ${#array_expected[*]} -eq ${#array_actual[*]} ] && [ ${#array_expected[*]} -ge 0 ]
 			then
+
+				touch expected_file_c
 				cout_array=0
 				while [  $cout_array -lt ${#array_expected[*]} ]
 				do			
 					echo "${array_expected[cout_array]} = ${array_actual[cout_array]} ;"
+					var_expected_file_c=`echo "${array_expected[cout_array]} = ${array_actual[cout_array]} ;"`
+					
+					edit_expected=`cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`
+
+					cat $file_c | grep -B 3 "$edit_expected" | sed -i "s/initialise_expected_global_data();/initialise_expected_global_data();\r\n    $var_expected_file_c  /g"
+
 					((cout_array++))
 				done
-				
-				echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26`  "
-				
+
+				#echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`"
+
 			else
 			
 				echo So phan tu mang khong dung.
 			fi
 
 			echo " "		
-
+			# rm -rf expected_file_c
 		fi
 
 		if [ `cat $file| sed -n "$temp_line,$i p" | grep -A 4 '>>  FAILED: Check: ACCESS_VARIABLE' -c` -ge 1 ]
@@ -69,7 +75,7 @@ do
 				((cout_array++))
 			done
 			
-			echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26`  "
+			echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`"
 			echo " "
 		
 		fi
@@ -96,7 +102,7 @@ do
 
 				((cout_array++))			
 			done
-			echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26`  "
+			echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`"
 			echo " "					
 		fi 
 		

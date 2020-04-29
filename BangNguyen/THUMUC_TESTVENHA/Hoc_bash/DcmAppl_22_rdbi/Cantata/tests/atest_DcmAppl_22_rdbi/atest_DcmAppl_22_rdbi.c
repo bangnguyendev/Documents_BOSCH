@@ -982,6 +982,10 @@ if (doIt) {
     C_F12E_PUB[14] = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_C_F12E_MERGE[0] = 0U;
     expected_C_F12E_MERGE[1] = 0U;
     expected_C_F12E_MERGE[2] = 0U;
@@ -1039,6 +1043,10 @@ if (doIt) {
     g_ECUCoreAssemPartNum_Read[6] = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_1[0] = 85U;
     expected_map_Data_1[1] = 85U;
     expected_map_Data_1[2] = 85U;
@@ -1080,6 +1088,10 @@ if (doIt) {
     g_ECUDeliveryAssemPartNum_Read[6] = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_2[0] = 85U;
     expected_map_Data_2[1] = 85U;
     expected_map_Data_2[2] = 85U;
@@ -1123,6 +1135,10 @@ if (doIt) {
     C_F1AE_PUB[8] = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_C_F1AE_MERGE[0] = 0U;
     expected_C_F1AE_MERGE[1] = 0U;
     expected_C_F1AE_MERGE[2] = 0U;
@@ -1176,6 +1192,10 @@ if (doIt) {
     g_ECUDeliveryAssemPartNum_Geely_Read[7] = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_4[0] = 85U;
     expected_map_Data_4[1] = 85U;
     expected_map_Data_4[2] = 85U;
@@ -1219,6 +1239,10 @@ if (doIt) {
     g_ECUCoreAssemPartNum_Geely_Read[7] = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_5[0] = 85U;
     expected_map_Data_5[1] = 85U;
     expected_map_Data_5[2] = 85U;
@@ -1294,6 +1318,10 @@ if (doIt) {
     g_ECUCoreAssemPartNum_Read[6] = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_6[0] = 241U;
     expected_map_Data_6[1] = 32U;
     expected_map_Data_6[2] = 0U;
@@ -1379,6 +1407,10 @@ if (doIt) {
     C_F120_PUB[7] = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_7[0] = 0U;
     expected_map_Data_7[1] = 0U;
     expected_map_Data_7[2] = 0U;
@@ -1419,6 +1451,10 @@ if (doIt) {
     ECUSerialNumber[3] = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_8[0] = 85U;
     expected_map_Data_8[1] = 85U;
     expected_map_Data_8[2] = 85U;
@@ -1458,6 +1494,10 @@ if (doIt) {
     C_F1A0_PUB[7] = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_9[0] = 0U;
     expected_map_Data_9[1] = 0U;
     expected_map_Data_9[2] = 0U;
@@ -1530,6 +1570,10 @@ if (doIt) {
     g_ECUCoreAssemPartNum_Geely_Read[7] = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_10[0] = 241U;
     expected_map_Data_10[1] = 160U;
     expected_map_Data_10[2] = 0U;
@@ -1605,6 +1649,10 @@ if (doIt) {
     ComScl_RawSigGrp_igVehModMngtGlbSafe1_0.ComScl_RawSignal_isVehModMngtGlbSafe1UsgModSts_0_u8 = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_11[0] = 85U;
 
     START_TEST("12: DcmAppl_UsageMode",
@@ -1633,6 +1681,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_12[0] = 0U;
     expected_map_Data_12[1] = 6U;
     expected_map_Data_12[2] = 8U;
@@ -1731,6 +1783,10 @@ if (doIt) {
     g_NMStatebufferFlexray_PST[9].CarTiGlbforNM_UB = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_13[0] = 85U;
     expected_map_Data_13[1] = 0U;
     expected_map_Data_13[2] = 0U;
@@ -1828,6 +1884,10 @@ if (doIt) {
     g_NMStatebufferChasCAN_PST[9].CarTiGlbforNM_UB = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_14[0] = 85U;
     expected_map_Data_14[1] = 0U;
     expected_map_Data_14[2] = 0U;
@@ -1925,6 +1985,10 @@ if (doIt) {
     g_NMStatebufferADReduCAN_PST[9].CarTiGlbforNM_UB = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_15[0] = 85U;
     expected_map_Data_15[1] = 0U;
     expected_map_Data_15[2] = 0U;
@@ -2003,6 +2067,10 @@ if (doIt) {
     ComScl_RawSigGrp_igVehBattU.ComScl_RawSignal_isVehBattUSysU_u8 = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_17[0] = 34U;
 
     START_TEST("17: DcmAppl_Vehiclebattery_Voltage_0xDD02",
@@ -2032,6 +2100,10 @@ if (doIt) {
     ComScl_RawSigGrp_igVehBattU.ComScl_RawSignal_isVehBattUSysU_u8 = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_17[0] = 0U;
 
     START_TEST("18: DcmAppl_Vehiclebattery_Voltage_0xDD02",
@@ -2060,6 +2132,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_18[0] = 0U;
     expected_map_Data_18[1] = 0U;
 
@@ -2090,6 +2166,10 @@ if (doIt) {
     RBMESG_RBVSI_InputRodStrokeCalc = 0;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_19[0] = 0U;
     expected_map_Data_19[1] = 0U;
 
@@ -2120,6 +2200,10 @@ if (doIt) {
     MESG_NMSG_CarTiGlb_UL = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_20[0] = 0U;
     expected_map_Data_20[1] = 0U;
     expected_map_Data_20[2] = 0U;
@@ -2152,6 +2236,10 @@ if (doIt) {
     MESG_NMSG_DcmPNCStatus_u32 = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_21[0] = 0U;
     expected_map_Data_21[1] = 0U;
     expected_map_Data_21[2] = 0U;
@@ -2183,6 +2271,10 @@ if (doIt) {
     MESG_NMSG_DstTrvlDMst_RCV_UL = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_22[0] = 0U;
     expected_map_Data_22[1] = 0U;
     expected_map_Data_22[2] = 0U;
@@ -2214,6 +2306,10 @@ if (doIt) {
     ComScl_RawSigGrp_igVehModMngtGlbSafe1_0.ComScl_RawSignal_isVehModMngtGlbSafe1PwrLvlElecMai_0_u8 = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_23[0] = 15U;
 
     START_TEST("24: DcmAppl_ElPowerLevel_0xDD0C",
@@ -2244,6 +2340,10 @@ if (doIt) {
     MESG_NMSG_VehicleSpeed_ST.VehicleSpeed_UW = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_23[0] = 32U;
 
     START_TEST("25: DcmAppl_ElPowerLevel_0xDD0C",
@@ -2274,6 +2374,10 @@ if (doIt) {
     MESG_NMSG_VehicleSpeed_ST.VehicleSpeed_UW = 1U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_23[0] = 33U;
 
     START_TEST("26: DcmAppl_ElPowerLevel_0xDD0C",
@@ -2304,6 +2408,10 @@ if (doIt) {
     MESG_NMSG_VehicleSpeed_ST.VehicleSpeed_UW = 125U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_23[0] = 15U;
 
     START_TEST("27: DcmAppl_ElPowerLevel_0xDD0C",
@@ -2334,6 +2442,10 @@ if (doIt) {
     MESG_NMSG_VehicleSpeed_ST.VehicleSpeed_UW = 126U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_23[0] = 34U;
 
     START_TEST("28: DcmAppl_ElPowerLevel_0xDD0C",
@@ -2364,6 +2476,10 @@ if (doIt) {
     MESG_NMSG_VehicleSpeed_ST.VehicleSpeed_UW = 267U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_23[0] = 15U;
 
     START_TEST("29: DcmAppl_ElPowerLevel_0xDD0C",
@@ -2394,6 +2510,10 @@ if (doIt) {
     MESG_NMSG_VehicleSpeed_ST.VehicleSpeed_UW = 268U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_23[0] = 35U;
 
     START_TEST("30: DcmAppl_ElPowerLevel_0xDD0C",
@@ -2424,6 +2544,10 @@ if (doIt) {
     MESG_NMSG_VehicleSpeed_ST.VehicleSpeed_UW = 534U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_23[0] = 15U;
 
     START_TEST("31: DcmAppl_ElPowerLevel_0xDD0C",
@@ -2454,6 +2578,10 @@ if (doIt) {
     MESG_NMSG_VehicleSpeed_ST.VehicleSpeed_UW = 535U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_23[0] = 36U;
 
     START_TEST("32: DcmAppl_ElPowerLevel_0xDD0C",
@@ -2483,6 +2611,10 @@ if (doIt) {
     RBMESG_RBMESG_UBBFiltered = 0U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, gs_RBMESG_UBBFiltered) = 0U;
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, gs_RBMESG_UBBFilteredAFterConv) = 0U;
     expected_map_Data_24[0] = 0U;
@@ -2514,6 +2646,10 @@ if (doIt) {
     RBMESG_RBMESG_LiPS2Signal_S16 = 0;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_25[0] = 0U;
     expected_map_Data_25[1] = 0U;
 
@@ -2545,6 +2681,10 @@ if (doIt) {
     RBMESG_RBMESG_BLMTemperatureB6_Ch2_s16 = 0;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_26[0] = 0U;
     expected_map_Data_26[1] = 0U;
     expected_map_Data_26[2] = 0U;
@@ -2577,6 +2717,10 @@ if (doIt) {
     ComScl_RawSigGrp_igVehModMngtGlbSafe1_0.ComScl_RawSignal_isVehModMngtGlbSafe1CarModSts1_0_u8 = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_27[0] = 85U;
 
     START_TEST("36: DcmAppl_carMode_0xD134",
@@ -2605,6 +2749,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("37: DcmAppl_faultyCarConfigParameters_0xE103",
                "default case");
@@ -2632,6 +2780,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("38: DcmAppl_faultyCarConfigParameters_0xE103",
                "created to solve true case of l_std_Return_FORCE_LAMP_TO_RED1 == 0 at line number 1095");
@@ -2690,6 +2842,10 @@ if (doIt) {
     MESG_NMSG_GCC_InvalidParametersArray_ST.Index[30] = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_28[0] = 10U;
     expected_map_Data_28[1] = 85U;
     expected_map_Data_28[2] = 85U;
@@ -2779,6 +2935,10 @@ if (doIt) {
     MESG_NMSG_GCC_InvalidParametersArray_ST.Index[30] = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_28[0] = 0U;
     expected_map_Data_28[1] = 85U;
     expected_map_Data_28[2] = 85U;
@@ -2868,6 +3028,10 @@ if (doIt) {
     MESG_NMSG_GCC_InvalidParametersArray_ST.Index[30] = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_28[0] = 10U;
     expected_map_Data_28[1] = 85U;
     expected_map_Data_28[2] = 85U;
@@ -2926,6 +3090,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("42: DcmAppl_faultyCarConfigParameters_0xE103",
                "created to solve true case of FailedState1 == 0 at line number 1097");
@@ -2954,6 +3122,10 @@ if (doIt) {
     MESG_NMSG_iBStatusXMT_N = C_iBoosterstate_NotInitialized_or_StartupPhase_N;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_29[0] = 0U;
 
     START_TEST("43: DcmAppl_iBstatus",
@@ -2983,6 +3155,10 @@ if (doIt) {
     MESG_NMSG_pForceBlendingPotentialXMT_ST.pForceBlendingPotential_UB = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_30[0] = 85U;
 
     START_TEST("44: DcmAppl_forceBlendingPotential",
@@ -3012,6 +3188,10 @@ if (doIt) {
     MESG_NMSG_sOutputRodDrvr_ST.sOutputRodDriver_SW = 0;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_31[0] = 0U;
     expected_map_Data_31[1] = 0U;
 
@@ -3042,6 +3222,10 @@ if (doIt) {
     MESG_NMSG_sOutputRod_Act_ST.sOutputRodAct_SW = 0;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_32[0] = 0U;
     expected_map_Data_32[1] = 0U;
 
@@ -3072,6 +3256,10 @@ if (doIt) {
     MESG_NMSG_ExtReq_XMT_ST.Qualifier_N = C_ExtReqQualifier_NotInitialized_N;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_33[0] = 0U;
 
     START_TEST("47: DcmAppl_extReqStatus",
@@ -3101,6 +3289,10 @@ if (doIt) {
     MESG_NMSG_ExtReq_XMT_ST.Active_B = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_34[0] = 85U;
 
     START_TEST("48: DcmAppl_extReqPrio",
@@ -3130,6 +3322,10 @@ if (doIt) {
     MESG_NMSG_pRunoutXMT_ST.pRunout_UB = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_35[0] = 85U;
 
     START_TEST("49: DcmAppl_runout",
@@ -3158,6 +3354,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_pBuffer[0] = 0U;
 
     START_TEST("50: RBAPLCUST_getCCP",
@@ -3187,6 +3387,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 86U;
     expected_map_pBuffer[0] = 85U;
     expected_map_pBuffer[1] = 1U;
@@ -3220,6 +3424,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_pBuffer[0] = 85U;
 
     START_TEST("52: RBAPLCUST_getCCP",
@@ -3249,6 +3457,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 86U;
     expected_map_pBuffer[0] = 85U;
     expected_map_pBuffer[1] = 1U;
@@ -3282,6 +3494,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 86U;
     expected_map_pBuffer[0] = 85U;
     expected_map_pBuffer[1] = 0U;
@@ -3315,6 +3531,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_pBuffer[0] = 85U;
 
     START_TEST("55: RBAPLCUST_getCCP",
@@ -3344,6 +3564,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 86U;
     expected_map_pBuffer[0] = 85U;
     expected_map_pBuffer[1] = 0U;
@@ -3377,6 +3601,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 86U;
     expected_map_pBuffer[0] = 85U;
     expected_map_pBuffer[1] = 0U;
@@ -3410,6 +3638,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_pBuffer[0] = 85U;
 
     START_TEST("58: RBAPLCUST_getCCP",
@@ -3439,6 +3671,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 86U;
     expected_map_pBuffer[0] = 85U;
     expected_map_pBuffer[1] = 0U;
@@ -3472,6 +3708,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 86U;
     expected_map_pBuffer[0] = 85U;
     expected_map_pBuffer[1] = 0U;
@@ -3505,6 +3745,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_pBuffer[0] = 85U;
 
     START_TEST("61: RBAPLCUST_getCCP",
@@ -3534,6 +3778,10 @@ if (doIt) {
     ACCESS_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 85U;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, gs_invalidCcpCounter) = 86U;
     expected_map_pBuffer[0] = 85U;
     expected_map_pBuffer[1] = 0U;
@@ -3565,6 +3813,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("63: DCOM_NvM_GetErrorStatus",
                "default case");
@@ -3592,6 +3844,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("64: DCOM_NvM_GetErrorStatus",
                "created to solve true case of ReadResultValue == 5 at line number 1279");
@@ -3619,6 +3875,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("65: DCOM_NvM_GetErrorStatus",
                "created to solve true case of ReadResultValue == 3 at line number 1279");
@@ -3646,6 +3906,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("66: DCOM_NvM_GetErrorStatus",
                "created to solve true case of ReadResultValue == 1 at line number 1279");
@@ -3673,6 +3937,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("67: DCOM_NvM_GetErrorStatus",
                "created to solve true case of ReadResultValue == 8 at line number 1279");
@@ -3700,6 +3968,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("68: DCOM_NvM_GetErrorStatus",
                "created to solve true case of ReadResultValue == 4 at line number 1279");
@@ -3727,6 +3999,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("69: DCOM_NvM_GetErrorStatus",
                "created to solve true case of ReadResultValue == 7 at line number 1278");
@@ -3754,6 +4030,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("70: DCOM_NvM_GetErrorStatus",
                "created to solve true case of ReadResultValue == 6 at line number 1278");
@@ -3795,6 +4075,10 @@ if (doIt) {
     MESG_RBAPO_ActuatorPositionQualifier = RBPSC_NotInitialized;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_36[0] = 0U;
     expected_map_Data_36[1] = 0U;
     expected_map_Data_36[2] = 0U;
@@ -3864,6 +4148,10 @@ if (doIt) {
     MESG_RBAPO_ActuatorPositionQualifier = RBPSC_Invalid;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_36[0] = 0U;
     expected_map_Data_36[1] = 0U;
     expected_map_Data_36[2] = 0U;
@@ -3933,6 +4221,10 @@ if (doIt) {
     MESG_RBAPO_ActuatorPositionQualifier = RBPSC_OffsetCorrected;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_36[0] = 1U;
     expected_map_Data_36[1] = 0U;
     expected_map_Data_36[2] = 0U;
@@ -4002,6 +4294,10 @@ if (doIt) {
     MESG_RBAPO_ActuatorPositionQualifier = RBPSC_NotOffsetCorrected;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_36[0] = 2U;
     expected_map_Data_36[1] = 0U;
     expected_map_Data_36[2] = 0U;
@@ -4061,6 +4357,10 @@ if (doIt) {
     RBMESG_iB_status_N = C_Off_N;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_37[0] = 0U;
     expected_map_Data_37[1] = 1U;
     expected_map_Data_37[2] = 1U;
@@ -4096,6 +4396,10 @@ if (doIt) {
     RBMESG_iB_status_N = C_Init_N;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_37[0] = 1U;
     expected_map_Data_37[1] = 1U;
     expected_map_Data_37[2] = 1U;
@@ -4131,6 +4435,10 @@ if (doIt) {
     RBMESG_iB_status_N = C_Failure_N;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_37[0] = 2U;
     expected_map_Data_37[1] = 1U;
     expected_map_Data_37[2] = 1U;
@@ -4166,6 +4474,10 @@ if (doIt) {
     RBMESG_iB_status_N = C_Diagnosis_N;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_37[0] = 3U;
     expected_map_Data_37[1] = 1U;
     expected_map_Data_37[2] = 1U;
@@ -4201,6 +4513,10 @@ if (doIt) {
     RBMESG_iB_status_N = C_ActiveGoodCheck_N;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_37[0] = 4U;
     expected_map_Data_37[1] = 1U;
     expected_map_Data_37[2] = 1U;
@@ -4236,6 +4552,10 @@ if (doIt) {
     RBMESG_iB_status_N = C_Actuated_N;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_37[0] = 5U;
     expected_map_Data_37[1] = 1U;
     expected_map_Data_37[2] = 1U;
@@ -4271,6 +4591,10 @@ if (doIt) {
     RBMESG_iB_status_N = C_Ready_N;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_37[0] = 4U;
     expected_map_Data_37[1] = 1U;
     expected_map_Data_37[2] = 1U;
@@ -4316,6 +4640,10 @@ if (doIt) {
     MESG_RBAPO_ActuatorPositionQualifier = 99;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_36[0] = 2U;
     expected_map_Data_36[1] = 0U;
     expected_map_Data_36[2] = 0U;
@@ -4372,6 +4700,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("83: DcmAppl_HighQuiescent_0xD005",
                "<Insert test case description here>");
@@ -4400,6 +4732,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("84: DcmAppl_HighQuiescent_0xD005_1",
                "<Insert test case description here>");
@@ -4428,6 +4764,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("85: DcmAppl_HighQuiescent_0xD005_2",
                "<Insert test case description here>");
@@ -4456,6 +4796,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("86: DcmAppl_HighQuiescent_0xD005_3",
                "<Insert test case description here>");
@@ -4486,6 +4830,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("87: DcmAppl_HighQuiescent_0xD005_4",
                "<Insert test case description here>");
@@ -4514,6 +4862,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("88: DcmAppl_HighQuiescent_0xD005_5",
                "<Insert test case description here>");
@@ -4543,6 +4895,10 @@ if (doIt) {
     map_Data[0] = 0xFFFF;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("89: DcmAppl_HighQuiescent_0xD005_6",
                "<Insert test case description here>");
@@ -4572,6 +4928,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("90: DcmAppl_HighQuiescent_0xD005_7",
                "<Insert test case description here>");
@@ -4604,6 +4964,10 @@ if (doIt) {
     RBMESG_iB_status_N = 100;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
     expected_map_Data_37[0] = 4U;
     expected_map_Data_37[1] = 1U;
     expected_map_Data_37[2] = 1U;
@@ -4637,6 +5001,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("92: DcmAppl_ReadQCMActDeact_D09A",
                "<Insert test case description here>");
@@ -4666,6 +5034,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("93: DcmAppl_ReadQCMActDeact_D09A_1",
                "<Insert test case description here>");
@@ -4695,6 +5067,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("94: DcmAppl_ReadQCMActDeact_D09A_2",
                "<Insert test case description here>");
@@ -4725,6 +5101,10 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("95: DcmAppl_ReadQCMActDeact_D09A_3",
                "<Insert test case description here>");
@@ -4755,6 +5135,10 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("96: DcmAppl_ReadQCMActDeact_D09A_4",
                "<Insert test case description here>");
@@ -4785,6 +5169,10 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("97: DcmAppl_ReadQCMActDeact_D09A_5",
                "<Insert test case description here>");
@@ -4815,6 +5203,10 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("98: DcmAppl_ReadQCMActDeact_D09A_6",
                "<Insert test case description here>");
@@ -4845,6 +5237,10 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("99: DcmAppl_ReadQCMActDeact_D09A_7",
                "<Insert test case description here>");
@@ -4875,6 +5271,10 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("100: DcmAppl_ReadQCMActDeact_D09A_8",
                "<Insert test case description here>");
@@ -4905,6 +5305,10 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("101: DcmAppl_ReadQCMActDeact_D09A_9",
                "<Insert test case description here>");
@@ -4935,6 +5339,10 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("102: DcmAppl_ReadQCMActDeact_D09A_10",
                "<Insert test case description here>");
@@ -4965,6 +5373,10 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("103: DcmAppl_ReadQCMActDeact_D09A_11",
                "<Insert test case description here>");
@@ -4995,6 +5407,10 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("104: DcmAppl_ReadQCMActDeact_D09A_12",
                "<Insert test case description here>");
@@ -5023,6 +5439,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("105: DcmAppl_RoutingTableConfigurationIdentification_0xD220",
                "<Insert test case description here>");
@@ -5051,6 +5471,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("106: DcmAppl_swAuthPublicKeyCheckSum_0xD03A",
                "<Insert test case description here>");
@@ -5079,6 +5503,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("107: DcmAppl_swAuthPublicKeyCheckSum_0xD03A_1",
                "<Insert test case description here>");
@@ -5107,6 +5535,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("108: DcmAppl_swAuthPublicKeyCheckSum_0xD03A_2",
                "<Insert test case description here>");
@@ -5133,6 +5565,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("109: PRC_DCOM_GetEcuSerial_V",
                "<Insert test case description here>");
@@ -5157,6 +5593,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("110: PRC_DCOM_GetEcuSerial_V_1",
                "<Insert test case description here>");
@@ -5181,6 +5621,10 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("111: PRC_DCOM_GetEcuSerial_V_2",
                "<Insert test case description here>");
@@ -5206,6 +5650,10 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("112: PRC_DCOM_GetEcuSerial_V_3",
                "<Insert test case description here>");
@@ -5239,6 +5687,10 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("113: DcmAppl_Supplier_Software_Version_0xFEE0",
                "<Insert test case description here>");
@@ -5270,6 +5722,10 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("114: DcmAppl_Supplier_Software_Version_0xFEE0_1",
                "<Insert test case description here>");
@@ -5301,6 +5757,10 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("115: DcmAppl_Supplier_Software_Version_0xFEE0_2",
                "<Insert test case description here>");
@@ -5334,6 +5794,10 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("116: DcmAppl_Supplier_Software_Version_0xFEE0_3",
                "<Insert test case description here>");
@@ -5366,6 +5830,10 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("117: DcmAppl_Supplier_Software_Version_0xFEE0_4",
                "<Insert test case description here>");
@@ -5395,6 +5863,10 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("118: PRC_DCOM_GetEcuSerial_V_4",
                "<Insert test case description here>");
@@ -5422,6 +5894,10 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("119: PRC_DCOM_GetEcuSerial_V_5",
                "<Insert test case description here>");
@@ -5449,6 +5925,10 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("120: PRC_DCOM_GetEcuSerial_V_6",
                "<Insert test case description here>");
@@ -5476,6 +5956,10 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("121: PRC_DCOM_GetEcuSerial_V_7",
                "<Insert test case description here>");
@@ -5503,6 +5987,10 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("122: PRC_DCOM_GetEcuSerial_V_8",
                "<Insert test case description here>");
@@ -5530,6 +6018,10 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("123: PRC_DCOM_GetEcuSerial_V_9",
                "<Insert test case description here>");
@@ -5557,6 +6049,10 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("124: PRC_DCOM_GetEcuSerial_V_10",
                "<Insert test case description here>");
@@ -5588,6 +6084,10 @@ if (doIt) {
 //    ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_HighQuiescent_0xD005, StatusFlag_b) = FALSE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("125: DcmAppl_HighQuiescent_0xD005_8",
                "<Insert test case description here>");
@@ -5620,6 +6120,10 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_HighQuiescent_0xD005, StatusFlag_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
+  expected_RBMESG_DriverOnPedal_B = 0x55 ;   
+  expected_RBMESG_iB_status_N = 1431655765 ;   
+  expected_RBMESG_RBMESG_UBBFiltered = 21845 ;   
+  expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ;   
 
     START_TEST("126: DcmAppl_HighQuiescent_0xD005_9",
                "<Insert test case description here>");
