@@ -1,9 +1,15 @@
 #!bin/bash
 file_c=`find |grep '\.c$'`
-cat $file_c
+# kiem tra xem co file bachkup chua
+if [ -f file_c_bk ]
+then
+	 echo ok
+	 cat file_c_bk > $file_c
+else 
+	echo not ok
+	cat $file_c > file_c_bk
+fi
 
-
-exit
 file=`find |grep '\.ctr$'`
 rm -rf line_TCs| touch line_TCs
 
@@ -32,22 +38,35 @@ do
 		
 			if [ ${#array_expected[*]} -eq ${#array_actual[*]} ] && [ ${#array_expected[*]} -ge 0 ]
 			then
+
+				touch expected_file_c
 				cout_array=0
 				while [  $cout_array -lt ${#array_expected[*]} ]
 				do			
 					echo "${array_expected[cout_array]} = ${array_actual[cout_array]} ;"
+					var_expected_file_c=`echo "${array_expected[cout_array]} = ${array_actual[cout_array]} ;"`
+					
+					edit_expected=`cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`
+
+					patter=`cat $file_c | grep -n "$edit_expected"` 
+
+					number_patter=`echo $patter| cut -d ':' -f1`
+					((number_patter--))
+
+					sed -i "$number_patter i\    $var_expected_file_c " $file_c
+
 					((cout_array++))
 				done
-				
-				echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26`  "
-				
+
+				#echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`"
+
 			else
 			
 				echo So phan tu mang khong dung.
 			fi
 
 			echo " "		
-
+			# rm -rf expected_file_c
 		fi
 
 		if [ `cat $file| sed -n "$temp_line,$i p" | grep -A 4 '>>  FAILED: Check: ACCESS_VARIABLE' -c` -ge 1 ]
@@ -66,10 +85,23 @@ do
 			do
 				var_ACCESS_VARIABLE=`echo $array_expected | sed 's/ -- //g'| cut -d ')' -f$((cout_array + 1))`
 				echo "$var_ACCESS_VARIABLE) = ${array_actual[cout_array]} ;"
+				var_expected_file_c=`echo "$var_ACCESS_VARIABLE) = ${array_actual[cout_array]} ;"`
+				edit_expected=`cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`
+
+				patter=`cat $file_c | grep -n "$edit_expected"` 
+
+				number_patter=`echo $patter| cut -d ':' -f1`
+				((number_patter--))
+
+				sed -i "$number_patter i\    $var_expected_file_c " $file_c
+				
 				((cout_array++))
 			done
 			
-			echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26`  "
+			echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`"
+			
+
+			
 			echo " "
 		
 		fi
@@ -93,10 +125,20 @@ do
 				var_memory=`echo $var_memory | sed "s/[\.a-zA-Z_\.]\{3,\}//g"`
 				var_memory=`echo $var_memory | sed "s/\.//g" | sed 's/ /_/g' | sed 's/_$//g'`
 				echo "expected_${array_expected[cout_array]}[0] = $var_memory ;"
+				var_expected_file_c=`echo "expected_${array_expected[cout_array]}[0] = $var_memory ;"`
 
+				edit_expected=`cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`
+
+				patter=`cat $file_c | grep -n "$edit_expected"` 
+
+				number_patter=`echo $patter| cut -d ':' -f1`
+				((number_patter--))
+
+				sed -i "$number_patter i\    $var_expected_file_c " $file_c
+				
 				((cout_array++))			
 			done
-			echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26`  "
+			echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`"
 			echo " "					
 		fi 
 		
