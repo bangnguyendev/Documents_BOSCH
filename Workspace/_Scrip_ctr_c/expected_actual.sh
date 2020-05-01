@@ -3,10 +3,10 @@ file_c=`find |grep '\.c$'`
 # kiem tra xem co file bachkup chua
 if [ -f file_c_bk ]
 then
-	 echo ok
+	 echo Nap tu file Backup
 	 cat file_c_bk > $file_c
 else 
-	echo not ok
+	echo Tao file Backup
 	cat $file_c > file_c_bk
 fi
 
@@ -17,96 +17,90 @@ cat $file |grep -n 'End Test:'| grep -v 'End Test: COVERAGE RULE SET'|cut -d ':'
 temp_line=7
 for i in `cat line_TCs`
 do
-	cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26
-	cat -n $file| sed -n "$temp_line,$i p" > File_TCs_$i
-	count_failed_check=`cat File_TCs_$i | grep '>>  FAILED:' -c`
+	cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 # print name TCs
+	cat $file| sed -n "$temp_line,$i p" > File_TCs_$i # lay noi dung TCs de tim FAILED
+	count_failed_check=`cat File_TCs_$i | grep -v '>>  FAILED: No match for ' | grep -v '>>  FAILED: Incomplete expected call sequence' |grep '>>  FAILED:' -c`
+	# KIEM TRA XEM TCs NAY CO FAILED HAY KHONG?
 	if [ $count_failed_check == 0 ]
 	then
 		echo --- TESTCASE PASSED ---
 	else
 		echo --- TESTCASE FAILED ---
+		# ham insert expected tu ctr qua file .c 
+		INSERT_EXPECTED_CTR2C() {
+			edit_expected=`cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`
+			patter=`cat $file_c | grep -n "$edit_expected"` 
+			number_patter=`echo $patter| cut -d ':' -f1`
+			((number_patter--))
+		}
 		
+		INSERT_EXPECTED_CTR2C
+		sed -i "$number_patter i\    /*      Author: $(uname -n)      */ " $file_c	
+
+		# kiem tra xem trong TCs nay co >>  FAILED: Check: ACCESS_VARIABLE hay khong?
 		if [ `cat $file| sed -n "$temp_line,$i p" | grep -A 2 '>>  FAILED: Check:' -c` -ge 1 ]
 		then
 		
 			echo ====================== Check Variable ===========================
-			echo " "
-			# fix failed >>  FAILED: Check: 		
+			echo " "	
 			array_expected=(`cat $file| sed -n "$temp_line,$i p" | grep -A 2 '>>  FAILED: Check:'| grep 'expected_'| sed 's/expected_/\/expected_/g'|cut -d '/' -f2`)
 			
 			array_actual=(`cat $file| sed -n "$temp_line,$i p" | grep -A 2 '>>  FAILED: Check:'| grep '           actual: '| sed "s/[a-v y-z A-Z :'<>]//g"`)
-		
+			# CHECK SO PHAN TU 2 MANG GIONG NHAU VA SO PHAN TU PHAI LON HON 0 
 			if [ ${#array_expected[*]} -eq ${#array_actual[*]} ] && [ ${#array_expected[*]} -ge 0 ]
 			then
-
-				touch expected_file_c
 				cout_array=0
 				while [  $cout_array -lt ${#array_expected[*]} ]
 				do			
 					echo "${array_expected[cout_array]} = ${array_actual[cout_array]} ;"
 					var_expected_file_c=`echo "${array_expected[cout_array]} = ${array_actual[cout_array]} ;"`
 					
-					edit_expected=`cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`
-
-					patter=`cat $file_c | grep -n "$edit_expected"` 
-
-					number_patter=`echo $patter| cut -d ':' -f1`
-					((number_patter--))
+					INSERT_EXPECTED_CTR2C
 
 					sed -i "$number_patter i\    $var_expected_file_c " $file_c
 
 					((cout_array++))
 				done
 
-				#echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`"
-
-			else
-			
+				echo 'INSERT_EXPECTED_CTR2C OK'
+				echo " "
+			else			
 				echo So phan tu mang khong dung.
-			fi
-
-			echo " "		
-			# rm -rf expected_file_c
+			fi	
 		fi
 
+		# kiem tra xem trong TCs nay co >>  FAILED: Check: ACCESS_VARIABLE hay khong?
 		if [ `cat $file| sed -n "$temp_line,$i p" | grep -A 4 '>>  FAILED: Check: ACCESS_VARIABLE' -c` -ge 1 ]
 		then
 				
 			echo ==================== Check: ACCESS_VARIABLE =====================
 			echo " "
-			# fix failed >>  FAILED: Check: 
 			
-			array_expected=`cat $file| sed -n "$temp_line,$i p" | grep -A 4 '>>  FAILED: Check: ACCESS_VARIABLE'| grep -A 1 "ACCESS_EXPECTED_VARIABLE(" | sed "s/.*= ACCESS_EXPECTED_VARIABLE(/ACCESS_EXPECTED_VARIABLE(/g"`
+			var_access=`cat $file| sed -n "$temp_line,$i p" | grep -A 4 '>>  FAILED: Check: ACCESS_VARIABLE'| grep -A 1 "ACCESS_EXPECTED_VARIABLE(" | sed "s/.*= ACCESS_EXPECTED_VARIABLE(/ACCESS_EXPECTED_VARIABLE(/g"`
 			
 			array_actual=(`cat $file| sed -n "$temp_line,$i p" | grep -A 4 '>>  FAILED: Check: ACCESS_VARIABLE'| grep '           actual: ' |sed "s/[a-v y-z A-Z :'<>]//g"`)
 			
 			cout_array=0
 			for dem_temp in `cat $file| sed -n "$temp_line,$i p" | grep -A 4 '>>  FAILED: Check: ACCESS_VARIABLE'| grep '           actual: ' |sed "s/[a-v y-z A-Z :'<>]//g"`
 			do
-				var_ACCESS_VARIABLE=`echo $array_expected | sed 's/ -- //g'| cut -d ')' -f$((cout_array + 1))`
+				var_ACCESS_VARIABLE=`echo $var_access | sed 's/ -- //g'| cut -d ')' -f$((cout_array + 1))`
 				echo "$var_ACCESS_VARIABLE) = ${array_actual[cout_array]} ;"
 				var_expected_file_c=`echo "$var_ACCESS_VARIABLE) = ${array_actual[cout_array]} ;"`
-				edit_expected=`cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`
-
-				patter=`cat $file_c | grep -n "$edit_expected"` 
-
-				number_patter=`echo $patter| cut -d ':' -f1`
-				((number_patter--))
+					
+				INSERT_EXPECTED_CTR2C
 
 				sed -i "$number_patter i\    $var_expected_file_c " $file_c
 				
 				((cout_array++))
 			done
 			
-			echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`"
-			
-
-			
+			echo 'INSERT_EXPECTED_CTR2C OK'
+						
 			echo " "
 		
 		fi
 
-
+		# kiem tra xem trong TCs nay co >>  FAILED: Check Memory: hay khong?
 		if [ `cat $file| sed -n "$temp_line,$i p" | grep '>>  FAILED: Check Memory:' -c` -ge 1 ]
 		then
 		
@@ -127,41 +121,22 @@ do
 				echo "expected_${array_expected[cout_array]}[0] = $var_memory ;"
 				var_expected_file_c=`echo "expected_${array_expected[cout_array]}[0] = $var_memory ;"`
 
-				edit_expected=`cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`
-
-				patter=`cat $file_c | grep -n "$edit_expected"` 
-
-				number_patter=`echo $patter| cut -d ':' -f1`
-				((number_patter--))
+				INSERT_EXPECTED_CTR2C
 
 				sed -i "$number_patter i\    $var_expected_file_c " $file_c
 				
 				((cout_array++))			
 			done
-			echo "    sed >>> `cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`"
+			echo 'INSERT_EXPECTED_CTR2C OK'
 			echo " "					
 		fi 
-		
 		echo ========================= The End. ==============================	
+		echo " "
 	fi
 	
 	temp_line=$((i+1))
 	rm -rf File_TCs_$i
 done
 rm -rf line_TCs temp_memory
-
-exit
-
-echo " "	
-echo ============== Incomplete expected call sequence ================
-echo " "
-# fix failed >>  FAILED: Check: 
-cat $file| sed -n "$temp_line,$i p" | grep '>>  FAILED: Incomplete expected call sequence' 
-
-echo " "
-echo ================== FAILED: No match for =========================
-echo " "
-# fix failed >>  FAILED: Check: 
-cat $file| sed -n "$temp_line,$i p" | grep '>>  FAILED: No match for ' 
 
 
