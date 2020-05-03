@@ -97,9 +97,9 @@ function create_header_h()
 
 for i in {0..18} {18..0} ; do echo -en "\e[48;5;${i}m \e[0m" ; done ; echo
 
-echo -e "\e[0m"
-cd ../
-mkdir -p Output_PSW
+echo -e "\e[0m" # tro lai font binh thuong
+cd ../ # quay ra ngoai quet file.c trong database
+mkdir -p Output_PSW # tao thu muc output chua project
 rm -rf Output_PSW/log.txt
 touch Output_PSW/log.txt
 
@@ -114,9 +114,7 @@ do
 	echo "File_Name    :" $name_var
 	echo ==================================
 
-	find |grep -i '\.c$'  |grep -i "$name_DataBase" |grep -i "$name_PATH" |grep -i "$name_var$"
-
-	count=`find |grep -i '\.c$' |grep -i "$name_DataBase" |grep -i "$name_PATH" |grep -i "$name_var$" -c`
+	count=`find . -type f -name "$name_var" | grep -i "$name_DataBase" | grep -i "$name_PATH" |grep -i "$name_var$" -c`
 
 	echo -e "\e[30;48;5;82m Luong File tim thay:  $count  \e[0m"
 
@@ -125,7 +123,7 @@ do
 	then		
 		echo -e "\e[30;48;5;82m ===Mot Ket Qua Khop=== \e[0m"
 		
-		file=`find |grep -i '\.c$'  |grep -i "$name_DataBase" |grep -i "$name_PATH" |grep -i "$name_var$"`		
+		file=`find . -type f -name "$name_var" | grep -i "$name_DataBase" | grep -i "$name_PATH" |grep -i "$name_var$"`		
 		# kiem tra lai xem duong dan file co ton tai hay khong
 		if [ -f "$file" ]
 		then
