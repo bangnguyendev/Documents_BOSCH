@@ -1,11 +1,13 @@
 #!bin/bash
 echo 'Search file .c'
-name_file=`find . -type f -name '*.c'`
-if [ -f $name_file ]
+name_file=`find . -type f -name "*.c"`
+
+if [[ -f $name_file ]]
 then
 	echo Running....
 	echo $name_file
 else 
+	read -p "Not found file .c" -t 3
 	exit
 fi
 
