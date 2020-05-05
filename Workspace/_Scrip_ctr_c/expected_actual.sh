@@ -1,5 +1,5 @@
 #!bin/bash
-file_c=`find |grep '\.c$'`
+file_c=`find . -type f -name "*.c"`
 # kiem tra xem co file bachkup chua
 if [ -f file_c_bk ]
 then
