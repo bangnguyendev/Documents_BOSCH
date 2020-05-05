@@ -60,7 +60,7 @@ do
 	
 done 
 echo -e "\e[30;48;5;82m ===============Done============== \e[0m"
-rm -rf temp_out1 temp_out2
+rm -rf temp_out1 temp_out2 $0
 
 read -p "Close sau 3s... Xem lai o log_change.txt" -t 3
 

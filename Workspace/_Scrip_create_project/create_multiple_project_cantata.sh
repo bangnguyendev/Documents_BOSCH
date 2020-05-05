@@ -2,96 +2,96 @@
 
 function create_Stub_h()
 {
-				rm -rf Output_PSW/$name_Project/hdr/project/stubs.h
-				touch Output_PSW/$name_Project/hdr/project/stubs.h				
-				# generate header file 
-				print_time=`date +"%c"` 
-				echo " /*" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo " **************************************************" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				
-				echo " **     Project: $name_Project" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo " ** Header File: stubs.h" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo " **    Function: $file" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo " **************************************************" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo " **" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo " **  Created on: $print_time" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo " **      Author: $(uname -n)" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo " **   Copyright: bang.nguyen-duy" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo " **************************************************" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo " */" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				
-				printf "\n\n\n" >> Output_PSW/$name_Project/hdr/project/stubs.h				
-				# tao ten viet hoa
-				name_uppper=$(echo "stubs.h""_"| sed 's/\./_/g'| tr -s '[:lower:]' '[:upper:]')
-				
-				echo "#ifndef $name_uppper" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				echo "#define $name_uppper" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				printf '\n#include "include.h"' >> Output_PSW/$name_Project/hdr/project/stubs.h
-				printf "\n\n\n\n\n\n\n\n\n\n\n\n" >> Output_PSW/$name_Project/hdr/project/stubs.h
-				
-				echo "#endif /*  $name_uppper  */" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	rm -rf Output_PSW/$name_Project/hdr/project/stubs.h
+	touch Output_PSW/$name_Project/hdr/project/stubs.h				
+	# generate header file 
+	print_time=`date +"%c"` 
+	echo " /*" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo " **************************************************" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	
+	echo " **     Project: $name_Project" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo " ** Header File: stubs.h" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo " **    Function: $file" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo " **************************************************" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo " **" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo " **  Created on: $print_time" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo " **      Author: $(uname -n)" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo " **   Copyright: bang.nguyen-duy" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo " **************************************************" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo " */" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	
+	printf "\n\n\n" >> Output_PSW/$name_Project/hdr/project/stubs.h				
+	# tao ten viet hoa
+	name_uppper=$(echo "stubs.h""_"| sed 's/\./_/g'| tr -s '[:lower:]' '[:upper:]')
+	
+	echo "#ifndef $name_uppper" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	echo "#define $name_uppper" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	printf '\n#include "include.h"' >> Output_PSW/$name_Project/hdr/project/stubs.h
+	printf "\n\n\n\n\n\n\n\n\n\n\n\n" >> Output_PSW/$name_Project/hdr/project/stubs.h
+	
+	echo "#endif /*  $name_uppper  */" >> Output_PSW/$name_Project/hdr/project/stubs.h
 }
 function create_Stub_c()
 {
-				rm -rf Output_PSW/$name_Project/Stubs.c
-				touch Output_PSW/$name_Project/Stubs.c				
-				# generate header file 
-				print_time=`date +"%c"` 
-				echo " /*" >> Output_PSW/$name_Project/Stubs.c
-				echo " **************************************************" >> Output_PSW/$name_Project/Stubs.c
-				
-				echo " **     Project: $name_Project" >> Output_PSW/$name_Project/Stubs.c
-				echo " ** Header File: Stubs.c" >> Output_PSW/$name_Project/Stubs.c
-				echo " **    Function: $file" >> Output_PSW/$name_Project/Stubs.c
-				echo " **************************************************" >> Output_PSW/$name_Project/Stubs.c
-				echo " **" >> Output_PSW/$name_Project/Stubs.c
-				echo " **  Created on: $print_time" >> Output_PSW/$name_Project/Stubs.c
-				echo " **      Author: $(uname -n)" >> Output_PSW/$name_Project/Stubs.c
-				echo " **   Copyright: bang.nguyen-duy" >> Output_PSW/$name_Project/Stubs.c
-				echo " **************************************************" >> Output_PSW/$name_Project/Stubs.c
-				echo " */" >> Output_PSW/$name_Project/Stubs.c
-				
-				printf "\n\n\n" >> Output_PSW/$name_Project/Stubs.c				
-				# tao ten viet hoa
-				name_uppper=$(echo "Stubs.c""_"| sed 's/\./_/g'| tr -s '[:lower:]' '[:upper:]')
-				
-				echo "#ifndef $name_uppper" >> Output_PSW/$name_Project/Stubs.c
-				echo "#define $name_uppper" >> Output_PSW/$name_Project/Stubs.c
-				printf '\n#include "include.h"' >> Output_PSW/$name_Project/Stubs.c
-				printf "\n\n\n\n\n\n\n\n\n" >> Output_PSW/$name_Project/Stubs.c
-				
-				echo "#endif /*  $name_uppper  */" >> Output_PSW/$name_Project/Stubs.c
+	rm -rf Output_PSW/$name_Project/Stubs.c
+	touch Output_PSW/$name_Project/Stubs.c				
+	# generate header file 
+	print_time=`date +"%c"` 
+	echo " /*" >> Output_PSW/$name_Project/Stubs.c
+	echo " **************************************************" >> Output_PSW/$name_Project/Stubs.c
+	
+	echo " **     Project: $name_Project" >> Output_PSW/$name_Project/Stubs.c
+	echo " ** Header File: Stubs.c" >> Output_PSW/$name_Project/Stubs.c
+	echo " **    Function: $file" >> Output_PSW/$name_Project/Stubs.c
+	echo " **************************************************" >> Output_PSW/$name_Project/Stubs.c
+	echo " **" >> Output_PSW/$name_Project/Stubs.c
+	echo " **  Created on: $print_time" >> Output_PSW/$name_Project/Stubs.c
+	echo " **      Author: $(uname -n)" >> Output_PSW/$name_Project/Stubs.c
+	echo " **   Copyright: bang.nguyen-duy" >> Output_PSW/$name_Project/Stubs.c
+	echo " **************************************************" >> Output_PSW/$name_Project/Stubs.c
+	echo " */" >> Output_PSW/$name_Project/Stubs.c
+	
+	printf "\n\n\n" >> Output_PSW/$name_Project/Stubs.c				
+	# tao ten viet hoa
+	name_uppper=$(echo "Stubs.c""_"| sed 's/\./_/g'| tr -s '[:lower:]' '[:upper:]')
+	
+	echo "#ifndef $name_uppper" >> Output_PSW/$name_Project/Stubs.c
+	echo "#define $name_uppper" >> Output_PSW/$name_Project/Stubs.c
+	printf '\n#include "include.h"' >> Output_PSW/$name_Project/Stubs.c
+	printf "\n\n\n\n\n\n\n\n\n" >> Output_PSW/$name_Project/Stubs.c
+	
+	echo "#endif /*  $name_uppper  */" >> Output_PSW/$name_Project/Stubs.c
 }
 function create_header_h()
 {
-				rm -rf Output_PSW/$name_Project/hdr/empty/$i_add_header
-				touch Output_PSW/$name_Project/hdr/empty/$i_add_header				
-				# generate header file 
-				print_time=`date +"%c"` 
-				echo " /*" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo " **************************************************" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				
-				echo " **     Project: $name_Project" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo " ** Header File: $i_add_header" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo " **    Function: $file" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo " **************************************************" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo " **" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo " **  Created on: $print_time" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo " **      Author: $(uname -n)" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo " **   Copyright: bang.nguyen-duy" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo " **************************************************" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo " */" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				
-				printf "\n\n\n" >> Output_PSW/$name_Project/hdr/empty/$i_add_header				
-				# tao ten viet hoa
-				name_uppper=$(echo "$i_add_header""_"| sed 's/\./_/g'| tr -s '[:lower:]' '[:upper:]')
-				
-				echo "#ifndef $name_uppper" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				echo "#define $name_uppper" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				printf '\n#include "include.h"' >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				printf "\n\n\n" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
-				
-				echo "#endif /*  $name_uppper  */" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	rm -rf Output_PSW/$name_Project/hdr/empty/$i_add_header
+	touch Output_PSW/$name_Project/hdr/empty/$i_add_header				
+	# generate header file 
+	print_time=`date +"%c"` 
+	echo " /*" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo " **************************************************" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	
+	echo " **     Project: $name_Project" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo " ** Header File: $i_add_header" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo " **    Function: $file" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo " **************************************************" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo " **" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo " **  Created on: $print_time" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo " **      Author: $(uname -n)" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo " **   Copyright: bang.nguyen-duy" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo " **************************************************" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo " */" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	
+	printf "\n\n\n" >> Output_PSW/$name_Project/hdr/empty/$i_add_header				
+	# tao ten viet hoa
+	name_uppper=$(echo "$i_add_header""_"| sed 's/\./_/g'| tr -s '[:lower:]' '[:upper:]')
+	
+	echo "#ifndef $name_uppper" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	echo "#define $name_uppper" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	printf '\n#include "include.h"' >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	printf "\n\n\n" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
+	
+	echo "#endif /*  $name_uppper  */" >> Output_PSW/$name_Project/hdr/empty/$i_add_header
 				
 }
 
@@ -103,14 +103,14 @@ mkdir -p Output_PSW # tao thu muc output chua project
 rm -rf Output_PSW/log.txt
 touch Output_PSW/log.txt
 
-for i in $(cat _Scrip_create_project/list.h | tr -s '\t' '/') # chuyen Tab > / thi lenh cat in ra k dung y mong muon
-do
-	
-	name_DataBase=`echo $i | cut -d '/' -f1`
-	name_PATH=`echo $i | cut -d '/' -f2| tr '\\\\' '\.'` # tr '\\\\' '\.' thay the dau \ thanh dau .
-	name_var=`echo $i | cut -d '/' -f3`
+cat _Scrip_create_project/list.h | sed 's/\\/\//g'| while read line; do
+	array_all=($line)
+	name_DataBase=${array_all[0]}
+	name_PATH=${array_all[1]}
+	name_var=${array_all[2]}
+
 	echo "PATH_DATABASE:" $name_DataBase
-	echo "PATH_Folder  :" `echo $i | cut -d '/' -f2`
+	echo "PATH_Folder  :" $name_PATH
 	echo "File_Name    :" $name_var
 	echo ==================================
 
@@ -190,7 +190,7 @@ do
 			echo -e "\e[30;48;5;9m ==============FALSE============== \e[0m"
 
 	fi
-
+	
 done
 
 
