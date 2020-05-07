@@ -4344,7 +4344,7 @@ if (doIt) {
     expected_map_Data_36[25] = 0U;
     expected_map_Data_36[26] = 0U;
     expected_map_Data_36[27] = 0U;
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_map_Data_36[0] = 55_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00 ; 
 
     START_TEST("82: DcmAppl_AnalogueData_0xFD01_1",
@@ -4374,8 +4374,8 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("83: DcmAppl_HighQuiescent_0xD005",
                "<Insert test case description here>");
@@ -4404,8 +4404,8 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("84: DcmAppl_HighQuiescent_0xD005_1",
                "<Insert test case description here>");
@@ -4434,8 +4434,8 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("85: DcmAppl_HighQuiescent_0xD005_2",
                "<Insert test case description here>");
@@ -4464,7 +4464,7 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_returnValue = 0x01 ; 
 
     START_TEST("86: DcmAppl_HighQuiescent_0xD005_3",
@@ -4496,8 +4496,8 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("87: DcmAppl_HighQuiescent_0xD005_4",
                "<Insert test case description here>");
@@ -4526,8 +4526,8 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("88: DcmAppl_HighQuiescent_0xD005_5",
                "<Insert test case description here>");
@@ -4557,7 +4557,7 @@ if (doIt) {
     map_Data[0] = 0xFFFF;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ; 
     expected_RBMESG_RBMESG_UBBFiltered = 21845 ; 
     expected_RBMESG_iB_status_N = 1431655765 ; 
@@ -4597,8 +4597,8 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("90: DcmAppl_HighQuiescent_0xD005_7",
                "<Insert test case description here>");
@@ -4635,7 +4635,7 @@ if (doIt) {
     expected_map_Data_37[1] = 1U;
     expected_map_Data_37[2] = 1U;
     expected_map_Data_37[3] = 1U;
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_map_Data_37[0] = 55_01_01_01 ; 
 
     START_TEST("91: DcmAppl_iB_Status_Information_0xFD00_1",
@@ -4666,8 +4666,8 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("92: DcmAppl_ReadQCMActDeact_D09A",
                "<Insert test case description here>");
@@ -4697,8 +4697,8 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("93: DcmAppl_ReadQCMActDeact_D09A_1",
                "<Insert test case description here>");
@@ -4728,8 +4728,8 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("94: DcmAppl_ReadQCMActDeact_D09A_2",
                "<Insert test case description here>");
@@ -4760,8 +4760,8 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("95: DcmAppl_ReadQCMActDeact_D09A_3",
                "<Insert test case description here>");
@@ -4822,8 +4822,8 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
+    expected_returnValue = 0x0A ; 
 
     START_TEST("97: DcmAppl_ReadQCMActDeact_D09A_5",
                "<Insert test case description here>");
@@ -4854,7 +4854,7 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_returnValue = 0x01 ; 
 
     START_TEST("98: DcmAppl_ReadQCMActDeact_D09A_6",
@@ -4886,7 +4886,7 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_returnValue = 0x01 ; 
 
     START_TEST("99: DcmAppl_ReadQCMActDeact_D09A_7",
@@ -4918,7 +4918,7 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_returnValue = 0x01 ; 
 
     START_TEST("100: DcmAppl_ReadQCMActDeact_D09A_8",
@@ -4950,7 +4950,7 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_returnValue = 0x01 ; 
 
     START_TEST("101: DcmAppl_ReadQCMActDeact_D09A_9",
@@ -4982,7 +4982,7 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_returnValue = 0x01 ; 
 
     START_TEST("102: DcmAppl_ReadQCMActDeact_D09A_10",
@@ -5014,7 +5014,7 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_returnValue = 0x01 ; 
 
     START_TEST("103: DcmAppl_ReadQCMActDeact_D09A_11",
@@ -5046,7 +5046,7 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_ReadQCMActDeact_D09A, s_Status_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_returnValue = 0x01 ; 
 
     START_TEST("104: DcmAppl_ReadQCMActDeact_D09A_12",
@@ -5076,7 +5076,7 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_map_Data[0] = 00_67_55_55_55_55_55_55_55_55_55_55_55_55_55 ; 
 
     START_TEST("105: DcmAppl_RoutingTableConfigurationIdentification_0xD220",
@@ -5106,7 +5106,7 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_returnValue = 0x01 ; 
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, Public_Checksum_Read_RdbiErrCodeOpenSession) = 103 ; 
 
@@ -5137,8 +5137,7 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x01 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, Public_Checksum_Read_RdbiErrCodeOpenSession) = 0 ; 
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, Public_Checksum_Read_RdbiStorageTag_u32) = 1282 ; 
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, Public_Checksum_Read_Success) = 103 ; 
@@ -5170,7 +5169,7 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, Public_Checksum_Read_RdbiErrCodeOpenSession) = 0 ; 
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, Public_Checksum_Read_RdbiStorageTag_u32) = 1282 ; 
     ACCESS_EXPECTED_VARIABLE(DcmAppl_22_rdbi, Public_Checksum_Read_Success) = 0 ; 
@@ -5200,7 +5199,7 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = FF_FF_FF_FF ; 
 
     START_TEST("109: PRC_DCOM_GetEcuSerial_V",
@@ -5226,7 +5225,7 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = FF_FF_FF_FF ; 
 
     START_TEST("110: PRC_DCOM_GetEcuSerial_V_1",
@@ -5252,7 +5251,7 @@ if (doIt) {
     initialise_global_data();
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = FF_FF_FF_FF ; 
 
     START_TEST("111: PRC_DCOM_GetEcuSerial_V_2",
@@ -5279,7 +5278,7 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = FF_FF_FF_FF ; 
 
     START_TEST("112: PRC_DCOM_GetEcuSerial_V_3",
@@ -5314,8 +5313,7 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_MESG_RBAPO_ActuatorPositionQualifier = 1431655697 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_map_Data[0] = 55_55_55_00_55_5F_55_55_55_55_55_00_00_55_55 ; 
 
     START_TEST("113: DcmAppl_Supplier_Software_Version_0xFEE0",
@@ -5348,8 +5346,7 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_MESG_RBAPO_ActuatorPositionQualifier = 1431655745 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_map_Data[0] = 55_55_55_00_55_5F_55_55_55_55_55_00_00_55_55 ; 
 
     START_TEST("114: DcmAppl_Supplier_Software_Version_0xFEE0_1",
@@ -5382,7 +5379,7 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_map_Data[0] = 55_55_55_00_55_5F_55_55_55_55_55_00_00_55_55 ; 
 
     START_TEST("115: DcmAppl_Supplier_Software_Version_0xFEE0_2",
@@ -5417,8 +5414,7 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_MESG_RBAPO_ActuatorPositionQualifier = 1431655680 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_map_Data[0] = 55_55_55_00_55_5F_55_55_55_55_55_00_00_55_55 ; 
 
     START_TEST("116: DcmAppl_Supplier_Software_Version_0xFEE0_3",
@@ -5452,7 +5448,7 @@ if (doIt) {
 
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_g_ECUCoreAssemPartNum_Geely_Read[0] = 55_55_55_55_55_55_55_55 ; 
     expected_map_Data[0] = 09_55_55_00_55_5F_5A_55_55_55_55_00_00_55_55 ; 
     expected_map_Data_21[0] = 55_55_55 ; 
@@ -5485,7 +5481,7 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = FF_FF_FF_FF ; 
 
     START_TEST("118: PRC_DCOM_GetEcuSerial_V_4",
@@ -5514,7 +5510,7 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = FF_FF_FF_FF ; 
 
     START_TEST("119: PRC_DCOM_GetEcuSerial_V_5",
@@ -5543,7 +5539,7 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = FF_FF_FF_FF ; 
 
     START_TEST("120: PRC_DCOM_GetEcuSerial_V_6",
@@ -5572,7 +5568,7 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = 00_00_00_00 ; 
 
     START_TEST("121: PRC_DCOM_GetEcuSerial_V_7",
@@ -5601,7 +5597,7 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = FF_FF_FF_FF ; 
 
     START_TEST("122: PRC_DCOM_GetEcuSerial_V_8",
@@ -5630,7 +5626,7 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = FF_FF_FF_FF ; 
 
     START_TEST("123: PRC_DCOM_GetEcuSerial_V_9",
@@ -5659,7 +5655,7 @@ if (doIt) {
     //ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, PRC_DCOM_GetEcuSerial_V, EcuSerialNumber_NvmBuffer) = 0x30;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_ECUSerialNumber[0] = 00_43_00_49 ; 
 
     START_TEST("124: PRC_DCOM_GetEcuSerial_V_10",
@@ -5692,8 +5688,7 @@ if (doIt) {
 //    ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_HighQuiescent_0xD005, StatusFlag_b) = FALSE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_returnValue = 0x0 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
 
     START_TEST("125: DcmAppl_HighQuiescent_0xD005_8",
                "<Insert test case description here>");
@@ -5726,11 +5721,7 @@ if (doIt) {
     ACCESS_LOCAL_VARIABLE(DcmAppl_22_rdbi, DcmAppl_HighQuiescent_0xD005, StatusFlag_b) = TRUE;
     /* Set expected values for global data checks */
     initialise_expected_global_data();
-    /*      Author: HC-UT40277C      */ 
-    expected_RBMESG_RBVSI_InputRodStrokeCalc = 21845 ; 
-    expected_RBMESG_RBMESG_UBBFiltered = 21845 ; 
-    expected_RBMESG_iB_status_N = 1431655765 ; 
-    expected_RBMESG_DriverOnPedal_B = 0x55 ; 
+    /*      Author: DESKTOP-F6OM0RO      */ 
     expected_MESG_NMSG_sOutputRod_Act_ST[0] = 55_55_55_55_55_55_55_55 ; 
     expected_g_QCMActDeact_UB[0] = 55 ; 
     expected_map_Data[0] = 00_00_00_00_00_00_00_00_00_FF_00_00_00_00_00 ; 
