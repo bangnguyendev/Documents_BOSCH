@@ -102,7 +102,10 @@ cd ../ # quay ra ngoai quet file.c trong database
 mkdir -p Output_PSW # tao thu muc output chua project
 rm -rf Output_PSW/log.txt
 touch Output_PSW/log.txt
+#str_ignore="src_tpl|Unit_tst|Unit_test|Test_Script|Unit Test" 
+find . -type f -name "*.c"|grep -v -i "bin"|grep -v -i "Unit_tst"|grep -v -i "Unit_test"|grep -v -i "Test_Script"|grep -v -i "Unit Test"|grep -v -i "src_tpl" > list_file_C
 
+set -x
 cat _Scrip_create_project/list.h | sed 's/\\/\//g'| while read line; do
 	array_all=($line)
 	name_DataBase=${array_all[0]}
@@ -114,7 +117,7 @@ cat _Scrip_create_project/list.h | sed 's/\\/\//g'| while read line; do
 	echo "File_Name    :" $name_var
 	echo ==================================
 
-	count=`find . -type f -name "$name_var" | grep -i "$name_DataBase" | grep -i "$name_PATH" |grep -i "$name_var$" -c`
+	count=`cat list_file_C |grep -i "$name_DataBase" | grep -i "$name_PATH" |grep -i "$name_var$" -c`
 
 	echo -e "\e[30;48;5;82m Luong File tim thay:  $count  \e[0m"
 
@@ -123,7 +126,7 @@ cat _Scrip_create_project/list.h | sed 's/\\/\//g'| while read line; do
 	then		
 		echo -e "\e[30;48;5;82m ===Mot Ket Qua Khop=== \e[0m"
 		
-		file=`find . -type f -name "$name_var" | grep -i "$name_DataBase" | grep -i "$name_PATH" |grep -i "$name_var$"`		
+		file=`cat list_file_C | grep -i "$name_DataBase" | grep -i "$name_PATH" |grep -i "$name_var$"`		
 		# kiem tra lai xem duong dan file co ton tai hay khong
 		if [ -f "$file" ]
 		then
@@ -192,7 +195,8 @@ cat _Scrip_create_project/list.h | sed 's/\\/\//g'| while read line; do
 	fi
 	
 done
-
+rm -rf list_file_C
+set +x
 
 
 
