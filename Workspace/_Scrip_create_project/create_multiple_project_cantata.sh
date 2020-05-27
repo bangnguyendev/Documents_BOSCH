@@ -103,9 +103,17 @@ mkdir -p Output_PSW # tao thu muc output chua project
 rm -rf Output_PSW/log.txt
 touch Output_PSW/log.txt
 #str_ignore="src_tpl|Unit_tst|Unit_test|Test_Script|Unit Test" 
-find . -type f -name "*.c"|grep -v -i "bin"|grep -v -i "Unit_tst"|grep -v -i "Unit_test"|grep -v -i "Test_Script"|grep -v -i "Unit Test"|grep -v -i "src_tpl" > list_file_C
 
-set -x
+if [ -f list_file_C ]
+then
+	echo Creating Project..
+else 
+	echo Searching file c ...
+	find . -type f -name "*.c"|grep -v -i "bin"|grep -v -i "Unit_tst"|grep -v -i "Unit_test"|grep -v -i "Test_Script"|grep -v -i "Unit Test"|grep -v -i "src_tpl" > list_file_C
+fi
+
+echo ==================================
+#set -x
 cat _Scrip_create_project/list.h | sed 's/\\/\//g'| while read line; do
 	array_all=($line)
 	name_DataBase=${array_all[0]}
@@ -136,11 +144,11 @@ cat _Scrip_create_project/list.h | sed 's/\\/\//g'| while read line; do
 			# copy file thu vien database
 			cp -r _Scrip_create_project/hdr Output_PSW/$name_Project
 			# tim file header source, tao file header
-			add_header=`cat $file |grep -i '#include'|  cut -d '"' -f2`
-			
+			add_header=`cat $file |grep -i '#include "'|  cut -d '"' -f2`
+			echo Add header . . .
 			for i_add_header in $add_header
 			do
-				#echo $add_header
+				echo + $i_add_header
 				create_header_h				
 			done
 			#####################################
@@ -195,8 +203,8 @@ cat _Scrip_create_project/list.h | sed 's/\\/\//g'| while read line; do
 	fi
 	
 done
-rm -rf list_file_C
-set +x
+#rm -rf list_file_C
+#set +x
 
 
 
