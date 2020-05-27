@@ -1,0 +1,3 @@
+make[2]: *** [atest_DcmAppl_22_rdbi/build_and_run] Error 1
+make[1]: *** [atest_DcmAppl_22_rdbi/make_test] Error 2
+make[1]: Target `atest_DcmAppl_22_rdbi/do_all' not remade because of errors.
