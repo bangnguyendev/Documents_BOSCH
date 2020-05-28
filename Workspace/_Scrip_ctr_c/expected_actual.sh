@@ -38,16 +38,17 @@ do
 		INSERT_EXPECTED_CTR2C
 		sed -i "$number_patter i\    /*      Author: $(uname -n)      */ " $file_c	
 
-		# kiem tra xem trong TCs nay co >>  FAILED: Check: ACCESS_VARIABLE hay khong?
+# kiem tra xem trong TCs nay co Check Variable hay khong?
 		if [ `cat $file| sed -n "$temp_line,$i p" |grep -v ">>  FAILED: Check: ACCESS_VARIABLE"| grep -A 2 '>>  FAILED: Check:' -c` -ge 1 ]
 		then
 		
 			echo ====================== Check Variable ===========================
 			echo " "	
-			array_expected=(`cat $file| sed -n "$temp_line,$i p" | grep -A 2 '>>  FAILED: Check:'| grep 'expected_'| sed 's/expected_/\/expected_/g'|cut -d '/' -f2`)
+			array_expected=(`cat $file| sed -n "$temp_line,$i p" |grep -v ">>  FAILED: Check: ACCESS_VARIABLE"| grep -A 2 '>>  FAILED: Check:'| grep 'expected_'| sed 's/expected_/\/expected_/g'|cut -d '/' -f2`)
 
-			cat $file| sed -n "$temp_line,$i p" | grep -A 2 '>>  FAILED: Check:' | grep '           actual: ' > temp_actual
+			cat $file| sed -n "$temp_line,$i p" |grep -v ">>  FAILED: Check: ACCESS_VARIABLE"| grep -A 2 '>>  FAILED: Check:' | grep '           actual: ' > temp_actual
 			cout_array=0
+
 			cat temp_actual | while read line; do
 				array_actual=($line)
 				
@@ -66,7 +67,7 @@ do
 			echo " "
 		fi
 
-		# kiem tra xem trong TCs nay co >>  FAILED: Check: ACCESS_VARIABLE hay khong?
+# kiem tra xem trong TCs nay co ACCESS_VARIABLE hay khong?
 		if [ `cat $file| sed -n "$temp_line,$i p" | grep -A 4 '>>  FAILED: Check: ACCESS_VARIABLE' -c` -ge 1 ]
 		then
 				
@@ -94,35 +95,7 @@ do
 			echo " "
 		fi
 
-		# kiem tra xem trong TCs nay co >>  FAILED: Check Memory: hay khong?
-		if [ `cat $file| sed -n "$temp_line,$i p" | grep '>>  FAILED: Check Memory:' -c` -ge 1 ]
-		then
-		
-			echo ======================== Check Memory ===========================
-			echo " "
-			
-			array_expected=(`cat $file| sed -n "$temp_line,$i p" | grep '>>  FAILED: Check Memory:'| cut -d ':' -f3| cut -d ' ' -f2`)
-			
-			cout_array=0
-			while [  $cout_array -lt ${#array_expected[*]} ]
-			do			
-				cat $file| sed -n "$temp_line,$i p" | grep -A 3 '>>  FAILED: Check Memory:'| grep '  actual: '| cut -d ':' -f2 > temp_memory			
-				var_memory=`awk "{if( NR == $((cout_array+1)) ) {print $1;}}" temp_memory ` 
-				var_memory=`echo $var_memory | sed "s/[ ]\{1,\}[U]\{1,\}\|[ ]\{2,\}[\.U\.]\{1,\}//g"`
-				var_memory=`echo $var_memory | sed "s/\.[a-zA-Z]//g"`
-				var_memory=`echo $var_memory | sed "s/[\.a-zA-Z_\.]\{3,\}//g"`
-				var_memory=`echo $var_memory | sed "s/\.//g" | sed 's/ /_/g' | sed 's/_$//g'`
-				echo "expected_${array_expected[cout_array]}[0] = $var_memory ;"
-				var_expected_file_c=`echo "expected_${array_expected[cout_array]}[0] = $var_memory ;"`
 
-				INSERT_EXPECTED_CTR2C
-
-				sed -i "$number_patter i\    $var_expected_file_c " $file_c
-				
-				((cout_array++))			
-			done
-			echo " "					
-		fi 
 		echo ========================= The End. ==============================	
 		echo " "
 
@@ -134,9 +107,33 @@ done
 rm -rf line_TCs temp_memory
 
 exit
-			# CHECK SO PHAN TU 2 MANG GIONG NHAU VA SO PHAN TU PHAI LON HON 0 
-			if [[ ${#array_expected[*]} -eq ${#array_actual[*]} ]] && [[ ${#array_expected[*]} -ge 0 ]]
-			then
+	# kiem tra xem trong TCs nay co >>  FAILED: Check Memory: hay khong?
+	if [ `cat $file| sed -n "$temp_line,$i p" | grep '>>  FAILED: Check Memory:' -c` -ge 1 ]
+	then
+	
+		echo ======================== Check Memory ===========================
+		echo " "
+		
+		array_expected=(`cat $file| sed -n "$temp_line,$i p" | grep '>>  FAILED: Check Memory:'| cut -d ':' -f3| cut -d ' ' -f2`)
+		
+		cout_array=0
+		while [  $cout_array -lt ${#array_expected[*]} ]
+		do			
+			cat $file| sed -n "$temp_line,$i p" | grep -A 3 '>>  FAILED: Check Memory:'| grep '  actual: '| cut -d ':' -f2 > temp_memory			
+			var_memory=`awk "{if( NR == $((cout_array+1)) ) {print $1;}}" temp_memory ` 
+			var_memory=`echo $var_memory | sed "s/[ ]\{1,\}[U]\{1,\}\|[ ]\{2,\}[\.U\.]\{1,\}//g"`
+			var_memory=`echo $var_memory | sed "s/\.[a-zA-Z]//g"`
+			var_memory=`echo $var_memory | sed "s/[\.a-zA-Z_\.]\{3,\}//g"`
+			var_memory=`echo $var_memory | sed "s/\.//g" | sed 's/ /_/g' | sed 's/_$//g'`
+			echo "expected_${array_expected[cout_array]}[0] = $var_memory ;"
+			var_expected_file_c=`echo "expected_${array_expected[cout_array]}[0] = $var_memory ;"`
 
-			fi	
+			INSERT_EXPECTED_CTR2C
+
+			sed -i "$number_patter i\    $var_expected_file_c " $file_c
+			
+			((cout_array++))			
+		done
+		echo " "					
+	fi 
 
