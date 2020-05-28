@@ -7,7 +7,7 @@ cat list_test_summary | while read line; do
 	echo $line
 	
 	Project=`cat $line | grep -i "Project: " | cut -d '>' -f3 | cut -d '<' -f1`
-	echo "Project: $Project"
+	echo -e "Project: \e[92m$Project \e[0m"
 	Result=`cat $line | grep -i "Overall Result: " | cut -d '>' -f3 | cut -d '<' -f1`
 	if [ $Result == Pass ] 
 	then
