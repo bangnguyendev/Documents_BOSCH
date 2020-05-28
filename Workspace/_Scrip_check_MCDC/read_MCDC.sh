@@ -28,6 +28,8 @@ cat list_test_summary | while read line; do
 
 done
 
+read -n 1 -r -s -p $'Press enter to exit...\n'
+
 exit
 
 	FAILED=`cat $line | grep -i -A 3 '>FAILED<'| grep -i "text-align:center;" | cut -d '>' -f2 | cut -d '<' -f1`
