@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # !/bin/sh
 # tim file  .ctr
 find . -type f -name '*.ctr' > temp_link
@@ -27,6 +28,9 @@ cd $substring_link
 # tim file  .ctr
 file=$(find . -type f -name '*.ctr')
 # tim file  .c
+=======
+#!/bin/sh
+>>>>>>> f635df3e19ecb4b4bd36a8b2ab894bc2c4055e55
 file_c=$(find . -type f -name "*.c")
 # kiem tra xem co file bachkup chua
 if [ -f file_c_bk ]
@@ -38,15 +42,27 @@ else
 	cat "$file_c" > file_c_bk
 fi
 
+<<<<<<< HEAD
+=======
+file=$(find . -type f -name '*.ctr')
+>>>>>>> f635df3e19ecb4b4bd36a8b2ab894bc2c4055e55
 rm -rf line_TCs
 touch line_TCs
 
 cat $file |grep -n 'End Test:'| grep -v 'End Test: COVERAGE RULE SET'|cut -d ':' -f1 >> line_TCs
+<<<<<<< HEAD
 # add them define true false
 sed -i "15i\ 	#define True (!False) " $file_c	
 sed -i "15i\ 	#define False 0 " $file_c	
 sed -i "15i\/*      Author: $(uname -n)      */ " $file_c	
 # khoi tao line test trong .ctr là vi tri line 7
+=======
+
+sed -i "15i\ 	#define True (!False) " $file_c	
+sed -i "15i\ 	#define False 0 " $file_c	
+sed -i "15i\/*      Author: $(uname -n)      */ " $file_c	
+
+>>>>>>> f635df3e19ecb4b4bd36a8b2ab894bc2c4055e55
 temp_line=7
 for i in $(cat line_TCs)
 do
@@ -139,6 +155,7 @@ done
 rm -rf line_TCs temp_memory
 
 exit
+<<<<<<< HEAD
 # kiem tra xem trong TCs nay co >>  FAILED: Check Memory: hay khong?
 if [ `cat $file| sed -n "$temp_line,$i p" | grep '>>  FAILED: Check Memory:' -c` -ge 1 ]
 then
@@ -168,4 +185,35 @@ then
 	done
 	echo " "					
 fi 
+=======
+	# kiem tra xem trong TCs nay co >>  FAILED: Check Memory: hay khong?
+	if [ `cat $file| sed -n "$temp_line,$i p" | grep '>>  FAILED: Check Memory:' -c` -ge 1 ]
+	then
+	
+		echo ======================== Check Memory ===========================
+		echo " "
+		
+		array_expected=(`cat $file| sed -n "$temp_line,$i p" | grep '>>  FAILED: Check Memory:'| cut -d ':' -f3| cut -d ' ' -f2`)
+		
+		cout_array=0
+		while [  $cout_array -lt ${#array_expected[*]} ]
+		do			
+			cat $file| sed -n "$temp_line,$i p" | grep -A 3 '>>  FAILED: Check Memory:'| grep '  actual: '| cut -d ':' -f2 > temp_memory			
+			var_memory=`awk "{if( NR == $((cout_array+1)) ) {print $1;}}" temp_memory ` 
+			var_memory=`echo $var_memory | sed "s/[ ]\{1,\}[U]\{1,\}\|[ ]\{2,\}[\.U\.]\{1,\}//g"`
+			var_memory=`echo $var_memory | sed "s/\.[a-zA-Z]//g"`
+			var_memory=`echo $var_memory | sed "s/[\.a-zA-Z_\.]\{3,\}//g"`
+			var_memory=`echo $var_memory | sed "s/\.//g" | sed 's/ /_/g' | sed 's/_$//g'`
+			echo "expected_${array_expected[cout_array]}[0] = $var_memory ;"
+			var_expected_file_c=`echo "expected_${array_expected[cout_array]}[0] = $var_memory ;"`
+
+			INSERT_EXPECTED_CTR2C
+
+			sed -i "$number_patter i\    $var_expected_file_c " $file_c
+			
+			((cout_array++))			
+		done
+		echo " "					
+	fi 
+>>>>>>> f635df3e19ecb4b4bd36a8b2ab894bc2c4055e55
 
