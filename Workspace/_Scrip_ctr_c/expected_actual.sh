@@ -1,24 +1,43 @@
 # !/bin/sh
 # tim file  .ctr
 find . -type f -name '*.ctr' > temp_link
-for link in `cat temp_link` # neu co nhieu hon 1 ten func giong nhau thi no se dc liet ke ra
+count=0;
+for i in `cat temp_link`
 do
-	if [ -f $link ]
-	then
-		echo -e "Result: \e[92m$link \e[0m"
-		read -p "Y/N ? " var_choose_ctr
-		if [ $var_choose_ctr == y ] || [ $var_choose_ctr == Y ]
-		then
-			echo -e "\e[92mChon: $link \e[0m"
-			break
-		else
-			echo == Skip ==
-		fi		
-	else
-		echo -e "Result: \e[30;48;5;9mFail \e[0m"
-	fi
+	((count++))
 done
-rm -rf temp_link
+if [ $count == 0 ] 
+then
+	echo Khong tim thay .ctr
+	exit 
+elif [ $count == 1 ] 
+then
+	echo Runing.......
+	link=`cat temp_link`
+else 
+	echo Thu muc chua nhieu file .ctr
+	for link in `cat temp_link` # neu co nhieu hon 1 ten func giong nhau thi no se dc liet ke ra
+	do
+		if [ -f $link ]
+		then
+			echo -e "Result: \e[92m$link \e[0m"
+			read -p "Y/N ? " var_choose_ctr
+			if [ $var_choose_ctr == y ] || [ $var_choose_ctr == Y ]
+			then
+				echo -e "\e[92mChon: $link \e[0m"
+				break
+			else
+				echo == Skip ==
+			fi		
+		else
+			echo -e "Result: \e[30;48;5;9mFail \e[0m"
+		fi
+	done
+	rm -rf temp_link
+	
+fi
+
+
 substring_link=${link%/*} # cat ten func de lay ten folder
 
 echo -e "Folder: \e[92m$substring_link \e[0m"
