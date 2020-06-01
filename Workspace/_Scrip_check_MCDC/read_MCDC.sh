@@ -30,14 +30,3 @@ cat list_test_summary | while read line; do
 done
 
 read -n 1 -r -s -p $'Press enter to exit...\n'
-
-exit
-
-	FAILED=`cat $line | grep -i -A 3 '>FAILED<'| grep -i "text-align:center;" | cut -d '>' -f2 | cut -d '<' -f1`
-
-	if [ $FAILED > 0 ]
-	then
-		echo -e "FAILED : \e[30;48;5;9m === Fail === \e[0m"
-	else
-		echo -e "FAILED : \e[30;48;5;82m === Pass === \e[0m"
-	fi
