@@ -15,10 +15,15 @@ rm -rf line_TCs
 touch line_TCs
 
 cat $file |grep -n 'End Test:'| grep -v 'End Test: COVERAGE RULE SET'|cut -d ':' -f1 >> line_TCs
+
+sed -i "15i\ 	#define True (!False) " $file_c	
+sed -i "15i\ 	#define False 0 " $file_c	
+sed -i "15i\/*      Author: $(uname -n)      */ " $file_c	
+
 temp_line=7
 for i in $(cat line_TCs)
 do
-	cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 # print name TCs
+	cat $file| sed -n "$((temp_line+5))p" | cut -d '-' -f26 # print name TCs
 	cat $file| sed -n "$temp_line,$i p" > File_TCs_$i # lay noi dung TCs de tim FAILED
 	count_failed_check=`cat File_TCs_$i | grep -v '>>  FAILED: No match for ' | grep -v '>>  FAILED: Incomplete expected call sequence' |grep '>>  FAILED:' -c`
 	# KIEM TRA XEM TCs NAY CO FAILED HAY KHONG?
@@ -29,7 +34,7 @@ do
 		echo --- TESTCASE FAILED ---
 		# ham insert expected tu ctr qua file .c 
 		INSERT_EXPECTED_CTR2C() {
-			edit_expected=`cat $file| sed -n "$((temp_line+1))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`
+			edit_expected=`cat $file| sed -n "$((temp_line+5))p" | cut -d '-' -f26 | sed 's/ Start Test: //g'`
 			patter=`cat $file_c | grep -n "$edit_expected"` 
 			number_patter=`echo $patter| cut -d ':' -f1`
 			((number_patter--))
