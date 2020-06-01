@@ -1,12 +1,13 @@
 #!/bin/bash
 
 find . -type f -name "test_summary.html" > list_test_summary
-
+rm -rf list_project
 cat list_test_summary | while read line; do
 
 	echo $line
 	
 	Project=`cat $line | grep -i "Project: " | cut -d '>' -f3 | cut -d '<' -f1`
+	cat $line | grep -i "Project: " | cut -d '>' -f3 | cut -d '<' -f1 >> list_project
 	echo -e "Project: \e[92m$Project \e[0m"
 	Result=`cat $line | grep -i "Overall Result: " | cut -d '>' -f3 | cut -d '<' -f1`
 	if [ $Result == Pass ] 
