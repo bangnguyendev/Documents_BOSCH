@@ -14,4 +14,5 @@ find . -type d -iname "$line" >> temp_link
 ((count++))
 echo ============
 done
+rm -rf temp_link
 read -n 1 -r -s -p $'Press enter to exit...\n'
