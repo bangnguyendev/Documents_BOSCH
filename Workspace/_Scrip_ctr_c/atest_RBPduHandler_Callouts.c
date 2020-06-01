@@ -12,6 +12,9 @@
 /*****************************************************************************/
 
 #define TEST_SCRIPT_GENERATOR 2
+/*      Author: HC-UT40277C      */ 
+ 	#define False 0 
+ 	#define True (!False) 
 
 /* Include files from software under test */
 #include "RB_Config.h"
