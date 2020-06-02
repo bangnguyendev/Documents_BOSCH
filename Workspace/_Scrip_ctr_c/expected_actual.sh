@@ -130,7 +130,7 @@ do
 				
 			echo ==================== Check: ACCESS_VARIABLE =====================
 			echo " "
-			
+
 			var_access=`cat $file| sed -n "$temp_line,$line_end_TCs p" | grep -A 4 '>>  FAILED: Check: ACCESS_VARIABLE'| grep -A 1 "ACCESS_EXPECTED_VARIABLE(" | sed "s/.*= ACCESS_EXPECTED_VARIABLE(/ACCESS_EXPECTED_VARIABLE(/g"`
 
 			cat $file| sed -n "$temp_line,$line_end_TCs p" | grep -A 4 '>>  FAILED: Check: ACCESS_VARIABLE'| grep '           actual: ' > temp_actual
@@ -138,7 +138,9 @@ do
 			cat temp_actual | while read line; do
 				array_actual=($line)
 
-				var_ACCESS_VARIABLE=`echo $var_access | sed 's/ -- //g'| cut -d ')' -f$((cout_array + 1))`
+				var_ACCESS_VARIABLE=`echo $var_access | sed 's/ -- //g'| cut -d ')' -f$((cout_array + 1))`		
+				var_ACCESS_VARIABLE=`echo $var_ACCESS_VARIABLE | sed "s/.*ACCESS_EXPECTED_VARIABLE/ACCESS_EXPECTED_VARIABLE/"`
+				var_ACCESS_VARIABLE=`echo $var_ACCESS_VARIABLE | sed "s/).*/)/"`
 				echo "$var_ACCESS_VARIABLE) = ${array_actual[1]} ;"
 				var_expected_file_c=`echo "$var_ACCESS_VARIABLE) = ${array_actual[1]} ;"`
 
@@ -158,7 +160,7 @@ do
 
 	fi
 	
-	temp_line=$((line_end_TCs+5))
+	temp_line=$((line_end_TCs+1))
 	rm -rf File_TCs_$line_end_TCs
 done
 rm -rf line_TCs temp_memory
