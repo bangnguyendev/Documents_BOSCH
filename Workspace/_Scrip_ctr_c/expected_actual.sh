@@ -37,10 +37,9 @@ else
 			echo -e "Result: \e[30;48;5;9mFail \e[0m"
 		fi
 	done
-	rm -rf temp_link
-	
+	rm -rf temp_link	
 fi
-
+rm -rf temp_link
 
 substring_link=${link%/*} # cat ten func de lay ten folder
 
@@ -75,7 +74,8 @@ temp_line=7
 for line_end_TCs in $(cat line_TCs)
 do
 # $i la vi tri ket thuc cua TCs dang check
-	cat $file| sed -n "$((temp_line+5))p" | cut -d '-' -f26 # print name TCs
+	name_TCs=`cat $file| sed -n "$((temp_line+5))p" | cut -d '-' -f26` # print name TCs
+	echo -e "\e[92m$name_TCs \e[0m"
 	cat $file| sed -n "$temp_line,$line_end_TCs p" > File_TCs_$line_end_TCs # lay noi dung TCs de tim FAILED
 	count_failed_check=`cat File_TCs_$line_end_TCs | grep -v '>>  FAILED: No match for ' | grep -v '>>  FAILED: Incomplete expected call sequence' |grep '>>  FAILED:' -c`
 	# KIEM TRA XEM TCs NAY CO FAILED HAY KHONG?
@@ -139,10 +139,11 @@ do
 				array_actual=($line)
 
 				var_ACCESS_VARIABLE=`echo $var_access | sed 's/ -- //g'| cut -d ')' -f$((cout_array + 1))`		
-				var_ACCESS_VARIABLE=`echo $var_ACCESS_VARIABLE | sed "s/.*ACCESS_EXPECTED_VARIABLE/ACCESS_EXPECTED_VARIABLE/"`
-				var_ACCESS_VARIABLE=`echo $var_ACCESS_VARIABLE | sed "s/).*/)/"`
-				echo "$var_ACCESS_VARIABLE) = ${array_actual[1]} ;"
-				var_expected_file_c=`echo "$var_ACCESS_VARIABLE) = ${array_actual[1]} ;"`
+				var_ACCESS_VARIABLE=`echo $var_ACCESS_VARIABLE | sed "s/.*ACCESS_EXPECTED_VARIABLE/ACCESS_EXPECTED_VARIABLE/"`				
+				var_ACCESS_VARIABLE=`echo "$var_ACCESS_VARIABLE)"`
+
+				echo "$var_ACCESS_VARIABLE = ${array_actual[1]} ;"
+				var_expected_file_c=`echo "$var_ACCESS_VARIABLE = ${array_actual[1]} ;"`
 
 				INSERT_EXPECTED_CTR2C
 
@@ -160,7 +161,7 @@ do
 
 	fi
 	
-	temp_line=$((line_end_TCs+1))
+	temp_line=$((line_end_TCs+1)) # tu vi tri "--- End Test:" cong them 1 line
 	rm -rf File_TCs_$line_end_TCs
 done
 rm -rf line_TCs temp_memory
