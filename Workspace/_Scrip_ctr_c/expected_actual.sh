@@ -60,7 +60,8 @@ else
 	echo Tao file Backup
 	cat "$file_c" > file_c_bk
 fi
-
+#cat $file_c
+#exit
 rm -rf line_TCs
 touch line_TCs
 #tim vi tri line ket thuc cua TestCase
@@ -165,7 +166,7 @@ do
 	rm -rf File_TCs_$line_end_TCs
 done
 rm -rf line_TCs temp_memory
-
+read -n 1 -r -s -p $'Press enter to exit...\n'
 exit
 # kiem tra xem trong TCs nay co >>  FAILED: Check Memory: hay khong?
 if [ `cat $file| sed -n "$temp_line,$line_end_TCs p" | grep '>>  FAILED: Check Memory:' -c` -ge 1 ]

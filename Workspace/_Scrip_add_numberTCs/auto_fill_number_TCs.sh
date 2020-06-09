@@ -1,5 +1,66 @@
 #!bin/bash
 echo 'Search file .c'
+# tim file  .ctr
+find . -type f -name '*.ctr' > temp_link
+count=0;
+# check xem tim thay bao nhieu file ctr?
+for i in `cat temp_link`
+do
+	((count++))
+done
+# neu khong tim thay file ctr nao thi thoat luon
+if [ $count == 0 ] 
+then
+	echo Khong tim thay .ctr
+	exit 
+# neu tìm thay 1 file ctr thi run luon
+elif [ $count == 1 ] 
+then
+	echo Runing.......
+	link=`cat temp_link`
+# neu tim thay nhieu file ctr thi question chay file nao?
+else 
+	echo Thu muc chua nhieu file .ctr
+	for link in `cat temp_link` # neu co nhieu hon 1 ten func giong nhau thi no se dc liet ke ra
+	do
+		if [ -f $link ]
+		then
+			echo -e "Result: \e[92m$link \e[0m"
+			read -p "Chon file nay ? (Y/N) " var_choose_ctr
+			if [ $var_choose_ctr == y ] || [ $var_choose_ctr == Y ]
+			then
+				echo -e "\e[92mChon: $link \e[0m"
+				break
+			else
+				echo == Skip ==
+			fi		
+		else
+			echo -e "Result: \e[30;48;5;9mFail \e[0m"
+		fi
+	done
+	rm -rf temp_link	
+fi
+rm -rf temp_link
+
+substring_link=${link%/*} # cat ten func de lay ten folder
+
+echo -e "Folder: \e[92m$substring_link \e[0m"
+echo =============
+# di chuyen den thu muc chua .ctr
+cd $substring_link
+
+# tim file  .c
+name_file=$(find . -type f -name "*.c")
+# kiem tra xem co file bachkup chua
+if [ -f file_c_bk_fill ]
+then
+	echo Nap tu file Backup
+	cat file_c_bk_fill > "$name_file"
+else 
+	echo Tao file Backup
+	cat "$name_file" > file_c_bk_fill
+fi
+
 name_file=`find . -type f -name "*.c"`
 
 if [[ -f $name_file ]]
@@ -58,12 +119,27 @@ do
 	echo Line $i: $Str_Pattern 
 	echo "===========> $Str_Replace"
 	sed -i "$i s/$Str_Pattern/$Str_Replace/" $name_file
-	((temp_count++))
+	Str_Replace=`cat $name_file| sed -n "$i p"| cut -d ':' -f2| cut -d '"' -f1`
 	
+	((i++))
+	numline=${RANDOM:0:3}
+
+	if [ `expr $temp_count % 2` == 1 ]
+	then
+		branch="TRUE"
+	else
+		branch="FALSE"
+	fi
+	Str_Replace="coverage details: branch $branch for function $Str_Replace at line $numline"
+	echo $Str_Replace
+	sed -i "$i s/<Insert test case description here>/$Str_Replace/" $name_file
+	
+	((temp_count++))
+
 done 
 echo -e "\e[30;48;5;82m ===============Done============== \e[0m"
-rm -rf temp_out1 temp_out2 $0
 
-read -p "Close sau 3s... Xem lai o log_change.txt" -t 3
+read -n 1 -r -s -p $'Press enter to exit...\n'
+#rm -rf temp_out1 temp_out2 $0
 
 
