@@ -48,6 +48,17 @@ echo -e "Folder: \e[92m$substring_link \e[0m"
 echo =============
 # di chuyen den thu muc chua .ctr
 cd $substring_link
+# tim file  .ctr
+file_ctr=$(find . -type f -name '*.ctr')
+
+line_begin_branch=`cat $file_ctr | grep -n 'decision coverage details' | cut -d ':' -f1 `
+line_end_branch=`cat $file_ctr | grep -n 'boolean operator coverage details' | cut -d ':' -f1 `
+
+
+cat $file_ctr | sed -n "$((line_begin_branch+2)),$((line_end_branch - 6)) p" > file_branch # lay noi dung TCs de tim FAILED
+cat file_branch| awk '{print $1}' | cut -d ')' -f1 | cut -d '(' -f2 > file_line_condition
+cat file_branch| awk '{print $4 , $5 , $6}' > file_condition
+
 
 # tim file  .c
 name_file=$(find . -type f -name "*.c")
@@ -106,7 +117,7 @@ grep 'START_TEST("[0-9]\{1,\}:' $name_file| cut -d ' ' -f5 > temp_out1
 # Search for [line numbers] containing the word "START_TEST("[0-9]*:" 
 # [cut -d ':' -f1] >> Filter the line numbers
 grep -n 'START_TEST("[0-9]\{1,\}:' $name_file| cut -d ':' -f1 > temp_out2
-
+temp_count_temp=1
 for i in `cat temp_out2`
 do
 
@@ -119,27 +130,32 @@ do
 	echo Line $i: $Str_Pattern 
 	echo "===========> $Str_Replace"
 	sed -i "$i s/$Str_Pattern/$Str_Replace/" $name_file
-	Str_Replace=`cat $name_file| sed -n "$i p"| cut -d ':' -f2| cut -d '"' -f1`
 	
-	((i++))
-	numline=${RANDOM:0:3}
+	name_function=`cat $name_file| sed -n "$i p"| cut -d ':' -f2| cut -d '"' -f1`
 
-	if [ `expr $temp_count % 2` == 1 ]
-	then
-		branch="TRUE"
-	else
-		branch="FALSE"
-	fi
-	Str_Replace="coverage details: branch $branch for function $Str_Replace at line $numline"
-	echo $Str_Replace
-	sed -i "$i s/<Insert test case description here>/$Str_Replace/" $name_file
+	branch=`cat file_condition| sed -n "$((temp_count_temp))p"`
+
+	numline=`cat file_line_condition| sed -n "$((temp_count_temp))p"`
 	
+	if [[ -z $branch ]] # neu k co data thi chay lai tu dau
+	then
+		temp_count_temp=1
+		branch=`cat file_condition| sed -n "$((temp_count_temp))p"`
+		numline=`cat file_line_condition| sed -n "$((temp_count_temp))p"`
+		Str_Replace="coverage details: cover $branch for function $name_function at line $numline"
+		echo $Str_Replace
+	else
+		Str_Replace="coverage details: cover $branch for function $name_function at line $numline"
+		echo $Str_Replace
+	fi
+
+	sed -i "$i s/<Insert test case description here>/$Str_Replace/" $name_file
+	((temp_count_temp++))
 	((temp_count++))
 
 done 
 echo -e "\e[30;48;5;82m ===============Done============== \e[0m"
-
+rm -rf file_branch file_condition file_line_condition temp_out1 temp_out2
 read -n 1 -r -s -p $'Press enter to exit...\n'
 #rm -rf temp_out1 temp_out2 $0
-
 
