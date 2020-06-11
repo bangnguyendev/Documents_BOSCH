@@ -1,0 +1,83 @@
+[DEBUG][2020-06-11 17:57:06] Starting coverage proccess...
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:00 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\conf.c
+[DEBUG][2020-06-11 17:57:06] Counter Lines between Function 0  c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\CoverageTestProjectM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 4:15:10 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\CoverageTestProjectM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\EV_Inv_dpStable_ESPhevXI.c
+[DEBUG][2020-06-11 17:57:06] Counter Lines between Function 131  c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\EV_Inv_dpStable_ESPhevXM.c
+[DEBUG][2020-06-11 17:57:06] add file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\EV_Inv_dpStable_ESPhevXM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:00 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\TM_EV_Inv_dpStable_ESPhevX_CalcM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_02_ConstantHevXI.c
+[DEBUG][2020-06-11 17:57:06] Counter Lines between Function 0  c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_02_ConstantHevXM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_02_ConstantHevXM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_03_SetupABSI.c
+[DEBUG][2020-06-11 17:57:06] Counter Lines between Function 0  c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_03_SetupABSM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_03_SetupABSM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_03_SetupHevXI.c
+[DEBUG][2020-06-11 17:57:06] Counter Lines between Function 0  c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_03_SetupHevXM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_03_SetupHevXM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_ASD_pid.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 4:15:11 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_precompile.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_Public_ConstantI.c
+[DEBUG][2020-06-11 17:57:06] Counter Lines between Function 0  c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_Public_ConstantM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_Public_ConstantM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_Public_Constant_MCoI.c
+[DEBUG][2020-06-11 17:57:06] Counter Lines between Function 0  c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_Public_Constant_MCoM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_Public_Constant_MCoM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_Public_TuningI.c
+[DEBUG][2020-06-11 17:57:06] Counter Lines between Function 0  c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_Public_TuningM.c
+[DEBUG][2020-06-11 17:57:06] remove file in treeview 6/11/2020 3:14:01 PM c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\_Public_TuningM.c
+[DEBUG][2020-06-11 17:57:07] Setting MCDC coverage
+[DEBUG][2020-06-11 17:57:07] Write RTRT Options: -noproc -nocall -block=decision -cond=modified -pass -fdcdir="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\CovRep_MCDC_EV_Inv_dpStable_ESPhevX_1_18_176_0" -tsfdir="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\CovRep_MCDC_EV_Inv_dpStable_ESPhevX_1_18_176_0" -keep -ignore=simogen.cpp -ignore=simogen_depformulas1.cpp -ignore=simogen_formulas1.cpp -ignore=simogen_global.cpp -ignore=simogen_vars1.cpp -verbose 
+[DEBUG][2020-06-11 17:57:07] in File: C:\Users\nbg7hc\AppData\Local\Temp\argTestRTcl.txt
+[DEBUG][2020-06-11 17:57:07] Excluding L1 functions
+[DEBUG][2020-06-11 17:57:07] Tools 
+[DEBUG][2020-06-11 17:57:07] Checking Components ok!
+[DEBUG][2020-06-11 17:57:07] Starting Devloper Studio proccess...
+[DEBUG][2020-06-11 17:57:07] Creating Workspaces...
+[DEBUG][2020-06-11 17:57:07] --> Creating Global Workspace
+[DEBUG][2020-06-11 17:57:07] --> Creating .\TC ok
+[DEBUG][2020-06-11 17:57:07] --> Creating Test Cases Workspace
+[DEBUG][2020-06-11 17:57:07] Creating project Workspace
+[DEBUG][2020-06-11 17:57:07] set Current Directory to  c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\DevStd
+[DEBUG][2020-06-11 17:57:07] Creating Visual Studio Project Files 
+[DEBUG][2020-06-11 17:57:07] Rebuild Visual Studio 2008 Project
+[DEBUG][2020-06-11 17:58:33] finish...
+[DEBUG][2020-06-11 17:58:33] Copy Labfile from CGen folder: c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\labels.psl_lab to genLabFile.lab
+[DEBUG][2020-06-11 17:58:33] Copy Mapfile from CGen folder: c:\TSDCT\ETAS\ASCET\V6_1_4\CGen\datain.psl_map to genpslMapping.map
+[DEBUG][2020-06-11 17:58:33] copy map file c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\genpslMapping.map c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\Stimulation\pslMapping.map
+[DEBUG][2020-06-11 17:58:33] copy lab file c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\genLabFile.lab c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\Stimulation\LabFile.lab
+[DEBUG][2020-06-11 17:58:33] Dir : True
+[DEBUG][2020-06-11 17:58:33] Config file will be ziped! 
+[DEBUG][2020-06-11 17:58:33] generate Zip File of c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\RubasaLoad
+[DEBUG][2020-06-11 17:58:33] Dir : True
+[DEBUG][2020-06-11 17:58:33] Config file will be ziped! 
+[DEBUG][2020-06-11 17:58:33] Dir : True
+[DEBUG][2020-06-11 17:58:34] Config file will be ziped! 
+[DEBUG][2020-06-11 17:58:34] generate Zip File of c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\AscetProject
+[DEBUG][2020-06-11 17:58:34] delete CovConf folder 
+[DEBUG][2020-06-11 17:58:34] File : True
+[DEBUG][2020-06-11 17:58:34] Config file will be ziped! 
+[DEBUG][2020-06-11 17:58:34] DB Config file will be create True
+[DEBUG][2020-06-11 17:58:34] Dir : True
+[DEBUG][2020-06-11 17:58:37] Config file will be ziped! 
+[DEBUG][2020-06-11 17:58:37] generate Zip File of ..\ATT\EV_Inv_dpStable_ESPhevX
+[DEBUG][2020-06-11 17:58:37] IFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_Complete\TM_EV_Inv_dpStable_ESPhevX_Calc_TC001.csv" OFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_CompleteMdf\tm_ev_inv_dpstable_esphevx_calc_tc001.mdf"
+[ERROR][2020-06-11 17:58:37] finish
+[DEBUG][2020-06-11 17:58:37] IFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_Complete\TM_EV_Inv_dpStable_ESPhevX_Calc_TC002.csv" OFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_CompleteMdf\tm_ev_inv_dpstable_esphevx_calc_tc002.mdf"
+[ERROR][2020-06-11 17:58:37] finish
+[DEBUG][2020-06-11 17:58:37] IFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_Complete\TM_EV_Inv_dpStable_ESPhevX_Calc_TC003.csv" OFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_CompleteMdf\tm_ev_inv_dpstable_esphevx_calc_tc003.mdf"
+[ERROR][2020-06-11 17:58:37] finish
+[DEBUG][2020-06-11 17:58:37] IFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_Complete\TM_EV_Inv_dpStable_ESPhevX_Calc_TC004.csv" OFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_CompleteMdf\tm_ev_inv_dpstable_esphevx_calc_tc004.mdf"
+[ERROR][2020-06-11 17:58:38] finish
+[DEBUG][2020-06-11 17:58:38] IFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_Complete\TM_EV_Inv_dpStable_ESPhevX_Calc_TC005.csv" OFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_CompleteMdf\tm_ev_inv_dpstable_esphevx_calc_tc005.mdf"
+[ERROR][2020-06-11 17:58:38] finish
+[DEBUG][2020-06-11 17:58:38] IFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_Complete\TM_EV_Inv_dpStable_ESPhevX_Calc_TC006.csv" OFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_CompleteMdf\tm_ev_inv_dpstable_esphevx_calc_tc006.mdf"
+[ERROR][2020-06-11 17:58:38] finish
+[DEBUG][2020-06-11 17:58:38] IFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_Complete\TM_EV_Inv_dpStable_ESPhevX_Calc_TC007.csv" OFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_CompleteMdf\tm_ev_inv_dpstable_esphevx_calc_tc007.mdf"
+[ERROR][2020-06-11 17:58:38] finish
+[DEBUG][2020-06-11 17:58:38] IFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_Complete\TM_EV_Inv_dpStable_ESPhevX_Calc_TC008.csv" OFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_CompleteMdf\tm_ev_inv_dpstable_esphevx_calc_tc008.mdf"
+[ERROR][2020-06-11 17:58:38] finish
+[DEBUG][2020-06-11 17:58:38] IFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_Complete\TM_EV_Inv_dpStable_ESPhevX_Calc_TC009.csv" OFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_CompleteMdf\tm_ev_inv_dpstable_esphevx_calc_tc009.mdf"
+[ERROR][2020-06-11 17:58:38] finish
+[DEBUG][2020-06-11 17:58:38] IFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_Complete\TM_EV_Inv_dpStable_ESPhevX_Calc_TC010.csv" OFN="c:\TSDE_Workarea\ETASData\ASCET\V6_1_4\ATT\EV_Inv_dpStable_ESPhevX\TestCases\EV_Inv_dpStable_ESPhevX_CompleteMdf\tm_ev_inv_dpstable_esphevx_calc_tc010.mdf"
+[ERROR][2020-06-11 17:58:38] finish

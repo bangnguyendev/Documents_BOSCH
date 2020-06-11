@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="http://abt-syseng.de.bosch.com/rubasa/schema/rubasaConfiguration_2.7_html.xsl" type="text/xsl"?>
+
+<RubasaConfiguration xsi:noNamespaceSchemaLocation="http://abt-syseng.de.bosch.com/rubasa/schema/rubasaConfiguration_2.7.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <Comment>Generator: de.bosch.rubatch.combiner.JobCombiner
+Job name: 2_Modultest
+Job description:
+TC_allpassed</Comment>
+    </Header>
+    <InFiles>
+        <RuleData>..\..\..\..\..\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\Rubasa\ATTRule.xml</RuleData>
+        <ExternalParameter>..\..\..\..\..\TSDE_Workarea\ETASData\ASCET\V6_1_4\CovExport\Rubasa\Param_TM_EV_Inv_dpStable_ESPhevX_Calc_ATTRule.xml</ExternalParameter>
+        <SignalData1>..\..\mdfFiles\sim_TM_EV_Inv_dpStable_ESPhevX_Calc_TC003.mdf</SignalData1>
+    </InFiles>
+    <OutFiles>
+        <OutputFile>TM_EV_Inv_dpStable_ESPhevX_Calc_TC003_run3.xml</OutputFile>
+        <ForceXML>false</ForceXML>
+        <DiscreteDataFileMode>append</DiscreteDataFileMode>
+        <LogFile>TM_EV_Inv_dpStable_ESPhevX_Calc_TC003_run3.log</LogFile>
+        <LogOnConsole>false</LogOnConsole>
+    </OutFiles>
+</RubasaConfiguration>

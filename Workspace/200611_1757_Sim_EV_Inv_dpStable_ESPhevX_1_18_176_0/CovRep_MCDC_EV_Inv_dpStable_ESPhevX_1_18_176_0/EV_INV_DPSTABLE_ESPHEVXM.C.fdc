@@ -1,0 +1,462 @@
+VE 3.0e C++COV C++MCDC #i6 7.5.0.6
+FC "EV_INV_DPSTABLE_ESPHEVXM.C" "C:\\TSDCT\\ETAS\\ASCET\\V6_1_4\\CGEN\\" "Preprocessing Flags:/nologo /errorReport:queue /Od /I C:\\tsdct\\ETAS\\ASCET\\V6_1_4\\target\\legacy\\psl /I C:\\tsdct\\ETAS\\ASCET\\V6_1_4\\target\\legacy /I C:\\tsdct\\ETAS\\ASCET\\V6_1_4\\target\\common /I C:\\tsdct\\ETAS\\ASCET\\V6_1_4\\target /I C:\\tsdct\\ETAS\\ASCET\\V6_1_4\\target\\psl /D STRICT /D SIM_PC /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D VISUALSTDPRJ_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /W3 /ZI /TC "
+FD 1591873027
+TC BS BT BI CO CC
+CE 0 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "ModeChangeFlag" 176 176
+BL 0 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /then 177 181
+BL 1 implicit "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else 176 181
+CE 2 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "EV_OpMode_k1 == 0" 183 183
+CE 4 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "dp_in <= (sint16)((self ->* ..." 184 184
+CC 6 2 2 4 3 TTTFFX 1
+BL 2 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /then 185 197
+CE 9 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "ModeChangeFlag" 201 201
+BL 3 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/then 202 207
+BL 4 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/else 209 212
+CE 11 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "dp_in > ((self ->* dpThres) ..." 214 214
+BL 5 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/then 215 219
+BL 6 implicit "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/else 214 219
+CE 13 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "dp_in <= (sint16)((self ->* ..." 227 227
+BL 7 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/then 228 231
+CE 15 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "dp_in > ((self ->* dpPressur..." 235 235
+BL 8 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/else/then 236 239
+BL 9 implicit "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/else/else 235 239
+BL 10 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/else 233 240
+CE 17 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "(self ->* dp_zero) ->* val" 242 242
+CE 19 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "dp_K1 <= 0" 246 246
+BL 11 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/then/?T: 246 246
+BL 12 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/then/?:F 246 246
+CE 21 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "_t1sint32 >= ((self ->* dp_C..." 250 250
+BL 13 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/then/?T: 250 250
+BL 14 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/then/?:F 250 250
+BL 15 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/then 243 251
+BL 16 implicit "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/else 242 251
+CE 23 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "(self ->* Closepulse) ->* val" 253 253
+BL 17 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/then 254 258
+CE 25 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "((self ->* dp_tgt) ->* val) ..." 262 262
+BL 18 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/else/then 263 266
+BL 19 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/else/else 268 272
+BL 20 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else/else 260 273
+CE 27 "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" "(self ->* dp_zero) ->* val" 275 275
+BL 21 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" /else 199 276
+BL 22 simple "void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)" / 173 277
+BL 23 simple "sint16 _040QM00600001NG71CCFSCAPBCTT0_getdp_tgt (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *)" / 279 282
+BL 24 simple "uint8 _040QM00600001NG71CCFSCAPBCTT0_getEV_OpMode (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *)" / 284 287
+BL 25 simple "uint16 _040QM00600001NG71CCFSCAPBCTT0_getqTgtOut (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *)" / 289 292
+BL 26 simple "void initClass__040QM00600001NG71CCFSCAPBCTT0 (_040QM00600001NG71CCFSCAPBCTT0_Class *)" / 307 308
+DC 789868053
+@RIK
+  ENCODING="System"
+  TOKEN="C++COV C++MCDC"
+  SRC="EV_INV_DPSTABLE_ESPHEVXM.C"
+  DIR="C:\TSDCT\ETAS\ASCET\V6_1_4\CGEN\"
+  DATE=1591873027
+  CHECKSUM=789868053
+  SUMS
+   ("&Functions",
+    "-&Exits",
+    "Functions and exits"),
+   ("&Calls"),
+   ("Statement &blocks"=20,
+    "-&Implicit blocks"=21,
+    "Decisions"=20+21,
+    "&Loops"),
+   ("Basic &conditions"=30,
+    "&Modified conditions"=31,
+    "M&ultiple conditions"=32)
+  ERRORS
+    32="a source object was not linked with the right runtime object (check instrumentation mode)",
+    49="a composition of conditions evaluates in an unexpected result, contact your vendor",
+    50="a composition of conditions reached with an unexpected input vector, contact your vendor"
+NODE TYPE=FILE NAME="EV_INV_DPSTABLE_ESPHEVXM.C"@@ALT@ @-ALT@Preprocessing Flags:/nologo /errorReport:queue /Od /I C:\tsdct\ETAS\ASCET\V6_1_4\target\legacy\psl /I C:\tsdct\ETAS\ASCET\V6_1_4\target\legacy /I C:\tsdct\ETAS\ASCET\V6_1_4\target\common /I C:\tsdct\ETAS\ASCET\V6_1_4\target /I C:\tsdct\ETAS\ASCET\V6_1_4\target\psl /D STRICT /D SIM_PC /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D VISUALSTDPRJ_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /W3 /ZI /TC @/ALT@
+@COMMENT@/******************************************************************************
+ * BEGIN: Banner
+ *-----------------------------------------------------------------------------
+ *    Please do not edit! This file was automatically generated by ASCET.
+ *-----------------------------------------------------------------------------
+ *                                 ETAS GmbH
+ *                      D-70469 Stuttgart, Borsigstr. 14
+ *-----------------------------------------------------------------------------
+ * File:.....................EV_Inv_dpStable_ESPhevXM.c
+ * Description:.............."EV_Inv_dpStable_ESPhevX>>Impl (module code)"
+ * Creation Date:............6/11/2020
+ * Creation Time:............5:29:25 PM
+ *-----------------------------------------------------------------------------
+ * ASCET User:...............nbg7hc
+ * ASCET Version:............V6.1.4_CS_SR28
+ * ASCET-MD Version:.........V6.1.4
+ * ASCET-RP Version:.........V6.1.4
+ * ASCET-SE Version:.........V6.1.4 CID[610]
+ *-----------------------------------------------------------------------------
+ * END: Banner
+ ******************************************************************************/@/COMMENT@
+
+
+@COMMENT@/*-----------------------------------------------------------------------------
+ *    Include files
+ *----------------------------------------------------------------------------*/@/COMMENT@
+
+@COMMENT@#include "globalH.h"@/COMMENT@
+@COMMENT@#include "_02_ConstantHevXM.h"@/COMMENT@
+@COMMENT@#include "_03_SetupABSM.h"@/COMMENT@
+@COMMENT@#include "_03_SetupHevXM.h"@/COMMENT@
+@COMMENT@#include "_Public_ConstantM.h"@/COMMENT@
+@COMMENT@#include "_02_ConstantHevXI.h"@/COMMENT@
+@COMMENT@#include "_03_SetupABSI.h"@/COMMENT@
+@COMMENT@#include "_03_SetupHevXI.h"@/COMMENT@
+@COMMENT@#include "_Public_ConstantI.h"@/COMMENT@
+@COMMENT@#include "EV_Inv_dpStable_ESPhevXM.h"@/COMMENT@
+
+
+@COMMENT@/******************************************************************************
+ * BEGIN: Generation Information
+ *-----------------------------------------------------------------------------
+ * Component:................Class
+ * Name:....................."EV_Inv_dpStable_ESPhevX"
+ * Implementation:..........."Impl"
+ * Dataset:.................."FA"
+ * Specification:............ESDL
+ * Version:.................."Version 1.18.176.0"
+ * Library Path:............."RNM_CMP_Database\PlatformLibrary\Package\Hydraulics\Private\Classes\_03_Components\_02_EV\EV_Inv_Control"
+ *-----------------------------------------------------------------------------
+ * Project Name:............."CoverageTestProject"
+ * Project Library Path:....."RNM_CMP_Database\_Temp_CoverageTestPrj\"
+ *-----------------------------------------------------------------------------
+ * Generation Date:..........6/11/2020
+ * Generation Time:..........17:29:23
+ *-----------------------------------------------------------------------------
+ * ASCET Version:............V6.1.4_CS_SR28
+ * ASCET-MD Version:.........V6.1.4
+ * ASCET-RP Version:.........V6.1.4
+ * ASCET-SE Version:.........V6.1.4 CID[610]
+ *-----------------------------------------------------------------------------
+ * END: Generation Information
+ ******************************************************************************/@/COMMENT@
+
+
+@COMMENT@/******************************************************************************
+ * BEGIN: Project Options "Build"/"Code"
+ *-----------------------------------------------------------------------------
+ *    Build
+ *-----------------------------------------------------------------------------
+ * Code Generator:...........Implementation Experiment
+ * Target:...................PC Simulation Library
+ *-----------------------------------------------------------------------------
+ *    Code
+ *-----------------------------------------------------------------------------
+ * Add Comment with Generation Information for each Component [true]: true
+ * Add Comment with Implementation Information for each Assignment Statement [true]: true
+ * Add Comment with Specification Source for each Statement [true]:..true
+ * Add parenthesis for readability [false]:..........................false
+ * Casting [MISRA]:..................................................Legacy
+ * Force Parenthesis for Binary Logical Operators [false]:...........false
+ * Generate Define Directives for Enum Values [false]:...............false
+ * Prefix for Component Names [<empty String>]:......................<empty String>
+ * Protected against division by zero [true]:........................true
+ * Protected Division against Signed Overflow [true]:................true
+ * Protected Vector Indices [true]:..................................true
+ *-----------------------------------------------------------------------------
+ *    Code.Compiler
+ *-----------------------------------------------------------------------------
+ * Division truncation direction [Zero (T-division)]:................Zero (T-division)
+ * Inline directive [__inline]:......................................__inline
+ * Integer Bit Size [32]:............................................32
+ * Private directive [static]:.......................................static
+ * Public directive [<empty String>]:................................<empty String>
+ *-----------------------------------------------------------------------------
+ *    Code.Experiment
+ *-----------------------------------------------------------------------------
+ * Activate Coverage Analysis [false]:...............................false
+ * Activate Measurement of Stack Variables and Operator Results [false]: false
+ * Activate Value Range Analysis [false]:............................false
+ * Add Comment with Specification Info for each Element [true]:......true
+ * Cache Locking [true]:.............................................false
+ * Coverage Counting Mode [boolean mode]:............................boolean mode
+ * Enable logging of all data changes [false]:.......................false
+ * Max Number of Loop Iterations [1000]:.............................0
+ * Message Usage Variant [NON_OPT_COPY_FUNCTION]:....................NON_OPT_COPY_FUNCTION
+ * Use OID for Generation of Component Names [true]:.................true
+ *-----------------------------------------------------------------------------
+ *    Code.FixedPoint
+ *-----------------------------------------------------------------------------
+ * Allow Double bit Size for Division Numerators [true]:.............true
+ * Allow Limit Service for Assignment Limitation [true]:.............false
+ * Arithmetic Service Set [<None>]:..................................<None>
+ * Generate Limiters (may be changed locally) [true]:................true
+ * Generate Round Operation on float to integer Assignment [true]:...true
+ * Maximum bit Length (float) [64]:..................................64
+ * Maximum bit Length (int) [32]:....................................32
+ * Result on Division by Zero [numerator]:...........................numerator
+ * Temp Vars always 32 bit (integer) [false]:........................true
+ * Use power of 2 approximations of literals [false]:................false
+ * Use SHIFT Operation on Signed Values instead of DIV Operation [true]: false
+ * Use SHIFT Operation on Signed Values instead of MUL Operation [true]: false
+ *-----------------------------------------------------------------------------
+ *    Code.Optimizations
+ *-----------------------------------------------------------------------------
+ * Auto-inline private methods (Smaller code-size - may be changed locally) [false]: false
+ * Generate well-formed switch [false]:..............................false
+ * Hierarchical Code-Generation (may be changed locally) [false]:....false
+ * Initialise history variable with zero [false]:....................false
+ * Optimize Direct Access Methods (Multiple Levels) [false]:.........false
+ * Optimize Direct Access Methods (One Level) [false]:...............false
+ * Optimize Static Actions (Restricted Modelling) [false]:...........false
+ * Outline Generated Methods (may be changed locally) [false]:.......true
+ *-----------------------------------------------------------------------------
+ *    Station.Build
+ *-----------------------------------------------------------------------------
+ * Use Customized Data Type Names [false]:...........................false
+ *-----------------------------------------------------------------------------
+ * END: Project Options "Build"/"Code"
+ ******************************************************************************/@/COMMENT@
+
+
+@COMMENT@/******************************************************************************
+ * BEGIN: Local symbolic constants and function declarations
+ *----------------------------------------------------------------------------*/@/COMMENT@
+
+@COMMENT@/*-----------------------------------------------------------------------------
+ *    Defines
+ *----------------------------------------------------------------------------*/@/COMMENT@
+
+@COMMENT@#define _ASCET_INTERPOLATE_ROUNDED INTERPOLATE_ROUNDED@/COMMENT@
+@COMMENT@#define _ASCET_INTERPOLATE_LINEAR INTERPOLATE_LINEAR@/COMMENT@
+
+
+@COMMENT@/*-----------------------------------------------------------------------------
+ * END: Local symbolic constants and function declarations
+ ******************************************************************************/@/COMMENT@
+
+
+@COMMENT@/******************************************************************************
+ * BEGIN: Function definitions - Algorithms
+ *----------------------------------------------------------------------------*/@/COMMENT@
+
+@COMMENT@/* public calc (ModeChangeFlag::log;dp_in::cont;qTgt::cont;dp_K1::cont;EV_OpMode_k1::udisc;B_Closepulse::log) */@/COMMENT@
+void @NODE TYPE=FUNCTION NAME="void _040QM00600001NG71CCFSCAPBCTT0_calc (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *, uint8, sint16, uint16, sint16, uint8, uint8)"@@LINK NAME="_040QM00600001NG71CCFSCAPBCTT0_calc"@_040QM00600001NG71CCFSCAPBCTT0_calc(struct _040QM00600001NG71CCFSCAPBCTT0_Obj *self, 
+   uint8 ModeChangeFlag, 
+   sint16 dp_in, 
+   uint16 qTgt, 
+   sint16 dp_K1, 
+   uint8 EV_OpMode_k1, 
+   uint8 B_Closepulse)
+@BRANCH MARK=TB ID=22 SUM=20@{ 
+   sint32 _t1sint32;
+   @COMMENT@/* calc: line #10 */@/COMMENT@
+   @DECISION SUM=20+21 ID=0|1@@POPUP@if@-POPUP@@BRANCH MARK=TB ID=1 SUM=21@implicit else@/BRANCH@@/POPUP@ (@POPUP@ModeChangeFlag@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=0 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=1 SUM=30@False@/BRANCH@@/POPUP@)
+   @BRANCH MARK=TB ID=0 SUM=20@{ 
+      @COMMENT@/* calc: line #11 */@/COMMENT@
+      @COMMENT@/* assignment to dpStep: min=0, max=1600, hex=32phys+0, limit=(maxBitLength: true, assign: true), zero incl.=true */@/COMMENT@
+      self->dpStep->val = self->dpStep_Fast->val;
+   }@/BRANCH@@/DECISION@
+   @COMMENT@/* calc: line #13 */@/COMMENT@
+   @DECISION SUM=20+21 ID=2|21@if (@POPUP@@POPUP@EV_OpMode_k1 == (uint8)0@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=2 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=3 SUM=30@False@/BRANCH@@/POPUP@ &&
+      @POPUP@dp_in <= (sint16)self->pTiny->val@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=4 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=5 SUM=30@False@/BRANCH@@/POPUP@@-POPUP@modified and multiple conditions:
+  @BRANCH MARK=TE ID=6&8 SUM=31@EV_OpMode_k1 == 0@/BRANCH@ needs
+      @BRANCH MARK=TE ID=6 SUM=32@TT@/BRANCH@=T,@BRANCH MARK=TE ID=8 SUM=32@FX@/BRANCH@=F
+  @BRANCH MARK=TE ID=6&7 SUM=31@dp_in <= (sint16)((self ->* pTiny) ->* val)@/BRANCH@ needs
+      @BRANCH MARK=TE ID=6 SUM=32@TT@/BRANCH@=T,@BRANCH MARK=TE ID=7 SUM=32@TF@/BRANCH@=F@/POPUP@)
+   @BRANCH MARK=TB ID=2 SUM=20@{ 
+      @COMMENT@/* calc: line #16 */@/COMMENT@
+      @COMMENT@/* assignment to EV_OpMode: min=0, max=255, hex=1phys+0, limit=(maxBitLength: false, assign: false), zero incl.=true */@/COMMENT@
+      self->EV_OpMode->val = (uint8)0;
+      @COMMENT@/* calc: line #17 */@/COMMENT@
+      @COMMENT@/* assignment to dp_tgt: min=-12800, max=12800, hex=32phys+0, limit=(maxBitLength: true, assign: true), zero incl.=true */@/COMMENT@
+      self->dp_tgt->val = (sint16)0;
+      @COMMENT@/* calc: line #18 */@/COMMENT@
+      @COMMENT@/* assignment to qTgtOut: min=0, max=12800, hex=128phys+0, limit=(maxBitLength: true, assign: true), zero incl.=true */@/COMMENT@
+      self->qTgtOut->val = (uint16)0;
+      @COMMENT@/* calc: line #19 */@/COMMENT@
+      self->EV_isClose->val = (uint8)false;
+   }@/BRANCH@
+   @BRANCH MARK=TB ID=21 SUM=20@else 
+   { 
+      @COMMENT@/* calc: line #23 */@/COMMENT@
+      @DECISION SUM=20+21 ID=3|4@if (@POPUP@ModeChangeFlag@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=9 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=10 SUM=30@False@/BRANCH@@/POPUP@)
+      @BRANCH MARK=TB ID=3 SUM=20@{ 
+         @COMMENT@/* calc: line #26 */@/COMMENT@
+         self->dp_zero->val = (uint8)false;
+         @COMMENT@/* calc: line #28 */@/COMMENT@
+         self->Closepulse->val = B_Closepulse;
+      }@/BRANCH@
+      @BRANCH MARK=TB ID=4 SUM=20@else 
+      { 
+         @COMMENT@/* calc: line #40 */@/COMMENT@
+         self->Closepulse->val = (uint8)false;
+      }@/BRANCH@@/DECISION@
+      @COMMENT@/* calc: line #45 */@/COMMENT@
+      @DECISION SUM=20+21 ID=5|6@@POPUP@if@-POPUP@@BRANCH MARK=TB ID=6 SUM=21@implicit else@/BRANCH@@/POPUP@ (@POPUP@dp_in > self->dpThres->val@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=11 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=12 SUM=30@False@/BRANCH@@/POPUP@)
+      @BRANCH MARK=TB ID=5 SUM=20@{ 
+         @COMMENT@/* calc: line #46 */@/COMMENT@
+         @COMMENT@/* assignment to dpStep: min=0, max=1600, hex=32phys+0, limit=(maxBitLength: true, assign: true), zero incl.=true */@/COMMENT@
+         self->dpStep->val = self->dpStep_Slow->val;
+      }@/BRANCH@@/DECISION@
+      @COMMENT@/* calc: line #49 */@/COMMENT@
+      @COMMENT@/* assignment to dp_tgt: min=-12800, max=12800, hex=32phys+0, limit=(maxBitLength: true, assign: true), zero incl.=true */@/COMMENT@
+      self->dp_tgt->val = dp_in;
+      @COMMENT@/* calc: line #50 */@/COMMENT@
+      @COMMENT@/* assignment to qTgtOut: min=0, max=12800, hex=128phys+0, limit=(maxBitLength: true, assign: true), zero incl.=true */@/COMMENT@
+      self->qTgtOut->val = qTgt;
+      @COMMENT@/* calc: line #53 */@/COMMENT@
+      @DECISION SUM=20+21 ID=7|10@if (@POPUP@dp_in <= (sint16)self->pTiny->val@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=13 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=14 SUM=30@False@/BRANCH@@/POPUP@)
+      @BRANCH MARK=TB ID=7 SUM=20@{ 
+         @COMMENT@/* calc: line #55 */@/COMMENT@
+         self->dp_zero->val = (uint8)true;
+      }@/BRANCH@
+      @BRANCH MARK=TB ID=10 SUM=20@else 
+      { 
+         @COMMENT@/* calc: line #57 */@/COMMENT@
+         @DECISION SUM=20+21 ID=8|9@@POPUP@if@-POPUP@@BRANCH MARK=TB ID=9 SUM=21@implicit else@/BRANCH@@/POPUP@ (@POPUP@dp_in > self->dpPressurePulsation->val@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=15 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=16 SUM=30@False@/BRANCH@@/POPUP@)
+         @BRANCH MARK=TB ID=8 SUM=20@{ 
+            @COMMENT@/* calc: line #59 */@/COMMENT@
+            self->dp_zero->val = (uint8)false;
+         }@/BRANCH@@/DECISION@
+      }@/BRANCH@@/DECISION@
+      @COMMENT@/* calc: line #64 */@/COMMENT@
+      @DECISION SUM=20+21 ID=15|16@@POPUP@if@-POPUP@@BRANCH MARK=TB ID=16 SUM=21@implicit else@/BRANCH@@/POPUP@ (@POPUP@self->dp_zero->val@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=17 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=18 SUM=30@False@/BRANCH@@/POPUP@)
+      @BRANCH MARK=TB ID=15 SUM=20@{ 
+         @COMMENT@/* calc: line #68 */@/COMMENT@
+         @COMMENT@/* assignment to dp_tgt_K1: min=-12800, max=12800, hex=32phys+0, limit=(maxBitLength: true, assign: true), zero incl.=true */@/COMMENT@
+         self->dp_tgt_K1->val = (@POPUP@dp_K1 <= (sint16)0@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=19 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=20 SUM=30@False@/BRANCH@@/POPUP@) ? @BRANCH MARK=TB ID=11 SUM=20@dp_K1@/BRANCH@ : @BRANCH MARK=TB ID=12 SUM=20@(sint16)0@/BRANCH@;
+         @COMMENT@/* calc: line #71 */@/COMMENT@
+         _t1sint32 = self->dp_tgt_K1->val - self->dpStep->val;
+         @COMMENT@/* assignment to dp_tgt: min=-12800, max=12800, hex=32phys+0, limit=(maxBitLength: true, assign: true), zero incl.=true */@/COMMENT@
+         self->dp_tgt->val = (@POPUP@_t1sint32 >= self->dp_CurrentZero->val@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=21 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=22 SUM=30@False@/BRANCH@@/POPUP@) ? @BRANCH MARK=TB ID=13 SUM=20@_t1sint32@/BRANCH@ : @BRANCH MARK=TB ID=14 SUM=20@self->dp_CurrentZero->val@/BRANCH@;
+      }@/BRANCH@@/DECISION@
+      @COMMENT@/* calc: line #74 */@/COMMENT@
+      @DECISION SUM=20+21 ID=17|20@if (@POPUP@self->Closepulse->val@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=23 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=24 SUM=30@False@/BRANCH@@/POPUP@)
+      @BRANCH MARK=TB ID=17 SUM=20@{ 
+         @COMMENT@/* calc: line #77 */@/COMMENT@
+         @COMMENT@/* assignment to EV_OpMode: min=0, max=255, hex=1phys+0, limit=(maxBitLength: false, assign: false), zero incl.=true */@/COMMENT@
+         self->EV_OpMode->val = (uint8)2;
+      }@/BRANCH@
+      @BRANCH MARK=TB ID=20 SUM=20@else 
+      { 
+         @COMMENT@/* calc: line #79 */@/COMMENT@
+         @DECISION SUM=20+21 ID=18|19@if (@POPUP@self->dp_tgt->val > self->dp_CurrentZero->val@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=25 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=26 SUM=30@False@/BRANCH@@/POPUP@)
+         @BRANCH MARK=TB ID=18 SUM=20@{ 
+            @COMMENT@/* assignment to EV_OpMode: min=0, max=255, hex=1phys+0, limit=(maxBitLength: false, assign: false), zero incl.=true */@/COMMENT@
+            self->EV_OpMode->val = (uint8)1;
+         }@/BRANCH@
+         @BRANCH MARK=TB ID=19 SUM=20@else 
+         { 
+            @COMMENT@/* calc: line #80 */@/COMMENT@
+            @COMMENT@/* assignment to EV_OpMode: min=0, max=255, hex=1phys+0, limit=(maxBitLength: false, assign: false), zero incl.=true */@/COMMENT@
+            self->EV_OpMode->val = (uint8)0;
+         }@/BRANCH@@/DECISION@
+      }@/BRANCH@@/DECISION@
+      @COMMENT@/* calc: line #82 */@/COMMENT@
+      self->EV_isClose->val = (uint8)!@POPUP@self->dp_zero->val@-POPUP@basic boolean conditions:
+  @BRANCH MARK=TE ID=27 SUM=30@True@/BRANCH@
+  @BRANCH MARK=TE ID=28 SUM=30@False@/BRANCH@@/POPUP@;
+   }@/BRANCH@@/DECISION@
+}@/BRANCH@@/NODE@
+sint16 @NODE TYPE=FUNCTION NAME="sint16 _040QM00600001NG71CCFSCAPBCTT0_getdp_tgt (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *)"@@LINK NAME="_040QM00600001NG71CCFSCAPBCTT0_getdp_tgt"@_040QM00600001NG71CCFSCAPBCTT0_getdp_tgt(struct _040QM00600001NG71CCFSCAPBCTT0_Obj *self)
+@BRANCH MARK=TB ID=23 SUM=20@{ 
+   @COMMENT@/* return with expr from getdp_tgt: min=-12800, max=12800, hex=32phys+0, limit=(maxBitLength: true, assign: true), zero incl.=true */@/COMMENT@
+   return (self->dp_tgt->val);@SHORTCUT MARK=TB ID=23@
+}@/BRANCH@@/NODE@
+uint8 @NODE TYPE=FUNCTION NAME="uint8 _040QM00600001NG71CCFSCAPBCTT0_getEV_OpMode (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *)"@@LINK NAME="_040QM00600001NG71CCFSCAPBCTT0_getEV_OpMode"@_040QM00600001NG71CCFSCAPBCTT0_getEV_OpMode(struct _040QM00600001NG71CCFSCAPBCTT0_Obj *self)
+@BRANCH MARK=TB ID=24 SUM=20@{ 
+   @COMMENT@/* return with expr from getEV_OpMode: min=0, max=255, hex=1phys+0, limit=(maxBitLength: false, assign: false), zero incl.=true */@/COMMENT@
+   return (self->EV_OpMode->val);@SHORTCUT MARK=TB ID=24@
+}@/BRANCH@@/NODE@
+uint16 @NODE TYPE=FUNCTION NAME="uint16 _040QM00600001NG71CCFSCAPBCTT0_getqTgtOut (struct _040QM00600001NG71CCFSCAPBCTT0_Obj *)"@@LINK NAME="_040QM00600001NG71CCFSCAPBCTT0_getqTgtOut"@_040QM00600001NG71CCFSCAPBCTT0_getqTgtOut(struct _040QM00600001NG71CCFSCAPBCTT0_Obj *self)
+@BRANCH MARK=TB ID=25 SUM=20@{ 
+   @COMMENT@/* return with expr from getqTgtOut: min=0, max=12800, hex=128phys+0, limit=(maxBitLength: true, assign: true), zero incl.=true */@/COMMENT@
+   return (self->qTgtOut->val);@SHORTCUT MARK=TB ID=25@
+}@/BRANCH@@/NODE@
+@COMMENT@/*-----------------------------------------------------------------------------
+ * END: Function definitions - Algorithms
+ ******************************************************************************/@/COMMENT@
+
+
+@COMMENT@/******************************************************************************
+ * BEGIN: Simulation instruction code
+ *----------------------------------------------------------------------------*/@/COMMENT@
+
+@COMMENT@/*-----------------------------------------------------------------------------
+ *    Class initialization
+ *----------------------------------------------------------------------------*/@/COMMENT@
+
+void @NODE TYPE=FUNCTION NAME="void initClass__040QM00600001NG71CCFSCAPBCTT0 (_040QM00600001NG71CCFSCAPBCTT0_Class *)"@@LINK NAME="initClass__040QM00600001NG71CCFSCAPBCTT0"@initClass__040QM00600001NG71CCFSCAPBCTT0 (_040QM00600001NG71CCFSCAPBCTT0_Class *_ASCET_class)
+@BRANCH MARK=TB ID=26 SUM=20@{ 
+}@/BRANCH@@/NODE@
+
+@COMMENT@/*-----------------------------------------------------------------------------
+ *    Functions for use with the L1 protocol
+ *----------------------------------------------------------------------------*/@/COMMENT@
+
+@COMMENT@#pragma attol stop_analyze@/COMMENT@
+uint8 *_L1__040QM00600001NG71CCFSCAPBCTT0_calc (ASDObject *self, uint8 *_ASCET_data)
+{ 
+   uint8  ModeChangeFlag;
+   sint16  dp_in;
+   uint16  qTgt;
+   sint16  dp_K1;
+   uint8  EV_OpMode_k1;
+   uint8  B_Closepulse;
+   asdSimPreCall (_ASCET_data);
+   removeScalar (_ASCET_data, (uint8 *) &B_Closepulse, 1);
+   removeScalar (_ASCET_data, (uint8 *) &EV_OpMode_k1, 1);
+   removeScalar (_ASCET_data, (uint8 *) &dp_K1, 2);
+   removeScalar (_ASCET_data, (uint8 *) &qTgt, 2);
+   removeScalar (_ASCET_data, (uint8 *) &dp_in, 2);
+   removeScalar (_ASCET_data, (uint8 *) &ModeChangeFlag, 1);
+   
+   _040QM00600001NG71CCFSCAPBCTT0_calc ((struct _040QM00600001NG71CCFSCAPBCTT0_Obj *)self, ModeChangeFlag, dp_in, qTgt, dp_K1, EV_OpMode_k1, B_Closepulse);
+   asdSimPostCall (_ASCET_data);
+   return (_ASCET_data);
+}
+@COMMENT@/*no L1-method generated for getdp_tgt*/@/COMMENT@
+@COMMENT@/*no L1-method generated for getEV_OpMode*/@/COMMENT@
+@COMMENT@/*no L1-method generated for getqTgtOut*/@/COMMENT@
+static MethodList _040QM00600001NG71CCFSCAPBCTT0_ObjectMethodList = 
+{ 
+   _L1__040QM00600001NG71CCFSCAPBCTT0_calc
+};
+static MethodList _040QM00600001NG71CCFSCAPBCTT0_ClassMethodList = 
+{ 
+   ((void *)0)
+};
+
+@COMMENT@/*-----------------------------------------------------------------------------
+ *    Global objects
+ *----------------------------------------------------------------------------*/@/COMMENT@
+
+static ASDClassHeader _040QM00600001NG71CCFSCAPBCTT0_ClassHeader = 
+{ 
+   1, 0, 14, 0, &_040QM00600001NG71CCFSCAPBCTT0_ObjectMethodList, &_040QM00600001NG71CCFSCAPBCTT0_ClassMethodList
+};
+_040QM00600001NG71CCFSCAPBCTT0_Class _040QM00600001NG71CCFSCAPBCTT0_ClassObj = {{1, {&_040QM00600001NG71CCFSCAPBCTT0_ClassHeader}, {0}}};
+@COMMENT@#pragma attol start_analyze@/COMMENT@
+
+@COMMENT@/*-----------------------------------------------------------------------------
+ * END: Simulation instruction code
+ ******************************************************************************/@/COMMENT@
+
+
+@/NODE /RIK@
