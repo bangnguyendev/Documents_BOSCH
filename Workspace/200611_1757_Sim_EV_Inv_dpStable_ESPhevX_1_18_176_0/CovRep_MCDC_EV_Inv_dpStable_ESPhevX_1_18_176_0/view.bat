@@ -1,1 +1,0 @@
-studio *.fdc *.tio
