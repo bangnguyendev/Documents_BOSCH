@@ -148,7 +148,7 @@ do
 		Str_Replace="coverage details: cover $branch for function $name_function at line $numline"
 		echo $Str_Replace
 	fi
-
+	((i++))
 	sed -i "$i s/<Insert test case description here>/$Str_Replace/" $name_file
 	((temp_count_temp++))
 	((temp_count++))
