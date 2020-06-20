@@ -109,7 +109,7 @@ then
 	echo Creating Project..
 else 
 	echo Searching file c ...
-	find . -type f -name "*.c"|grep -v -i "bin"|grep -v -i "Unit_tst"|grep -v -i "Unit_test"|grep -v -i "Test_Script"|grep -v -i "Unit Test"|grep -v -i "src_tpl" > list_file_C
+	find . -type f -name "*.c"|egrep -v -i "bin|Unit_tst|Test_Script|Unit_test|Unit Test" > list_file_C
 fi
 
 echo ==================================
@@ -148,7 +148,7 @@ cat _Scrip_create_project/list.h | sed 's/\\/\//g'| while read line; do
 			echo Add header . . .
 			for i_add_header in $add_header
 			do
-				echo + $i_add_header
+				#echo + $i_add_header
 				create_header_h				
 			done
 			#####################################
@@ -205,7 +205,7 @@ cat _Scrip_create_project/list.h | sed 's/\\/\//g'| while read line; do
 done
 #rm -rf list_file_C
 #set +x
-
+read -n 1 -r -s -p $'Press enter to exit...\n'
 
 
 
