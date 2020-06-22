@@ -1,0 +1,53 @@
+
+=====================================================================================================
+Date    : 19-Jun-2020
+Time    : 16:59:11
+User    : nbg7hc
+Host    : HC-UT40277C
+Version : 2.8.0
+CallID  : RuBatch_1592560744659318500_8236@HC-UT40277C
+=====================================================================================================
+=====================================================================================================
+Info
+Id            : 2006
+Message       : XML file: Schema update needed
+Description   : The loaded xml file uses a deprecated schema. Please update with JixEditor (Bulk Update Tool). Execution will be continued with updated file.
+Context       : Referenced schema in rule file: rubasa_2.5
+Xpath         : unknown
+=====================================================================================================
+=====================================================================================================
+The following 2 signals are used and hence loaded (from file 1)
+   =plt=>  This line will be used in the plot file
+expected_t_PBA_FPB_PB_PBH_Operation.TM_Toyota_PCS_Common_Timer_FPB_Calc
+   =plt=>  expected_t_PBA_FPB_PB_PBH_Operation.TM_Toyota_PCS_Common_Timer_FPB_Calc
+sim_t_PBA_FPB_PB_PBH_Operation.TM_Toyota_PCS_Common_Timer_FPB_Calc
+   =plt=>  sim_t_PBA_FPB_PB_PBH_Operation.TM_Toyota_PCS_Common_Timer_FPB_Calc
+=====================================================================================================
+=====================================================================================================
+Info
+Id            : 2001
+Message       : mdfdset*c Data
+Description   : The context field as shown above gives the details of the signal that the mdfdset*c tool provides. The input to the mdfdset*c tool is the signal file provided in the rubasa interface.
+Context       : MDFDSET[__WIN64__] 1.3.0.5 <MAR 20 2016>
+ READING ...\sim_TM_Toyota_PCS_Common_Timer_F... ... OK, ELEMENTS=2 SIGNALS=2 TC=0(ms) T=0(s)..0.02(s)
+ PROCESSING FILE C:\Users\nbg7hc\AppData\Local\Temp\RUBASA\Temp_RuBatch_1592560744659318500_8236@HC-UT40277C\tmp_plt_1.plt ... OK
+ INTERPOLATING expected_t_PBA_FPB_PB_PBH_Operation.TM_Toyota_PCS_Common_Timer_FPB_Calc ... OK
+ INTERPOLATING sim_t_PBA_FPB_PB_PBH_Operation.TM_Toyota_PCS_Common_Timer_FPB_Calc ... OK
+ WRITING ...\tmp_RuBatch_1592560744659318500_... ... OK, ELEMENTS=5 SIGNALS=2 TC=5(ms) T=0(s)..0.02(s)
+MDFDSET FINISHED, T[cpu]=0.00(s)
+Xpath         : unknown
+=====================================================================================================
+=====================================================================================================
+Data Loading Time: 1 sec
+=====================================================================================================
+=====================================================================================================
+Execution Info  : OK
+Overall Verdict : Failed
+=====================================================================================================
+=====================================================================================================
+Rule Evaluation Time: 0 sec
+=====================================================================================================
+=====================================================================================================
+RUBASA ENDS
+There were 0 Error(s) and 0 Warning(s)
+=====================================================================================================
