@@ -1,1 +1,0 @@
-atlsplit.exe atlout.spt
