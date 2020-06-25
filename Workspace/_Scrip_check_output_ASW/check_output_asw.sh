@@ -23,7 +23,8 @@ do
 	if [[ -f $ReportRTRT ]]
 	then
 		echo -e "\e[92m ===ReportRTRT=== \e[0m"
-		cat $ReportRTRT | grep -A 6 "Conclusion" |egrep "Statement blocks|Decisions|Modified conditions|Multiple conditions|----"
+		echo "			C0	C1	MCDC"
+		cat $ReportRTRT | grep -A 6 "Conclusion" |egrep "Statement blocks|Decisions|Modified conditions"
 		echo -e "\e[93m ============================ \e[0m"
 	else
 		echo -e "\e[91m ===Khong co ReportRTRT=== \e[0m"
