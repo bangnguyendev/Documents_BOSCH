@@ -51,24 +51,22 @@ cd $substring_link
 # tim file  .ctr
 file_ctr=$(find . -type f -name '*.ctr')
 
-line_begin_branch=`cat $file_ctr | grep -n 'decision coverage details' | cut -d ':' -f1 `
-line_end_branch=`cat $file_ctr | grep -n 'boolean operator coverage details' | cut -d ':' -f1 `
 
 
-cat $file_ctr | sed -n "$((line_begin_branch+2)),$((line_end_branch - 6)) p" > file_branch # lay noi dung TCs de tim FAILED
+cat $file_ctr | egrep ".c([0-9]\{1,\}):|decn" > file_branch # lay noi dung TCs de tim FAILED
+
 cat file_branch| awk '{print $1}' | cut -d ')' -f1 | cut -d '(' -f2 > file_line_condition
 cat file_branch| awk '{print $4 , $5 , $6}' > file_condition
-
 
 # tim file  .c
 name_file=$(find . -type f -name "*.c")
 # kiem tra xem co file bachkup chua
 if [ -f file_c_bk_fill ]
 then
-	echo Nap tu file Backup
+	echo -e "\e[92m ===Nap tu file Backup=== \e[0m"
 	cat file_c_bk_fill > "$name_file"
 else 
-	echo Tao file Backup
+	echo -e "\e[92m ===Tao file Backup=== \e[0m"
 	cat "$name_file" > file_c_bk_fill
 fi
 

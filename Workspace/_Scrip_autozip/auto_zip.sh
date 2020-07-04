@@ -6,7 +6,7 @@ do
 	echo $file
 	if [[ $file != "." ]]
 	then
-		zip -r $file.zip $file
+		7z a $file.zip $file
 	fi
 	
 done 
