@@ -22,5 +22,10 @@ find -type f -name "MT_*.zip" > list_MT
 cat list_MT
 echo -e "\e[92m Copying to Output .......  \e[0m"
 cp `cat list_MT` ./OUTPUT
+for del in `cat list_MT`
+do
+	rm -rf $del
+done
+
 rm -rf list_folder list_MT
 read -n 1 -r -s -p $'Press enter to exit...\n'

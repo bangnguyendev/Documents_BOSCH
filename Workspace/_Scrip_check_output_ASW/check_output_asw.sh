@@ -13,6 +13,9 @@ do
 		cd $docs
 		echo -e "\e[92m ===Documents=== \e[0m"
 		find ./ -type f
+		link_excel=`find ./ -type f -name 'TD_*.xlsm'`
+		link_excel=`realpath $link_excel`
+
 		echo -e "\e[93m ============================ \e[0m"
 	else
 		echo -e "\e[91m ===Khong co Documents=== \e[0m"
@@ -25,6 +28,8 @@ do
 		echo -e "\e[92m ===ReportRTRT=== \e[0m"
 		echo "			C0	C1	MCDC"
 		cat $ReportRTRT | grep -A 6 "Conclusion" |egrep "Statement blocks|Decisions|Modified conditions"
+		echo -e "\e[93m ============================ \e[0m"
+		/c/Python27/python.exe /c/_BangNguyen/documents_bosch/Workspace/_Scrip_check_output_ASW/check.py $link_excel
 		echo -e "\e[93m ============================ \e[0m"
 	else
 		echo -e "\e[91m ===Khong co ReportRTRT=== \e[0m"
