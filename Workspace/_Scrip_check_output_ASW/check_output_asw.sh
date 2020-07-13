@@ -1,4 +1,6 @@
 link_project=`pwd`
+#link file check.py
+link_check_py="/c/_BangNguyen/documents_bosch/Workspace/_Scrip_check_output_ASW/check.py"
 find ./ -maxdepth 1 -mindepth 1 -type d | grep "MT_[0-9]\{1,3\}" > list_MT
 for goto_MT in `cat list_MT`
 do
@@ -29,7 +31,7 @@ do
 		echo "			C0	C1	MCDC"
 		cat $ReportRTRT | grep -A 6 "Conclusion" |egrep "Statement blocks|Decisions|Modified conditions"
 		echo -e "\e[93m ============================ \e[0m"
-		/c/Python27/python.exe /c/_BangNguyen/documents_bosch/Workspace/_Scrip_check_output_ASW/check.py $link_excel
+		python $link_check_py $link_excel
 		echo -e "\e[93m ============================ \e[0m"
 	else
 		echo -e "\e[91m ===Khong co ReportRTRT=== \e[0m"

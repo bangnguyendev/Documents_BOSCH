@@ -1,12 +1,13 @@
 import openpyxl
 import sys
 
-path_excel=str(sys.argv[1])
+path_excel='C:/_BangNguyen/documents_bosch/Workspace/_Scrip_check_output_ASW/ok/TD_CRB_Pressure2Volume_MT_097.xlsm'
 wb = openpyxl.load_workbook(path_excel, data_only=True)
 sheet_Summary = wb['Summary']
 print ("                C0 C1........................", sheet_Summary['A6'].value)
 print ("                MCDC.........................", sheet_Summary['B6'].value)
 print ("    Reason : ", sheet_Summary['C6'].value)
+print (" ======================== ")
 
 try:
     sheet_Testcases = wb['Testcases']
@@ -24,15 +25,17 @@ Row_Name_Var = 23
 
 max_row_table = sheet_Testcases.max_row
 max_column_table = sheet_Testcases.max_column
-''''''
+print (max_row_table)
 for i in range(Row_Name_Var,max_row_table):
-    if str(sheet_Testcases.cell(i, TC_No).value) == 'None' :
-        max_row_table = i
+    if sheet_Testcases.cell(i, TC_No).value == 'None':
+        print (i)
+        max_row_table = i + 23
         break
-
+        
+print (max_row_table)
 '''Check TM name'''
-if str(sheet_Testcases.cell(Row_Name_Var, TC_No).value) == 'None':
-    print (" Error: [A23] TM_ name")
+if sheet_Testcases.cell(Row_Name_Var, TC_No).value == 'None':
+    print ("Miss TM_ name")
 
 
 '''Check input cont'''
@@ -52,25 +55,26 @@ for i in range(loc_input,loc_end_input):
         value_max=float(sheet_Testcases.cell(Row_Max, i).value)
         value_min=float(sheet_Testcases.cell(Row_Min, i).value)
 
-        flag_not_out_max = 0
-        flag_not_out_min = 0
-        flag_not_mid_value = 0
+        flag_not_out_max=0
+        flag_not_out_min=0
+        flag_not_mid_value=0
         '''Check input out max'''
-        for j in range(24,max_row_table): 
+        for j in range(24,max_row_table+1): 
             if float(sheet_Testcases.cell(j, i).value) > value_max :
                 flag_not_out_max = 0
                 break
             else :
                 flag_not_out_max = 1
         '''Check input out min'''
-        for j in range(24,max_row_table): 
+        for j in range(24,max_row_table+1): 
+            print (sheet_Testcases.cell(j, i).value)
             if float(sheet_Testcases.cell(j, i).value) < value_min :
                 flag_not_out_min = 0
                 break
             else :
                 flag_not_out_min = 1        
         '''Check input not mid value'''
-        for j in range(24,max_row_table): 
+        for j in range(24,max_row_table+1): 
             if float(sheet_Testcases.cell(j, i).value) < value_max and float(sheet_Testcases.cell(j, i).value) > value_min :
                 flag_not_mid_value = 0 
                 break
@@ -89,7 +93,7 @@ for i in range(loc_input,loc_end_input):
     if str(sheet_Testcases.cell(Row_Type, i).value) == 'log':
         flag_true = 0   
         flag_false = 0     
-        for j in range(24,max_row_table):
+        for j in range(24,max_row_table+1):
             if str(sheet_Testcases.cell(j, i).value) == 'True':
                 flag_true = 1
             if str(sheet_Testcases.cell(j, i).value) == 'False':
@@ -106,5 +110,3 @@ for i in range(loc_input,loc_end_input):
 
 
 wb.close()
-
- 
