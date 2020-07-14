@@ -1,0 +1,36 @@
+{} is not existed".format(path_taskid))
+Different information {},{},{},{}".format(taskid, function, user_tester, "NG"))
+Different Information {},{},{},{}".format(taskid, function, user_tester, "NG_DiffInfor"))
+Different Information {},{},{},{},{}".format(taskid, mt_number, function, user_tester, "NG_DiffInfor"))
+Different ItemName {} - {}".format(data_test_design.get("ItemName"), temp))
+Item FileCoverageReasonXLS {} has different C0: {}/{}; C1: {}/{}; MCDC: {}/{}".format(data_CoverageReasonXLS.get("Item_Name"), data_CoverageReasonXLS.get("C0"), score_c0,
+Item FileTestReportXML {} has different C0: {}/{}; C1: {}/{}; MCDC: {}/{}".format(data_test_report_xml.get("testScriptName"), data_test_report_xml.get("C0"), score_c0,
+Item FileTestSummaryHTML {} got different Verdict: {} - {}".format(data_test_summary.get("Project"), data_test_summary.get("Verdict"), data.get("Status Result")))
+Item FileTestSummaryHTML {} has different C0: {}/{}; C1: {}/{}; MCDC: {}/{}".format(data_test_summary.get("Project"), data_test_summary.get("C0"), score_c0,
+Item FileTestSummaryHTML {} has different name: {} - {}".format(sub_new_func, data_test_summary.get("Project"), sub_new_func))
+Item FileTPA {} has different C0: {}/{}; C1: {}/{}; MCDC: {}/{}".format(data_tpa.get("FileName").replace(".c", ""), data_test_summary.get("C0"), score_c0,
+Item FileWalkThroughDoc {} has different Baseline: {} - {}".format(data_Walkthrough.get("project").replace(".c", ""), data_Walkthrough.get("baseline"), temp_baseline)
+Item FileWalkThroughDoc {} has different C0: {}/{}; C1: {}/{}".format(data_Walkthrough.get("project").replace(".c", ""), data_Walkthrough.get("C0"), score_c0,
+Item FileWalkThroughDoc {} has none comment finding/impact: {} - {}".format(data_Walkthrough.get("project").replace(".c", ""), data_Walkthrough.get("tbl_finding").get('finding'),
+Item FileWalkThroughDoc {} has none OPL: {}".format(data_Walkthrough.get("project").replace(".c", ""), str(num_OPL)))
+Item FileWalkThroughDoc {} has OPL: {}".format(data_Walkthrough.get("project").replace(".c", ""), str(num_OPL)))
+Item FileWalkThroughDoc {} has wrong comment confirm UT26: {} - {}".format(data_Walkthrough.get("project").replace(".c", ""), data_Walkthrough.get("tbl_finding").get('confirm_UT26'),
+Item FileWalkThroughDoc {} has wrong comment confirm UT9: {} - {}".format(data_Walkthrough.get("project").replace(".c", ""), data_Walkthrough.get("tbl_finding").get('confirm_UT9'),
+Item FileWalkThroughDoc {} has wrong comment finding/impact: {} - {}".format(data_Walkthrough.get("project").replace(".c", ""), data_Walkthrough.get("tbl_finding").get('finding'),
+Item FileWalkThroughDoc {} has wrong ItemRevision: {} - {}".format(data.get("ItemName"), data_Walkthrough.get("ItemRevision"), data.get("ItemRevision")))
+Item FileWalkThroughDoc {} has wrong name - {}".format(data_Walkthrough.get("project").replace(".c", ""), data.get("ItemName")))
+Item FileWalkThroughDoc {} has wrong name - {}".format(data_Walkthrough.get("project").replace(".c", ""), sub_new_func))
+Item FileWalkThroughDoc {} has wrong path: {}/{} - {}/{}".format(data_Walkthrough.get("project").replace(".c", ""), data_Walkthrough.get('path_testscript'), path_testscript,
+Item FileWalkThroughDoc has different reviewer/tester {}/{} - {}/{}".format(data_Walkthrough.get("review partner"), convert_name(key=utils.load(CONST.SETTING, "users").get(data.get("Tester")).get("reviewer"), opt="name"), \
+ItemName {} got ItemRevision: {} - {}".format(data.get("ItemName"), data_ATT.get("ClassVersion"), data.get("ItemRevision")))
+ItemName {} got ItemRevision: {}/{} - {}".format(data.get("ItemName"), data_ATT.get("ClassVersion"), data_test_design.get("ItemRevision"), data.get("ItemRevision")))
+ItemName {} got TestModuleName: {} - {}".format(data.get("ItemName"), data_ATT.get("TestModuleName"), lst_file_PLT))
+ItemName {} got Verdict: {} - {}".format(data.get("ItemName"), data_ATT.get("CompleteVerdict"), data.get("Status Result")))
+ItemName {} has none file ATT Report".format(data.get("ItemName").replace(".c", "")))
+ItemName {} has none file PLT".format(data.get("ItemName").replace(".c", "")))
+ItemName {} has none file RTRT.txt".format(data.get("ItemName").replace(".c", "")))
+ItemName {} has none file test design".format(data.get("ItemName").replace(".c", "")))
+ItemName {} has none file Walkthrough".format(data.get("ItemName").replace(".c", "")))
+ItemName RTRT Report {} has different C0: {}/{}; C1: {}/{}; MCDC: {}/{}".format(data.get("ItemName"), data_RTRT.get("C0"), score_c0,
+Long Name {},{},{},{}".format(taskid, function, user_tester, "NG_Long_Name"))
+Miss src in componentname {},{},{},{}".format(taskid, function, user_tester, "NG"))

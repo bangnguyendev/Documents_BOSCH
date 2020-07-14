@@ -31,13 +31,14 @@ for i in range(Row_TC1,max_row_table):
     if str(sheet_Testcases.cell(i, TC_No).value) == 'None' :
         max_row_table = i
         break
-        
+     
 '''Check TM name'''
 if str(sheet_Testcases.cell(Row_Name_Var, TC_No).value) == 'None':
     print (" ====> Error: [A23] Thieu TM_ name")
 
 
 '''Check input cont'''
+print ("======== CHECK INPUT ")
 for col in range(1,max_column_table+1):
     if str(sheet_Testcases.cell(Row_Title, col).value) == 'INPUTS':
         col_start_input = col
@@ -63,45 +64,59 @@ for col in range(col_start_input,col_end_input):
         flag_not_mid_value = 0
         
         '''Check input out max'''
-        for row in range(Row_TC1,max_row_table): 
-            if float(sheet_Testcases.cell(row, col).value) > value_max :
-                flag_not_out_max = 0
-                break
-            else :
-                flag_not_out_max = 1
+        for row in range(Row_TC1,max_row_table +1): 
+            if sheet_Testcases.cell(row, col).value is not None:
+                if float(sheet_Testcases.cell(row, col).value) > value_max :
+                    flag_not_out_max = 0
+                    break
+                else :
+                    flag_not_out_max = 1         
+
         '''Check input out min'''
-        for row in range(Row_TC1,max_row_table): 
-            if float(sheet_Testcases.cell(row, col).value) < value_min :
-                flag_not_out_min = 0
-                break
-            else :
-                flag_not_out_min = 1        
+        for row in range(Row_TC1,max_row_table +1):   
+            if sheet_Testcases.cell(row, col).value is not None:
+                if float(sheet_Testcases.cell(row, col).value) < value_min :
+                    flag_not_out_min = 0
+                    break
+                else :
+                    flag_not_out_min = 1        
         '''Check input not mid value'''
-        for row in range(Row_TC1,max_row_table): 
-            if float(sheet_Testcases.cell(row, col).value) < value_max and float(sheet_Testcases.cell(row, col).value) > value_min :
-                flag_not_mid_value = 0 
-                break
-            else :
-                flag_not_mid_value = 1   
+
+        for row in range(Row_TC1,max_row_table +1):
+            if sheet_Testcases.cell(row, col).value is not None:
+                if float(sheet_Testcases.cell(row, col).value) < value_max and float(sheet_Testcases.cell(row, col).value) > value_min :
+                    flag_not_mid_value = 0 
+                    break
+                else :
+                    flag_not_mid_value = 1   
         '''print resuit'''                
         if flag_not_out_max == 1:
-            print ("None out max: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+            print (" ====> Error: None out max: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
         if flag_not_out_min == 1:
-            print ("None out min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+            print (" ====> Error: None out min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
         if flag_not_mid_value == 1:
-            print ("None mid value: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+            print (" ====> Error: None mid value: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
 
 '''Check input log'''
 for col in range(col_start_input,col_end_input):
     if str(sheet_Testcases.cell(Row_Type, col).value) == 'log':
+        try:
+            value_tol=float(sheet_Testcases.cell(Row_Tolerance, col).value)
+            if value_tol == 0:
+                pass
+            else:
+                print (" ====> Error: Tolerance failse", str(sheet_Testcases.cell(Row_Name_Var, col).value))
+        except Exception as e:  
+            value_tol = 'None'
+            print (" ====> Error: Thieu Tolerance", str(sheet_Testcases.cell(Row_Name_Var, col).value))
         flag_true = 0   
         flag_false = 0     
-        for row in range(Row_TC1,max_row_table):
-
-            if str(sheet_Testcases.cell(row, col).value) == 'True':
-                flag_true = 1
-            if str(sheet_Testcases.cell(row, col).value) == 'False':
-                flag_false = 1
+        for row in range(Row_TC1,max_row_table +1):
+            if sheet_Testcases.cell(row, col).value is not None:
+                if str(sheet_Testcases.cell(row, col).value) == 'True':
+                    flag_true = 1
+                if str(sheet_Testcases.cell(row, col).value) == 'False':
+                    flag_false = 1
             
             if str(sheet_Testcases.cell(row, col).value) != 'True' and str(sheet_Testcases.cell(row, col).value) != 'False':
                 print (" ====> Error: Sai dinh dang Bool ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
@@ -109,14 +124,15 @@ for col in range(col_start_input,col_end_input):
         if flag_true == 1 and flag_false == 1:
             pass
         else :
-            print ("Thieu TRUE/FALSE: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+            print (" ====> Error: Thieu TRUE/FALSE: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
             
 '''Check input enum'''
 for col in range(col_start_input,col_end_input):
     if str(sheet_Testcases.cell(Row_Type, col).value) == 'enum':
         print ("Check enum: ", str(sheet_Testcases.cell(Row_Name_Var, col).value))
 
-'''Check variable as input enum'''
+
+'''Check variable as input '''
 flag_yes_as_input = 0
 for col in range(1,max_column_table+1):
     if str(sheet_Testcases.cell(Row_Title, col).value) == 'LOCAL VARIABLES AS INPUT':
@@ -124,11 +140,12 @@ for col in range(1,max_column_table+1):
         col_start_as_input = col
         break
 if flag_yes_as_input == 1:
+    print ("======== CHECK AS INPUT ")
     for col in range(col_start_as_input + 1,max_column_table+1):
         if str(sheet_Testcases.cell(Row_Title, col).value) != 'None':
             col_end_as_input = col
             break
-            
+    '''Check variable as input cont'''        
     for col in range(col_start_as_input,col_end_as_input):
         if str(sheet_Testcases.cell(Row_Type, col).value) == 'cont':
             try:
@@ -146,44 +163,292 @@ if flag_yes_as_input == 1:
             flag_out_min = 0
             flag_mid_value = 0
             
-            '''Check input out max'''
-            for row in range(Row_TC1,max_row_table): 
-                if float(sheet_Testcases.cell(row, col).value) == value_max :
-                    flag_max = 1
-  
-                if float(sheet_Testcases.cell(row, col).value) > value_max :
-                    flag_out_max = 1
+            '''Check input max'''
+            for row in range(Row_TC1,max_row_table +1): 
+                if sheet_Testcases.cell(row, col).value is not None:
+                    if float(sheet_Testcases.cell(row, col).value) == value_max :
+                        flag_max = 1
+      
+                    if float(sheet_Testcases.cell(row, col).value) > value_max :
+                        flag_out_max = 1
 
+            '''Check input min'''
+            for row in range(Row_TC1,max_row_table +1): 
+                if sheet_Testcases.cell(row, col).value is not None:
+                    if float(sheet_Testcases.cell(row, col).value) == value_min :
+                        flag_min = 1
 
-            '''Check input out min'''
-            for row in range(Row_TC1,max_row_table): 
-                if float(sheet_Testcases.cell(row, col).value) == value_min :
-                    flag_min = 1
-
-                if float(sheet_Testcases.cell(row, col).value) < value_min :
-                    flag_out_min = 1
-
+                    if float(sheet_Testcases.cell(row, col).value) < value_min :
+                        flag_out_min = 1
      
             '''Check input not mid value'''
-            for row in range(Row_TC1,max_row_table): 
-                if float(sheet_Testcases.cell(row, col).value) < value_max and float(sheet_Testcases.cell(row, col).value) > value_min :
-                    flag_mid_value = 0 
-                    break
-                else :
-                    flag_mid_value = 1   
+            for row in range(Row_TC1,max_row_table +1): 
+                if sheet_Testcases.cell(row, col).value is not None:
+                    if float(sheet_Testcases.cell(row, col).value) < value_max and float(sheet_Testcases.cell(row, col).value) > value_min :
+                        flag_mid_value = 0 
+                        break
+                    else :
+                        flag_mid_value = 1  
+
             '''print resuit'''          
             if flag_max == 0:
-                print ("None value max: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))   
+                print (" ====> Error: None value max: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))   
             if flag_min == 0:
-                print ("None value min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))     
+                print (" ====> Error: None value min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))     
             if flag_mid_value == 1:
-                print ("None mid value: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))                
+                print (" ====> Error: None mid value: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))                
             if flag_out_max == 1:
-                print ("Out range max: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+                print (" ====> Error: Out range max: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
             if flag_out_min == 1:
-                print ("Out range min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
-
+                print (" ====> Error: Out range min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+    
+    '''Check variable as input log'''   
+    for col in range(col_start_as_input,col_end_as_input):
+        if str(sheet_Testcases.cell(Row_Type, col).value) == 'log':    
+            flag_true = 0   
+            flag_false = 0
+            try:
+                value_tol=float(sheet_Testcases.cell(Row_Tolerance, col).value)
+                if value_tol == 0:
+                    pass
+                else:
+                    print (" ====> Error: Tolerance failse", str(sheet_Testcases.cell(Row_Name_Var, col).value))
+            except Exception as e:  
+                value_tol = 'None'
+                print (" ====> Error: Thieu Tolerance", str(sheet_Testcases.cell(Row_Name_Var, col).value))
+                    
+            for row in range(Row_TC1,max_row_table+1):
+                if sheet_Testcases.cell(row, col).value is not None:
+                    if str(sheet_Testcases.cell(row, col).value) == 'True':
+                        flag_true = 1
+                    if str(sheet_Testcases.cell(row, col).value) == 'False':
+                        flag_false = 1
+                    
+                if str(sheet_Testcases.cell(row, col).value) != 'True' and str(sheet_Testcases.cell(row, col).value) != 'False':
+                    print (" ====> Error: Sai dinh dang Bool ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+                    
+            if flag_true == 1 and flag_false == 1:
+                pass
+            else :
+                print (" ====> Error: Thieu TRUE/FALSE: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
         
+
+'''Check IMPORTED PARAMETERS '''
+flag_yes_imp_parm = 0
+for col in range(1,max_column_table+1):
+    if str(sheet_Testcases.cell(Row_Title, col).value) == 'IMPORTED PARAMETERS':
+        print ("======== CHECK IMPORTED PARAMETERS ")
+        flag_yes_imp_parm = 1
+        col_start_imp_parm = col
+        break
+if flag_yes_imp_parm == 1:
+    for col in range(col_start_imp_parm + 1,max_column_table+1):
+        if str(sheet_Testcases.cell(Row_Title, col).value) != 'None':
+            col_end_imp_parm = col
+            break
+    '''Check IMPORTED PARAMETERS cont'''        
+    for col in range(col_start_imp_parm,col_end_imp_parm):
+        if str(sheet_Testcases.cell(Row_Type, col).value) == 'cont':
+            if str(sheet_Testcases.cell(Row_Max, col).value) == 'inf':
+                pass
+            elif str(sheet_Testcases.cell(Row_Max, col).value) == 'INF':
+                pass
+            else :               
+                value_max=float(sheet_Testcases.cell(Row_Max, col).value)
+                value_min=float(sheet_Testcases.cell(Row_Min, col).value)
+                if value_min > value_max:
+                    print (" ====> Error: value_min > value_max????" ,str(sheet_Testcases.cell(Row_Name_Var, col).value))
+                else:
+                    
+                    flag_max = 0
+                    flag_out_max = 0
+                    flag_min = 0
+                    flag_out_min = 0
+                    flag_mid_value = 0
+                    
+                    '''Check input max'''
+                    for row in range(Row_TC1,max_row_table+1): 
+                        if sheet_Testcases.cell(row, col).value is not None:
+                            if float(sheet_Testcases.cell(row, col).value) == value_max :
+                                flag_max = 1
+              
+                            if float(sheet_Testcases.cell(row, col).value) > value_max :
+                                flag_out_max = 1
+
+
+                    '''Check input min'''
+                    for row in range(Row_TC1,max_row_table+1): 
+                        if sheet_Testcases.cell(row, col).value is not None:
+                            if float(sheet_Testcases.cell(row, col).value) == value_min :
+                                flag_min = 1
+
+                            if float(sheet_Testcases.cell(row, col).value) < value_min :
+                                flag_out_min = 1
+
+             
+                    '''Check input not mid value'''
+                    for row in range(Row_TC1,max_row_table+1): 
+                        if sheet_Testcases.cell(row, col).value is not None:
+                            if float(sheet_Testcases.cell(row, col).value) < value_max and float(sheet_Testcases.cell(row, col).value) > value_min :
+                                flag_mid_value = 0 
+                                break
+                            else :
+                                flag_mid_value = 1   
+                    '''print resuit'''          
+                    if flag_max == 0:
+                        print (" ====> Error: None value max: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))   
+                    if flag_min == 0:
+                        print (" ====> Error: None value min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))     
+                    if flag_mid_value == 1:
+                        print (" ====> Error: None mid value: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))                
+                    if flag_out_max == 1:
+                        print (" ====> Error: Out range max: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+                    if flag_out_min == 1:
+                        print (" ====> Error: Out range min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+
+'''Check LOCAL VARIABLES '''            
+flag_yes_lcal_var = 0
+for col in range(1,max_column_table+1):
+    if str(sheet_Testcases.cell(Row_Title, col).value) == 'LOCAL VARIABLES':
+        print ("======== CHECK LOCAL VARIABLES ")
+        flag_yes_lcal_var = 1
+        col_start_lcal_var = col
+        break
+if flag_yes_lcal_var == 1:
+    for col in range(col_start_lcal_var + 1,max_column_table+1):
+        if str(sheet_Testcases.cell(Row_Title, col).value) != 'None':
+            col_end_lcal_var = col
+            break        
+    for col in range(col_start_lcal_var,col_end_lcal_var):
+        if str(sheet_Testcases.cell(Row_Type, col).value) == 'cont':
+            try:
+                value_tol=float(sheet_Testcases.cell(Row_Tolerance, col).value)
+            except Exception as e:  
+                value_tol = 'None'
+                print (" ====> Error: Thieu Tolerance", str(sheet_Testcases.cell(Row_Name_Var, col).value))
+
+
+'''Check PARAMETERS '''            
+flag_yes_parameters = 0
+for col in range(1,max_column_table+1):
+    if str(sheet_Testcases.cell(Row_Title, col).value) == 'PARAMETERS':
+        print ("======== CHECK PARAMETERS ")
+        flag_yes_parameters = 1
+        col_start_parameters = col
+        break
+if flag_yes_parameters == 1:
+    for col in range(col_start_parameters + 1,max_column_table+1):
+        if str(sheet_Testcases.cell(Row_Title, col).value) != 'None':
+            col_end_parameters = col
+            break    
+    '''Check PARAMETERS cont'''        
+    for col in range(col_start_parameters,col_end_parameters):
+        if str(sheet_Testcases.cell(Row_Type, col).value) == 'cont':                  
+            try:
+                value_tol=float(sheet_Testcases.cell(Row_Tolerance, col).value)
+            except Exception as e:  
+                value_tol = 'None'
+                print (" ====> Error: Thieu Tolerance", str(sheet_Testcases.cell(Row_Name_Var, col).value))
+            
+            value_max=float(sheet_Testcases.cell(Row_Max, col).value)
+            value_min=float(sheet_Testcases.cell(Row_Min, col).value)
+            
+            flag_out_max = 0
+            flag_out_min = 0
+            
+            '''Check input max'''
+            for row in range(Row_TC1,max_row_table+1): 
+                try:
+                    float(sheet_Testcases.cell(row, col).value)
+                    if float(sheet_Testcases.cell(row, col).value) > value_max :
+                        flag_out_max = 1
+                        break
+                except Exception as e:  
+                    '''print (" ====> WARNING: Div0", str(sheet_Testcases.cell(Row_Name_Var, col).value))'''
+            '''Check input min'''
+            for row in range(Row_TC1,max_row_table+1): 
+                try:
+                    float(sheet_Testcases.cell(row, col).value)
+                    if float(sheet_Testcases.cell(row, col).value) < value_min :
+                        flag_out_min = 1
+                        break
+                except Exception as e:  
+                    '''print (" ====> WARNING: Div0", str(sheet_Testcases.cell(Row_Name_Var, col).value))'''
+                
+
+            '''print resuit'''          
+            if flag_out_max == 1:
+                print (" ====> Error: Out range max: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+            if flag_out_min == 1:
+                print (" ====> Error: Out range min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+    
+                        
+'''Check OUTPUTS '''            
+for col in range(1,max_column_table+1):
+    if str(sheet_Testcases.cell(Row_Title, col).value) == 'OUTPUTS':
+        print ("======== CHECK OUTPUTS ")
+        col_start_outputs = col
+        break
+
+for col in range(col_start_outputs + 1,max_column_table+1):
+    if str(sheet_Testcases.cell(Row_Title, col).value) != 'None':
+        col_end_outputs = col
+        break    
+
+'''Check OUTPUTS cont'''        
+for col in range(col_start_outputs,col_end_outputs):
+    if str(sheet_Testcases.cell(Row_Type, col).value) == 'cont':                  
+        try:
+            value_tol=float(sheet_Testcases.cell(Row_Tolerance, col).value)
+        except Exception as e:  
+            value_tol = 'None'
+            print (" ====> Error: Thieu Tolerance", str(sheet_Testcases.cell(Row_Name_Var, col).value))
+        
+        value_max=float(sheet_Testcases.cell(Row_Max, col).value)
+        value_min=float(sheet_Testcases.cell(Row_Min, col).value)
+
+        flag_out_max = 0
+        flag_out_min = 0
+        
+        '''Check input max'''
+        for row in range(Row_TC1,max_row_table+1): 
+            if sheet_Testcases.cell(row, col).value is not None:
+                if float(sheet_Testcases.cell(row, col).value) > value_max :
+                    flag_out_max = 1
+                    break            
+
+        '''Check input min'''
+        for row in range(Row_TC1,max_row_table+1): 
+            if sheet_Testcases.cell(row, col).value is not None:
+                if float(sheet_Testcases.cell(row, col).value) < value_min :
+                    flag_out_min = 1
+                    break
+
+        '''print resuit'''          
+        if flag_out_max == 1:
+            print (" ====> Error: Out range max: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+        if flag_out_min == 1:
+            print (" ====> Error: Out range min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+
+'''Check outpurs log'''   
+for col in range(col_start_outputs,col_end_outputs):
+    if str(sheet_Testcases.cell(Row_Type, col).value) == 'log':   
+        try:
+            value_tol=float(sheet_Testcases.cell(Row_Tolerance, col).value)
+            if value_tol == 0:
+                pass
+            else:
+                print (" ====> Error: Tolerance failse", str(sheet_Testcases.cell(Row_Name_Var, col).value))
+        except Exception as e:  
+            value_tol = 'None'
+            print (" ====> Error: Thieu Tolerance", str(sheet_Testcases.cell(Row_Name_Var, col).value))
+    
+        for row in range(Row_TC1,max_row_table+1):
+            if sheet_Testcases.cell(row, col).value is not None:
+                if str(sheet_Testcases.cell(row, col).value) != 'True' and str(sheet_Testcases.cell(row, col).value) != 'False':
+                    print (" ====> Error: Sai dinh dang Bool ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+                
+                        
 wb.close()
 
  
