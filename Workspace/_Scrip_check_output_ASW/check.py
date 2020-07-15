@@ -39,7 +39,7 @@ else:
     print (" ====> Error: [A23] Thieu TM_ name")
 
 
-'''Check input cont'''
+'''Read col input cont'''
 print ("======== CHECK INPUT ")
 for col in range(1,max_column_table+1):
     if str(sheet_Testcases.cell(Row_Title, col).value) == 'INPUTS':
@@ -50,6 +50,22 @@ for col in range(col_start_input + 1,max_column_table+1):
     if sheet_Testcases.cell(Row_Title, col).value is not None:
         col_end_input = col
         break
+
+'''check row max min'''
+for col in range(1,max_column_table+1):
+    if str(sheet_Testcases.cell(Row_Title, col).value) == 'DESCRIPTIONS':
+        col_end_row_max = col
+        break
+for col in range(col_start_input,col_end_row_max):
+    if sheet_Testcases.cell(Row_Max, col).value is not None:
+        type_value = str(sheet_Testcases.cell(Row_Type, col).value)
+        if type_value == 'cont' or type_value == 'log' or type_value == 'enum':
+            value_max = float(sheet_Testcases.cell(Row_Max, col).value)
+            value_min = float(sheet_Testcases.cell(Row_Min, col).value)
+            if value_max < value_min :
+                print (" ====> Error: Check Row MaxMin ", str(sheet_Testcases.cell(Row_Name_Var, col).value))
+        
+
 
 for col in range(col_start_input,col_end_input):
     if str(sheet_Testcases.cell(Row_Type, col).value) == 'cont':
@@ -243,7 +259,7 @@ if flag_yes_as_input == 1:
             if flag_out_min == 1:
                 print (" ====> Error: Out range min: ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
             if flag_round_minmax == 1:
-                print (" ====> Error: Check RoundMaxMin ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
+                print (" ====> Warning: Check RoundMaxMin ",str(sheet_Testcases.cell(Row_Name_Var, col).value))
 
     '''Check variable as input log'''   
     for col in range(col_start_as_input,col_end_as_input):
@@ -300,9 +316,9 @@ if flag_yes_imp_parm == 1:
     '''Check IMPORTED PARAMETERS cont'''        
     for col in range(col_start_imp_parm,col_end_imp_parm):
         if str(sheet_Testcases.cell(Row_Type, col).value) == 'cont':
-            if str(sheet_Testcases.cell(Row_Max, col).value) == 'inf':
+            if str(sheet_Testcases.cell(Row_Min, col).value) == '-inf':
                 pass
-            elif str(sheet_Testcases.cell(Row_Max, col).value) == 'INF':
+            elif str(sheet_Testcases.cell(Row_Min, col).value) == '-INF':
                 pass
             else :               
                 value_max=float(sheet_Testcases.cell(Row_Max, col).value)
@@ -461,7 +477,7 @@ if flag_yes_parameters == 1:
             flag_out_max = 0
             flag_out_min = 0
             
-            '''Check '''
+            '''Check out range max'''
             for row in range(Row_TC1,max_row_table+1): 
                 if (sheet_Testcases.cell(row, col).value) is not None:
                     try:
@@ -474,7 +490,7 @@ if flag_yes_parameters == 1:
                         '''print (" ====> WARNING: Div0", str(sheet_Testcases.cell(Row_Name_Var, col).value))'''
                 else:
                     break
-            '''Check '''
+            '''Check check out range min'''
             for row in range(Row_TC1,max_row_table+1): 
                 if (sheet_Testcases.cell(row, col).value) is not None:
                     try:

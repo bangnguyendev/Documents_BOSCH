@@ -1,7 +1,5 @@
 Start checker: Archives
 *****************************************************************
-T212,MT_162,SLC2,bang.nguyen-duy,OK
-T212,MT_169,TCS_BrakeReq_Limiter_Axe,bang.nguyen-duy,OK
-## Total T212: status GOOD: Found/Count/Total - 2/2/2
+## Total T203: status BAD: Found/Count/Total - 0/4/0
 -----------------------------------------------------------------
 FINISH

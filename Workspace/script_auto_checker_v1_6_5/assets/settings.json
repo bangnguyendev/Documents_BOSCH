@@ -1,6 +1,6 @@
 {
     "file_summary": "//hc-ut40070c/duongnguyen/0000_Project/001_Prj/02_JOEM/Summary_JOEM_COEM_20200801.xlsm",
-    "dir_input_joem": "C:/01_ASW/REN_CDV/20201407/OUTPUT",
+    "dir_input_joem": "C:/01_ASW/RN_SUV_BSS80/OUTPUT",
     "dir_input_coem": "C:/Users/nhi5hc/Desktop/Input",
 
     "dir_output": "C:/Users/nhi5hc/Desktop/OUTPUT",
@@ -18,11 +18,11 @@
     ],
 
     "l_taskids_joem": {
-        "Package": 20200714,
-        "Project": "REN_CDV",
+        "Package": 20200715,
+        "Project": "RN_SUV_BSS80",
         "BB": "",
         "TaskGroup": [
-            "T212"
+            "T203"
         ]
     },
     
