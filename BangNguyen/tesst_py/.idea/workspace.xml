@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8d4214c-2ed6-46f5-847a-2eb32f6c3d26" name="Default Changelist" comment="okok">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python.py" beforeDir="false" afterPath="$PROJECT_DIR$/python.py" afterDir="false" />
-    </list>
+    <list default="true" id="f8d4214c-2ed6-46f5-847a-2eb32f6c3d26" name="Default Changelist" comment="okok" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,6 +108,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="okok" />
@@ -125,10 +123,11 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1590723140917" />
-    <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1590739200136">
-      <screen x="0" y="0" width="1280" height="689" />
+    <state x="505" y="118" key="FileChooserDialogImpl" timestamp="1594807834676">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="421" y="99" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1590739200136" />
+    <state x="505" y="118" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594807834676" />
     <state width="1259" height="166" key="GridCell.Tab.0.bottom" timestamp="1590742883290">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
