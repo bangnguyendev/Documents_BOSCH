@@ -1,6 +1,6 @@
 link_project=`pwd`
 #link file check.py
-link_check_py="/c/_BangNguyen/documents_bosch/Workspace/_Scrip_check_output_ASW/check.py"
+link_check_py="/c/_BangNguyen/documents_bosch/Workspace/_Scrip_check_output_ASW/check_excel.py"
 find ./ -maxdepth 1 -mindepth 1 -type d | grep "MT_[0-9]\{1,3\}" > list_MT
 for goto_MT in `cat list_MT`
 do
