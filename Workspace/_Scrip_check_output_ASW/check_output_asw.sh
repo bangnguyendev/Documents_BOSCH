@@ -15,9 +15,17 @@ do
 		cd $docs
 		echo -e "\e[92m ===Documents=== \e[0m"
 		find ./ -type f
+						
 		link_excel=`find ./ -type f -name 'TD_*.xlsm'`
-		link_excel=`realpath $link_excel`
-
+		if [[ -f $link_excel ]]
+		then
+			# cover link tuong doi >>> link tueyt doi
+			link_excel=`realpath $link_excel`
+		else
+			echo -e "\e[91m ====> Error: Khong co TD_*.xlsm === \e[0m"
+		fi
+		
+		
 		echo -e "\e[93m ============================ \e[0m"
 	else
 		echo -e "\e[91m ===Khong co Documents=== \e[0m"

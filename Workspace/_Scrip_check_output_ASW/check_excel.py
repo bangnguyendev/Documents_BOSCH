@@ -2,29 +2,32 @@ import openpyxl
 import sys
 import subprocess
 
-
-path_excel = str(sys.argv[1])
-# path_excel = 'C:\\Users\\NguyenBang\\Desktop\\testassw\\OUTPUT_EXCEL\\TD_Psa_MTC_Info_MT_070.xlsm'
-
 try:
-    wb = openpyxl.load_workbook(path_excel, data_only=True)
-    sheet_Summary = wb['Summary']
-    subprocess.run('echo -e "\e[92m ======= EXCEL TM_ File ======= \n \e[0m"')
-    print("                C0 C1........................", sheet_Summary['A6'].value)
-    print("                MCDC.........................", sheet_Summary['B6'].value)
-    print("")
-    print("    Reason : ", sheet_Summary['C6'].value , "\n")
-    print("========")
-except:
-    subprocess.run('echo -e "\e[91m ====> Error: Duong dan file dai hoac khong co file TD_*.xlsm. \n \e[0m"')
+    ''' Neu co file '''
+    path_excel = str(sys.argv[1])
+    # path_excel = 'C:\\Users\\NguyenBang\\Desktop\\testassw\\OUTPUT_EXCEL\\TD_Psa_MTC_Info_MT_070.xlsm'
+    try:
+        ''' Neu do dai link phu hop '''
+        wb = openpyxl.load_workbook(path_excel, data_only=True)
+        sheet_Summary = wb['Summary']
+        subprocess.run('echo -e "\e[92m ======= EXCEL TM_ File ======= \n \e[0m"')
+        print("                C0 C1........................", sheet_Summary['A6'].value)
+        print("                MCDC.........................", sheet_Summary['B6'].value)
+        print("")
+        print("    Reason : ", sheet_Summary['C6'].value , "\n")
+        print("========")
         
-# khai bao bien va chon sheet
-try:
-    sheet_TCs = wb['Testcases']
+        # khai bao bien va chon sheet
+        try:
+            sheet_TCs = wb['Testcases']
+        except:
+            sheet_TCs = wb.worksheets[3]            
+    except:
+        subprocess.run('echo -e "\e[91m ====> Error: Duong dan file dai. \n \e[0m"')
 except:
-    sheet_TCs = wb.worksheets[3]
+    subprocess.run('echo -e "\e[91m ====> Error: Khong co file TD_*.xlsm. \n \e[0m"')
 
-
+        
 '''Check input'''
 TC_No = 1
 Row_Tolerance = 18
@@ -641,6 +644,7 @@ def check_local_variable():
                 flag_min = 0
                 flag_out_min = 0
                 flag_mid_value = 0
+                flag_check_round = 0
                 flag_div0 = 0
                 value_max = 0
                 value_min = 0
@@ -691,22 +695,43 @@ def check_local_variable():
                             try:
                                 if float(sheet_TCs.cell(row, col).value) < value_max and float(
                                         sheet_TCs.cell(row, col).value) > value_min:
-                                    flag_mid_value = 0
+                                    flag_mid_value = 0 # co mid value
                                     break
                                 else:
-                                    flag_mid_value = 1
+                                    flag_mid_value = 1 # khong co mid value
                             except ValueError:
                                 flag_div0 = 1
                         else:
                             break
+
+                    '''Check xem khong co mid value co phu hop hay khong?'''
+                    if flag_mid_value == 1: # khong co mid value
+                        for row in range(Row_TC1, max_row_table + 1):
+                            if sheet_TCs.cell(row, col).value is not None:
+                                try:
+                                    if float(sheet_TCs.cell(row, col).value) == value_max:
+                                        flag_check_round = 0
+                                    elif float(sheet_TCs.cell(row, col).value) == value_min:
+                                        flag_check_round = 0
+                                    else:
+                                        flag_check_round = 1
+                                        break
+                                    
+                                except ValueError:
+                                    flag_div0 = 1
+                            else:
+                                break
+                    
 
                     '''print resuit'''
                     if flag_max == 0:
                         print(" ====> Error: None value max: ", str(sheet_TCs.cell(Row_Name_Var, col).value))
                     if flag_min == 0:
                         print(" ====> Error: None value min: ", str(sheet_TCs.cell(Row_Name_Var, col).value))
-                    if flag_mid_value == 1:
-                        print(" ====> Error: None mid value: ", str(sheet_TCs.cell(Row_Name_Var, col).value), " - Check at INPUTS")
+                    
+                    if flag_check_round == 1:
+                        print(" ====> Error: Check round min max : ", str(sheet_TCs.cell(Row_Name_Var, col).value), " - Check at INPUTS")
+                    
                     if flag_out_max == 1:
                         print(" ====> Error: Out range max: ", str(sheet_TCs.cell(Row_Name_Var, col).value))
                     if flag_out_min == 1:

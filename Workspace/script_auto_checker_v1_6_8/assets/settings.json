@@ -1,9 +1,9 @@
 {
     "file_summary": "//hc-ut40070c/duongnguyen/0000_Project/001_Prj/02_JOEM/Summary_JOEM_COEM_20200801.xlsm",
-    "dir_input_joem": "C:/01_ASW/RN_SUV_BSS80/OUTPUT",
-    "dir_input_coem": "C:/Users/nhi5hc/Desktop/Input",
+    "dir_input_joem": "C:/Users/nbg7hc.APAC/Desktop/OUTPUT",
+    "dir_input_coem": "C:/Users/nhi5hc/Desktop/Input/b",
 
-    "dir_output": "C:/Users/nhi5hc/Desktop/OUTPUT",
+    "dir_output": "C:",
 
     "sheetname": "Merged_JOEM",
 

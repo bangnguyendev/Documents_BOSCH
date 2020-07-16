@@ -1,6 +1,10 @@
 VERSION: 1.6.4
     - Support check ASW, PSW
     - Support check ASW Walkthrough (Missed making WT)
+VERSION: 1.6.6
+    - Update description for tracing error
+    - Update show error if your path is too long
+    - Update check config is correct or not before launching system
 
 SETUP (file "./assets/settings.json")
     "file_summary": "//hc-ut40070c/duongnguyen/0000_Project/001_Prj/02_JOEM/Summary_JOEM_COEM_20200701.xlsm",
@@ -10,20 +14,20 @@ SETUP (file "./assets/settings.json")
     - Select Group:
         + "sheetname": "Merged_COEM",
     - Select Reviewer to make Walkthrough
-        "reviewer": "hieu.nguyen-trung",
+        "reviewer": "hieu.nguyen-trung", => config for COEM
     - Select mode for COEM or JOEM:
-        + "mode_coem": [
+        + "mode_coem": [ => config for COEM
             "check_releases",
             "check_archives",
             "make_archives"
         ],
 
-        + "mode_joem": [
+        + "mode_joem": [ => config for JOEM
             "check_archives",
             "make_archives"
         ],
     - Coordinate X/Y in your summary file (optinal):
-        + "coordinator": {
+        + "coordinator": { => default of Summary File
             "begin": 59,
             "end": 1000
         },
@@ -46,12 +50,12 @@ SETUP (file "./assets/settings.json")
             "huy.nguyen-hoang": {"name": "EXTERNAL Nguyen Tran Hoang Huy (Ban Vien), RBVH/EPS45", "id": "hgy7hc", "reviewer": "thanh.nguyen-kim"}
         }
 OPTION:
-    + # Check Release is correct or not: check_releases
-    + # Check Archive is correct or not: check_archives
-    + # Create Archive Walkthrough: make_archieves
-    + # Create Structure Of Folder Release: make_folder_release
-    + # Convert summary exel to json file: create_summary_json_file
-    + # Collect information for deliverables: collect_information_deliverables
+    + # Check Release is correct or not: check_releases => config for COEM
+    + # Check Archive is correct or not: check_archives => config for COEM/JOEM
+    + # Create Archive Walkthrough: make_archieves => config for COEM/JOEM
+    + # Create Structure Of Folder Release: make_folder_release => config for COEM
+    + # Convert summary exel to json file: create_summary_json_file => config for COEM/JOEM
+    + # Collect information for deliverables: collect_information_deliverables => config for COEM/JOEM
 
 RUN:
     Step 1: Update SETUP
