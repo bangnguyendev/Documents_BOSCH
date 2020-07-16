@@ -1,2 +1,10 @@
 Start checker: Archives
 *****************************************************************
+T203,MT_609,ApbDiag_Coordinator3,bang.nguyen-duy,OK
+T203,MT_611,CRB_BoundByRegenProhibit_Gradient_SetValue,bang.nguyen-duy,OK
+T203,MT_612,CRB_BoundByRegenProhibit_Gradient_SetValue_ePedalOR,bang.nguyen-duy,NG_DiffInfor
+T203,MT_613,CRB_BoundByRegenProhibit_vPushrodDetection,bang.nguyen-duy,OK
+T203,MT_614,CRB_BoundByStability_CM_Mb,bang.nguyen-duy,OK
+## Total T203: status GOOD: Found/Count/Total - 5/5/5
+-----------------------------------------------------------------
+FINISH

@@ -30,6 +30,7 @@ except:
         
 '''Check input'''
 TC_No = 1
+Row_Enum = 15
 Row_Tolerance = 18
 Row_Type = 19
 Row_Max = 20
@@ -234,7 +235,6 @@ def check_input():
 
         '''Check input enum'''
         if str(sheet_TCs.cell(Row_Type, col).value) == 'enum':
-            print("WARNING Check enum min max mid for: ", str(sheet_TCs.cell(Row_Name_Var, col).value))
             """Check Tolerance YES/NO and must be 0 or 1"""
             if sheet_TCs.cell(Row_Tolerance, col).value is not None:
                 value_tol = float(sheet_TCs.cell(Row_Tolerance, col).value)
@@ -242,6 +242,54 @@ def check_input():
                     pass
                 else:
                     print(" ====> Error: Row Tolerance must be 0 or 1", str(sheet_TCs.cell(Row_Name_Var, col).value))
+                
+                """Check max enum"""
+                flag_ok_max = 0
+                flag_ok_min = 0
+                flag_enum_max = 0
+                flag_enum_min = 0
+                flag_enum_mid = 0
+                value_max = 0
+                value_min = 0
+                if sheet_TCs.cell(Row_Max, col).value is not None:
+                    value_max = float(sheet_TCs.cell(Row_Max, col).value)
+                    flag_ok_max = 1
+                else:
+                    flag_ok_max = 0
+
+                if sheet_TCs.cell(Row_Min, col).value is not None:
+                    value_min = float(sheet_TCs.cell(Row_Min, col).value)
+                    flag_ok_min = 1
+                else:
+                    flag_ok_min = 0
+            
+                if flag_ok_min == 1 and flag_ok_max ==1:
+                    '''Check enum max'''
+                    " quet theo hang de in name enum "
+                    for row in range(Row_TC1, max_row_table + 1):
+                        if sheet_TCs.cell(row, col).value is not None:
+                            name_enum = str(sheet_TCs.cell(row, col).value)                            
+                            for col_enum in range(TC_No, max_column_table + 1):
+                                if str(sheet_TCs.cell(Row_Enum, col_enum).value) == name_enum:
+                                    number_is_enum = float(sheet_TCs.cell(Row_Enum + 1, col_enum).value)
+                                    break
+                                    
+                            if number_is_enum == value_max:
+                                flag_enum_max = 1
+                            if number_is_enum == value_min:
+                                flag_enum_min = 1 
+                            if number_is_enum < value_max and number_is_enum > value_min:
+                                flag_enum_mid = 1                              
+                        else:
+                            break
+
+                    if flag_enum_max == 0:
+                        print(" ====> Error: Missing Enum max", str(sheet_TCs.cell(Row_Name_Var, col).value))
+                    if flag_enum_min == 0:
+                        print(" ====> Error: Missing Enum min", str(sheet_TCs.cell(Row_Name_Var, col).value))
+                    if flag_enum_mid == 0:
+                        print(" ====> Error: Missing Enum mid", str(sheet_TCs.cell(Row_Name_Var, col).value))
+          
             else:
                 value_tol = 'None'
                 print(" ====> Error: Thieu Tolerance", str(sheet_TCs.cell(Row_Name_Var, col).value))
