@@ -1,5 +1,7 @@
 #!/bin/bash
-
+# Read MC/DC
+# Xoa file autotest_generation.txt
+# Don dep file bash, py
 ####################
 # ham read & printf mcdc
 PRINT_MCDC_SUMMARY() {
@@ -47,7 +49,7 @@ do
 
 	#check test_report.html
 	test_report=`find . -type f -name "test_summary.html"`
-
+	#xoa file autotest_generation.txt
 	rm -rf autotest_generation.txt
 	cd $link_current # quay tro lai thu muc ngoai cung	
 	# echo $Project >> list_project # tao file nay de check AR WalkThougth COEM
