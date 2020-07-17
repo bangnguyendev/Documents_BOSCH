@@ -1,5 +1,4 @@
 import sys
-
 import openpyxl
 
 '''variable const'''
@@ -16,6 +15,8 @@ color_Red = '\x1b[91m '
 color_Green = '\x1b[92m '
 color_Yellow = '\x1b[93m '
 color_White = '\x1b[0m '
+E_OK = True
+E_NOT_OK = False
 """
 17/7/2020
     Updated:    
@@ -25,6 +26,14 @@ color_White = '\x1b[0m '
         Khong can check tolerance cho imported parameter
         Cover them truong hop cho check_value_row_max_min()
         Fixed truong hop ngoai le cho file excel [long path, file khong ton tai.]
+18/7/2020
+    Updated:
+        E_OK = True
+        E_NOT_OK = False
+        * E_OK -  Condition OK.
+        * E_NOT_OK - Condition NOK.
+    Fixed:
+        Enum 0 -> 1 thi khong can check mid enum.
 """
 
 
@@ -120,7 +129,7 @@ def check_TM_name():
     if sheet_TCs.cell(Row_Name_Var, TC_No).value is not None:
         pass
     else:
-        print_error("  ====> Error: [A23] Thieu TM_ name at sheet Testcases")
+        print_error(" ====> Error: [A23] Thieu TM_ name at sheet Testcases")
     return
 
 
@@ -138,16 +147,16 @@ def check_value_row_max_min():
             col_end_row_max = col
             break
     for col in range(col_start_input, col_end_row_max):
-        flag_value_max = False
-        flag_value_min = False
+        flag_value_max = E_NOT_OK
+        flag_value_min = E_NOT_OK
         if sheet_TCs.cell(Row_Max, col).value is not None:
-            flag_value_max = True
+            flag_value_max = E_OK
         else:
-            flag_value_max = False
+            flag_value_max = E_NOT_OK
         if sheet_TCs.cell(Row_Min, col).value is not None:
-            flag_value_min = True
+            flag_value_min = E_OK
         else:
-            flag_value_min = False
+            flag_value_min = E_NOT_OK
 
         type_value = str(sheet_TCs.cell(Row_Type, col).value)
         if type_value == 'cont' or type_value == 'log' or type_value == 'enum':
@@ -193,34 +202,34 @@ def check_input():
                 print_error(" ====> Error: Thieu Tolerance", col)
 
             """Check must be out max"""
-            flag_ok_max = 0
-            flag_ok_min = 0
-            flag_not_out_max = 0
-            flag_not_out_min = 0
-            flag_not_mid_value = 0
+            flag_ok_max = E_NOT_OK
+            flag_ok_min = E_NOT_OK
+            flag_not_out_max = E_NOT_OK
+            flag_not_out_min = E_NOT_OK
+            flag_not_mid_value = E_NOT_OK
             value_max = 0
-            value_min = 0
+            value_min = 1
             if sheet_TCs.cell(Row_Max, col).value is not None:
                 value_max = float(sheet_TCs.cell(Row_Max, col).value)
-                flag_ok_max = 1
+                flag_ok_max = E_OK
             else:
-                flag_ok_max = 0
+                flag_ok_max = E_NOT_OK
 
             if sheet_TCs.cell(Row_Min, col).value is not None:
                 value_min = float(sheet_TCs.cell(Row_Min, col).value)
-                flag_ok_min = 1
+                flag_ok_min = E_OK
             else:
-                flag_ok_min = 0
+                flag_ok_min = E_NOT_OK
 
-            if flag_ok_min == 1 and flag_ok_max == 1:
+            if flag_ok_min == E_OK and flag_ok_max == E_OK:
                 '''Check input out max'''
                 for row in range(Row_TC1, max_row_table + 1):
                     if sheet_TCs.cell(row, col).value is not None:
                         if float(sheet_TCs.cell(row, col).value) > value_max:
-                            flag_not_out_max = 0
+                            flag_not_out_max = E_NOT_OK
                             break
                         else:
-                            flag_not_out_max = 1
+                            flag_not_out_max = E_OK
                     else:
                         break
 
@@ -228,10 +237,10 @@ def check_input():
                 for row in range(Row_TC1, max_row_table + 1):
                     if sheet_TCs.cell(row, col).value is not None:
                         if float(sheet_TCs.cell(row, col).value) < value_min:
-                            flag_not_out_min = 0
+                            flag_not_out_min = E_NOT_OK
                             break
                         else:
-                            flag_not_out_min = 1
+                            flag_not_out_min = E_OK
                     else:
                         break
 
@@ -240,21 +249,21 @@ def check_input():
                     if sheet_TCs.cell(row, col).value is not None:
                         if float(sheet_TCs.cell(row, col).value) < value_max and float(
                                 sheet_TCs.cell(row, col).value) > value_min:
-                            flag_not_mid_value = 0
+                            flag_not_mid_value = E_NOT_OK
                             break
                         else:
-                            flag_not_mid_value = 1
+                            flag_not_mid_value = E_OK
                     else:
                         break
             else:
                 print_error(" ====> Error: Missing row value Max/Min", col)
 
             '''print resuit'''
-            if flag_not_out_max == 1:
+            if flag_not_out_max == E_OK:
                 print_error(" ====> Error: None out max: ", col)
-            if flag_not_out_min == 1:
+            if flag_not_out_min == E_OK:
                 print_error(" ====> Error: None out min: ", col)
-            if flag_not_mid_value == 1:
+            if flag_not_mid_value == E_OK:
                 print_error(" ====> Error: None mid value: ", col)
 
         """check log"""
@@ -269,18 +278,18 @@ def check_input():
                 value_tol = 'None'
                 print_error(" ====> Error: Thieu Tolerance", col)
 
-            flag_true = 0
+            flag_true = E_NOT_OK
             "Check must be has TRUE & FALSE"
-            flag_false = 0
+            flag_false = E_NOT_OK
             "Check must be has TRUE & FALSE"
-            flag_format = 0
+            flag_format = E_OK
             "Check format TRUE/FALSE, not 1/0"
             for row in range(Row_TC1, max_row_table + 1):
                 if sheet_TCs.cell(row, col).value is not None:
                     if str(sheet_TCs.cell(row, col).value) == 'True':
-                        flag_true = 1
+                        flag_true = E_OK
                     if str(sheet_TCs.cell(row, col).value) == 'False':
-                        flag_false = 1
+                        flag_false = E_OK
                 else:
                     break
 
@@ -288,12 +297,12 @@ def check_input():
                 if sheet_TCs.cell(row, col).value is not None:
                     if str(sheet_TCs.cell(row, col).value) != 'True' and str(
                             sheet_TCs.cell(row, col).value) != 'False':
-                        flag_format = 1
+                        flag_format = E_NOT_OK
                         break
 
-            if flag_true == 0 or flag_false == 0:
+            if flag_true == E_NOT_OK or flag_false == E_NOT_OK:
                 print_error(" ====> Error: Thieu TRUE/FALSE: ", col)
-            if flag_format == 1:
+            if flag_format == E_NOT_OK:
                 print_error(" ====> Error: Wrong format Bool  ", col)
 
         '''Check input enum'''
@@ -307,28 +316,28 @@ def check_input():
                     print_error(" ====> Error: Row Tolerance must be 'int' ", col)
 
                 """Check max enum"""
-                flag_ok_max = 0
-                flag_ok_min = 0
-                flag_enum_max = 0
-                flag_enum_min = 0
-                flag_enum_mid = 0
-                flag_enum_format = 0
+                flag_ok_max = E_NOT_OK
+                flag_ok_min = E_NOT_OK
+                flag_enum_max = E_NOT_OK
+                flag_enum_min = E_NOT_OK
+                flag_enum_mid = E_NOT_OK
+                flag_enum_format = E_OK
                 value_max = 0
                 value_min = 0
                 number_of_enum = 0
                 if sheet_TCs.cell(Row_Max, col).value is not None:
                     value_max = float(sheet_TCs.cell(Row_Max, col).value)
-                    flag_ok_max = 1
+                    flag_ok_max = E_OK
                 else:
-                    flag_ok_max = 0
+                    flag_ok_max = E_NOT_OK
 
                 if sheet_TCs.cell(Row_Min, col).value is not None:
                     value_min = float(sheet_TCs.cell(Row_Min, col).value)
-                    flag_ok_min = 1
+                    flag_ok_min = E_OK
                 else:
-                    flag_ok_min = 0
+                    flag_ok_min = E_NOT_OK
 
-                if flag_ok_min == 1 and flag_ok_max == 1:
+                if flag_ok_min == E_OK and flag_ok_max == E_OK:
                     '''Check enum max'''
                     " quet theo hang de in name enum "
                     for row in range(Row_TC1, max_row_table + 1):
@@ -341,27 +350,30 @@ def check_input():
                                         break
                                 else:
                                     """Neu dinh dang sai thi bat co bao"""
-                                    flag_enum_format = 1
+                                    flag_enum_format = E_NOT_OK
 
                             if number_of_enum == value_max:
-                                flag_enum_max = 1
+                                flag_enum_max = E_OK
                             if number_of_enum == value_min:
-                                flag_enum_min = 1
+                                flag_enum_min = E_OK
                             if value_max > number_of_enum > value_min:
-                                flag_enum_mid = 1
+                                if value_max - value_min != 1
+                                    # cover for max_enum = 1; min_enum = 0;
+                                    flag_enum_mid = E_OK
+
                         else:
                             break
 
-                    if flag_enum_max == 0:
+                    if flag_enum_max == E_NOT_OK:
                         print_error(" ====> Error: Missing Enum max", col)
 
-                    if flag_enum_min == 0:
+                    if flag_enum_min == E_NOT_OK:
                         print_error(" ====> Error: Missing Enum min", col)
 
-                    if flag_enum_mid == 0:
+                    if flag_enum_mid == E_NOT_OK:
                         print_error(" ====> Error: Missing Enum mid", col)
 
-                    if flag_enum_format == 1:
+                    if flag_enum_format == E_NOT_OK:
                         print_error(" ====> Error: Wrong format Enum - Not is number ", col)
 
             else:
@@ -389,16 +401,16 @@ def check_as_input():
             Print warning
             Check Tolerance
     """
-    flag_yes_as_input = 0
+    flag_yes_as_input = E_NOT_OK
     "Flag check xem sheet co LOCAL VARIABLES AS INPUT hay khong?"
     col_start_as_input = 0
     col_end_as_input = 0
     for col in range(1, max_column_table + 1):
         if str(sheet_TCs.cell(Row_Title, col).value) == 'LOCAL VARIABLES AS INPUT':
-            flag_yes_as_input = 1
+            flag_yes_as_input = E_OK
             col_start_as_input = col
             break
-    if flag_yes_as_input == 1:
+    if flag_yes_as_input == E_OK:
         print_notice("======== CHECK AS INPUT ")
         for col in range(col_start_as_input + 1, max_column_table + 1):
             if sheet_TCs.cell(Row_Title, col).value is not None:
@@ -416,36 +428,36 @@ def check_as_input():
                     print_error(" ====> Error: Thieu Tolerance", col)
 
                 """Check must be out max"""
-                flag_ok_max = 0
-                flag_ok_min = 0
-                flag_max = 0
-                flag_out_max = 0
-                flag_min = 0
-                flag_out_min = 0
-                flag_mid_value = 0
+                flag_ok_max = E_NOT_OK
+                flag_ok_min = E_NOT_OK
+                flag_max = E_NOT_OK
+                flag_out_max = E_OK
+                flag_min = E_NOT_OK
+                flag_out_min = E_OK
+                flag_mid_value = E_NOT_OK
                 value_max = 0
                 value_min = 0
                 if sheet_TCs.cell(Row_Max, col).value is not None:
                     value_max = float(sheet_TCs.cell(Row_Max, col).value)
-                    flag_ok_max = 1
+                    flag_ok_max = E_OK
                 else:
-                    flag_ok_max = 0
+                    flag_ok_max = E_NOT_OK
 
                 if sheet_TCs.cell(Row_Min, col).value is not None:
                     value_min = float(sheet_TCs.cell(Row_Min, col).value)
-                    flag_ok_min = 1
+                    flag_ok_min = E_OK
                 else:
-                    flag_ok_min = 0
+                    flag_ok_min = E_NOT_OK
 
-                if flag_ok_min == 1 and flag_ok_max == 1:
+                if flag_ok_min == E_OK and flag_ok_max == E_OK:
                     '''Check input max'''
                     for row in range(Row_TC1, max_row_table + 1):
                         if sheet_TCs.cell(row, col).value is not None:
                             if float(sheet_TCs.cell(row, col).value) == value_max:
-                                flag_max = 1
+                                flag_max = E_OK
 
                             if float(sheet_TCs.cell(row, col).value) > value_max:
-                                flag_out_max = 1
+                                flag_out_max = E_NOT_OK
                         else:
                             break
 
@@ -453,10 +465,10 @@ def check_as_input():
                     for row in range(Row_TC1, max_row_table + 1):
                         if sheet_TCs.cell(row, col).value is not None:
                             if float(sheet_TCs.cell(row, col).value) == value_min:
-                                flag_min = 1
+                                flag_min = E_OK
 
                             if float(sheet_TCs.cell(row, col).value) < value_min:
-                                flag_out_min = 1
+                                flag_out_min = E_NOT_OK
                         else:
                             break
 
@@ -465,23 +477,23 @@ def check_as_input():
                         if sheet_TCs.cell(row, col).value is not None:
                             if float(sheet_TCs.cell(row, col).value) < value_max and float(
                                     sheet_TCs.cell(row, col).value) > value_min:
-                                flag_mid_value = 0
+                                flag_mid_value = E_OK
                                 break
                             else:
-                                flag_mid_value = 1
+                                flag_mid_value = E_NOT_OK
                         else:
                             break
 
                     '''print resuit'''
-                    if flag_max == 0:
+                    if flag_max == E_NOT_OK:
                         print_error(" ====> Error: None value max: ", col)
-                    if flag_min == 0:
+                    if flag_min == E_NOT_OK:
                         print_error(" ====> Error: None value min: ", col)
-                    if flag_mid_value == 1:
+                    if flag_mid_value == E_NOT_OK:
                         print_error(" ====> Error: None mid value: ", col)
-                    if flag_out_max == 1:
+                    if flag_out_max == E_NOT_OK:
                         print_error(" ====> Error: Out range max: ", col)
-                    if flag_out_min == 1:
+                    if flag_out_min == E_NOT_OK:
                         print_error(" ====> Error: Out range min: ", col)
                 else:
                     print_error(" ====> Error: Missing row value Max/Min", col)
@@ -574,7 +586,9 @@ def check_as_input():
                                 if number_of_enum == value_min:
                                     flag_enum_min = 1
                                 if value_max > number_of_enum > value_min:
-                                    flag_enum_mid = 1
+                                    if value_max - value_min != 1
+                                        # cover for max_enum = 1; min_enum = 0;
+                                        flag_enum_mid = E_OK
                             else:
                                 break
 

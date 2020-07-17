@@ -22,7 +22,19 @@ do
 			# cover link tuong doi >>> link tueyt doi
 			link_excel=`realpath $link_excel`
 		else
-			echo -e "\e[91m ====> Error: Khong co TD_*.xlsm === \e[0m"
+			echo -e "\e[91m ====> Error: Khong co TD_*.xlsm  \e[0m"
+		fi
+
+		link_plt=`find ./ -type f -name '*.plt' | wc -l`
+		if [[ $link_plt < 1 ]]
+		then
+			echo -e "\e[91m ====> Error: Khong co *.plt  \e[0m"
+		fi
+		
+		link_htm=`find ./ -type f -name '*.htm' | wc -l`
+		if [[ $link_htm < 1 ]]
+		then
+			echo -e "\e[91m ====> Error: Khong co *.htm  \e[0m"
 		fi
 		
 		
