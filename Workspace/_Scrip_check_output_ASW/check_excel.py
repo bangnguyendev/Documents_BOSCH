@@ -17,6 +17,7 @@ Row_TC1 = 24
 color_Red = '\x1b[91m '
 color_Green = '\x1b[92m '
 color_Yellow = '\x1b[93m '
+color_Orange = '\x1b[38;5;208m '
 color_White = '\x1b[0m '
 E_OK = True
 E_NOT_OK = False
@@ -59,6 +60,7 @@ def print_error(string=None, col_checking=None):
 def print_notice(string=None, col_checking=None):
     """
     Print green color
+    col_checking is type int.
     """
     if col_checking is not None:
         print(color_Green + string + color_White + str(sheet_TCs.cell(Row_Name_Var, col_checking).value))
@@ -69,7 +71,7 @@ def print_notice(string=None, col_checking=None):
 
 def print_warning(string=None, col_checking=None):
     """
-    Print red yellow
+    Print yellow color
     col_checking is type int.
     """
     if col_checking is not None:
@@ -1343,7 +1345,7 @@ try:
     value_RTRT_MCDC = str(sys.argv[4]) # input chua data MCDC RTRT
 
     try:
-        ''' Neu do dai link phu hop '''
+        # ''' Neu do dai link phu hop '''
         # Open file TD Excel
         wb = openpyxl.load_workbook(path_excel, data_only=True)
         # Khoi tao value name-Sheet can check
@@ -1351,10 +1353,10 @@ try:
         sheet_Rev_History = wb['Revision History']
     except:
         print_error(" ====> Error: Duong dan file dai. ")
-        exit()
+        exit() # Exit khoi python
 except:
     print_error(" ====> Error: Khong co file TD_*.xlsm. ")
-    exit()
+    exit() # Exit khoi python
 
 
 # check sheet revision_history
@@ -1379,25 +1381,26 @@ for num_sheet in range(Sheet_default, Sheet_TC_End):
     except:
         exit()
 
-    print_notice("---> Begin check Sheet: " + sheet_TCs.title)
+    # print name sheet dang test
+    print_warning("---> Begin check Sheet: " + sheet_TCs.title)
     # khoi tao row col o sheet dang tesst    
     max_row_table = sheet_TCs.max_row
     max_column_table = sheet_TCs.max_column
 
-    """find number TCs"""
+    # """find number TCs"""
     for row in range(Row_TC1, max_row_table + 1):
         if sheet_TCs.cell(row, TC_No).value is None:
             max_row_table = row
             break
 
-    """find location range col input"""
+    # """find location range col input"""
     col_start_input = 0
     for col in range(1, max_column_table + 1):
         if str(sheet_TCs.cell(Row_Title, col).value) == 'INPUTS':
             col_start_input = col
             break
 
-    """find location range col input"""
+    # """find location range col input"""
     for col in range(col_start_input + 1, max_column_table + 1):
         if sheet_TCs.cell(Row_Title, col).value is not None:
             col_end_input = col
@@ -1414,7 +1417,7 @@ for num_sheet in range(Sheet_default, Sheet_TC_End):
     check_parameters()
     check_output()
 
-    print_warning(" ---------> Check finished: " + sheet_TCs.title + '\n')
+    print_warning("---------> Check finished: " + sheet_TCs.title + '\n')
     # close file excel.
     wb.close()
 
