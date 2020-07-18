@@ -2,6 +2,9 @@ import sys
 import openpyxl
 
 '''variable const'''
+name_user = 'EXTERNAL Nguyen Duy Bang (Ban Vien, RBVH/EPS45)'
+Sheet_default = 3
+Sheet_TC_End = 100
 TC_No = 1
 Row_Enum = 15
 Row_Tolerance = 18
@@ -17,24 +20,28 @@ color_Yellow = '\x1b[93m '
 color_White = '\x1b[0m '
 E_OK = True
 E_NOT_OK = False
-"""
-17/7/2020
-    Updated:    
-        Check enum.
-        Print color.
-    Fixed:
-        Khong can check tolerance cho imported parameter
-        Cover them truong hop cho check_value_row_max_min()
-        Fixed truong hop ngoai le cho file excel [long path, file khong ton tai.]
-18/7/2020
-    Updated:
-        E_OK = True
-        E_NOT_OK = False
-        * E_OK -  Condition OK.
-        * E_NOT_OK - Condition NOK.
-    Fixed:
-        Enum 0 -> 1 thi khong can check mid enum.
-"""
+
+# """
+# 17/7/2020
+#     Updated:    
+#         Check enum.
+#         Print color.
+#     Fixed:
+#         Khong can check tolerance cho imported parameter
+#         Cover them truong hop cho check_value_row_max_min()
+#         Fixed truong hop ngoai le cho file excel [long path, file khong ton tai.]
+# 18/7/2020
+#     Updated:
+#         E_OK = True - Condition OK.
+#         E_NOT_OK = False - Condition NOK.
+#         Compare C0 C1 MCDC RTRT<->Excel TD
+#     Fixed:
+#         Enum 0 -> 1 thi khong can check mid enum.
+# 18/72020:
+#     Updated:
+#         Cho phep Check het nhung sheet chua TCs.
+#         Group function.
+# """
 
 
 def print_error(string=None, col_checking=None):
@@ -72,56 +79,86 @@ def print_warning(string=None, col_checking=None):
     return
 
 
-try:
-    ''' Neu co file '''
-    path_excel = str(sys.argv[1])
-    # path_excel = 'C:\\Users\\NguyenBang\\Desktop\\testassw\\MT_063_Psa_TCSPlus_MTCTargetSlip_DriverIntention
-    # \\Delivery\\TestEnvironment\\Psa_TCSPlus_MTCTargetSlip_DriverIntention\\Documents\\TD_Psa_TCSPlus_MTCTargetSl
-    # .xlsm'
-    try:
-        ''' Neu do dai link phu hop '''
-        wb = openpyxl.load_workbook(path_excel, data_only=True)
-        sheet_Summary = wb['Summary']
-        print_notice("======= EXCEL TM_ File =======")
-        print("                C0 C1........................", sheet_Summary['A6'].value)
-        print("                MCDC.........................", sheet_Summary['B6'].value)
-        print("")
-        print("    Reason : ", sheet_Summary['C6'].value, "\n")
-        print("========")
+def check_revision_history():
+    """
+    Check Fill Date
+    """
+    if sheet_Rev_History['D17'].value is None:
+        print_warning(" ====> WARNING: Revision History: Fill 'Date' ")
 
-        # khai bao bien va chon sheet
-        try:
-            sheet_TCs = wb['Testcases']
-        except:
-            sheet_TCs = wb.worksheets[3]
-    except:
-        print_error(" ====> Error: Duong dan file dai. ")
-        exit()
-except:
-    print_error(" ====> Error: Khong co file TD_*.xlsm. ")
-    exit()
 
-max_row_table = sheet_TCs.max_row
-max_column_table = sheet_TCs.max_column
+def check_c0c1_mcdc():
+    """
+    Check MCDC RTRT <-> TD Excel
+    """    
+    flag_compare_MCDC = E_OK
+    flag_compare_C0 = E_OK
+    flag_compare_C1 = E_OK
+    # Read data MCDC tu sheet Summary and compare
+    # Check MCDC RTRT <-> TD Excel
+    value_TD_MCDC = str(sheet_Summary['B6'].value)
+    if value_RTRT_MCDC == '100.0%':
+        if value_TD_MCDC == '1':
+            pass
+        else: # failse MCDC
+            flag_compare_MCDC = E_NOT_OK
+    elif value_RTRT_MCDC == 'NA':
+        if value_TD_MCDC == 'NA':
+            pass
+        else: # failse MCDC
+            flag_compare_MCDC = E_NOT_OK
+    else: # Neu gia tri la so 0.0% < float < 100.0% 
+        # Read data MCDC tu sheet Summary
+        value_TD_MCDC = float(sheet_Summary['B6'].value)
+        value_TD_MCDC = str(value_TD_MCDC*100)
+        value_TD_MCDC = str(value_TD_MCDC + '%')
+        if value_RTRT_MCDC != value_TD_MCDC:
+                # failse MCDC
+            flag_compare_MCDC = E_NOT_OK
 
-"""find number TCs"""
-for row in range(Row_TC1, max_row_table + 1):
-    if sheet_TCs.cell(row, TC_No).value is None:
-        max_row_table = row
-        break
+    # Read data C0C1 tu sheet Summary
+    value_TD_C0C1 = str(sheet_Summary['A6'].value)
+    value_TD_C0 = value_TD_C0C1.split('/')[0] # split data -> C0
+    value_TD_C1 = value_TD_C0C1.split('/')[1] # split data -> C1
+    # Compare Data C0C1
+    # Check C0 RTRT <-> TD Excel
+    if value_RTRT_C0 == '100.0%':
+        if value_TD_C0 == '100%':
+            pass
+        else:
+            flag_compare_C0 = E_NOT_OK
+    elif value_RTRT_C0 != value_TD_C0:
+        flag_compare_C0 = E_NOT_OK
 
-"""find location range col input"""
-col_start_input = 0
-for col in range(1, max_column_table + 1):
-    if str(sheet_TCs.cell(Row_Title, col).value) == 'INPUTS':
-        col_start_input = col
-        break
+    # Check C1 RTRT <-> TD Excel
+    if value_RTRT_C1 == '100.0%':
+        if value_TD_C1 == '100%':
+            pass
+        else:
+            flag_compare_C1 = E_NOT_OK
+    elif value_RTRT_C1 != value_TD_C1:
+        flag_compare_C1 = E_NOT_OK
+    
+    # print resuit
+    if flag_compare_MCDC == E_NOT_OK:
+        print_error(" ====> Error: Failed MCDC. ")
+        print_warning("         RTRT/TD_excel: " + value_RTRT_MCDC + "/" +  value_TD_MCDC)
+    if flag_compare_C0 == E_NOT_OK:
+        print_error(" ====> Error: Failed C0. ")
+        print_warning("         RTRT/TD_excel: " + value_RTRT_C0 + "/" +  value_TD_C0)
+    if flag_compare_C1 == E_NOT_OK:
+        print_error(" ====> Error: Failed C1. ")
+        print_warning("         RTRT/TD_excel: " + value_RTRT_C1 + "/" +  value_TD_C1)
+    # check Reason
+    if  flag_compare_MCDC == E_NOT_OK or \
+        flag_compare_C0 == E_NOT_OK or \
+        flag_compare_C1 == E_NOT_OK:
+        if str(sheet_Summary['C6'].value) == "NA":
+            print_error(" ====> Error: Reason sheet Summary must not be 'NA'")
 
-"""find location range col input"""
-for col in range(col_start_input + 1, max_column_table + 1):
-    if sheet_TCs.cell(Row_Title, col).value is not None:
-        col_end_input = col
-        break
+    print(" Reason : ", sheet_Summary['C6'].value, "\n")
+    #end check c0c1 mcdc
+    return
 
 
 def check_TM_name():
@@ -357,7 +394,7 @@ def check_input():
                             if number_of_enum == value_min:
                                 flag_enum_min = E_OK
                             if value_max > number_of_enum > value_min:
-                                if value_max - value_min != 1
+                                if value_max - value_min != 1:
                                     # cover for max_enum = 1; min_enum = 0;
                                     flag_enum_mid = E_OK
 
@@ -586,7 +623,7 @@ def check_as_input():
                                 if number_of_enum == value_min:
                                     flag_enum_min = 1
                                 if value_max > number_of_enum > value_min:
-                                    if value_max - value_min != 1
+                                    if value_max - value_min != 1:
                                         # cover for max_enum = 1; min_enum = 0;
                                         flag_enum_mid = E_OK
                             else:
@@ -876,10 +913,7 @@ def check_local_variable():
             '''check cont'''
             if str(sheet_TCs.cell(Row_Type, col).value) == 'cont':
                 """Check Tolerance YES/NO"""
-                if sheet_TCs.cell(Row_Tolerance, col).value is not None:
-                    value_tol = float(sheet_TCs.cell(Row_Tolerance, col).value)
-                else:
-                    value_tol = 'None'
+                if sheet_TCs.cell(Row_Tolerance, col).value is None:
                     print_error(" ====> Error: Thieu Tolerance", col)
 
                 """Check must be out max"""
@@ -1283,7 +1317,6 @@ def check_output():
                 if flag_ok_min == 1 and flag_ok_max == 1:
                     for row in range(Row_TC1, max_row_table + 1):
                         if sheet_TCs.cell(row, col).value is not None:
-                            for col_enum in range(TC_No, max_column_table + 1):
                                 if not isinstance(sheet_TCs.cell(row, col).value, str):
                                     """Neu dinh dang sai thi bat co bao"""
                                     flag_enum_format = 1
@@ -1299,12 +1332,89 @@ def check_output():
     return
 
 
-check_TM_name()
-check_sum_TCs()
-check_value_row_max_min()
-check_input()
-check_as_input()
-check_imported_parameters()
-check_local_variable()
-check_parameters()
-check_output()
+# ''' Neu co file '''
+# """ Lay input tu bash shell """
+try:
+    # ''' Neu co file '''
+    # """ Lay input tu bash shell """
+    path_excel = str(sys.argv[1]) # link file TD
+    value_RTRT_C0 = str(sys.argv[2]) # input chua data C0 RTRT
+    value_RTRT_C1 = str(sys.argv[3]) # input chua data C1 RTRT
+    value_RTRT_MCDC = str(sys.argv[4]) # input chua data MCDC RTRT
+
+    try:
+        ''' Neu do dai link phu hop '''
+        # Open file TD Excel
+        wb = openpyxl.load_workbook(path_excel, data_only=True)
+        # Khoi tao value name-Sheet can check
+        sheet_Summary = wb['Summary']
+        sheet_Rev_History = wb['Revision History']
+    except:
+        print_error(" ====> Error: Duong dan file dai. ")
+        exit()
+except:
+    print_error(" ====> Error: Khong co file TD_*.xlsm. ")
+    exit()
+
+
+# check sheet revision_history
+check_revision_history()
+# chech MCDC C0C1
+check_c0c1_mcdc()
+
+
+# read tong so sheet TCs
+Sheet_TC_End = len(wb.sheetnames)
+# check sheet chua TCs
+for num_sheet in range(Sheet_default, Sheet_TC_End):
+    # khai bao bien va chon sheet
+    try:
+        sheet_TCs = wb.worksheets[num_sheet]
+        if sheet_TCs.title == 'Testcases_Backup':
+            continue       
+        elif sheet_TCs.cell(Row_Title, TC_No).value != 'TC No.':
+            continue
+        elif sheet_TCs.cell(Row_TC1, TC_No).value is None:
+            continue
+    except:
+        exit()
+
+    print_notice("---> Begin check Sheet: " + sheet_TCs.title)
+    # khoi tao row col o sheet dang tesst    
+    max_row_table = sheet_TCs.max_row
+    max_column_table = sheet_TCs.max_column
+
+    """find number TCs"""
+    for row in range(Row_TC1, max_row_table + 1):
+        if sheet_TCs.cell(row, TC_No).value is None:
+            max_row_table = row
+            break
+
+    """find location range col input"""
+    col_start_input = 0
+    for col in range(1, max_column_table + 1):
+        if str(sheet_TCs.cell(Row_Title, col).value) == 'INPUTS':
+            col_start_input = col
+            break
+
+    """find location range col input"""
+    for col in range(col_start_input + 1, max_column_table + 1):
+        if sheet_TCs.cell(Row_Title, col).value is not None:
+            col_end_input = col
+            break
+
+
+    check_TM_name()
+    check_sum_TCs()
+    check_value_row_max_min()
+    check_input()
+    check_as_input()
+    check_imported_parameters()
+    check_local_variable()
+    check_parameters()
+    check_output()
+
+    print_warning(" ---------> Check finished: " + sheet_TCs.title + '\n')
+    # close file excel.
+    wb.close()
+
