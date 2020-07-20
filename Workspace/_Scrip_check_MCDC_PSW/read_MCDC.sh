@@ -4,57 +4,67 @@
 # Don dep file bash, py
 ####################
 # ham read & printf mcdc
-PRINT_MCDC_SUMMARY() {
-	Project=`cat $data_summary | grep -i "Project: " | cut -d '>' -f3 | cut -d '<' -f1`
-	echo -e "Project: \e[92m$Project \e[0m"
-	Result=`cat $data_summary | grep -i "Overall Result: " | cut -d '>' -f3 | cut -d '<' -f1`
-	#check sumary
-	if [ $Result == Pass ] 
+####################
+link_current=`pwd` # save dir current
+find . -type f -name "test_summary.html" > list_test_summary
+link_checkpy='/c/_BangNguyen/documents_bosch/Workspace/_Scrip_check_MCDC_PSW/check_excel_PSW.py'
+rm -rf list_folder_UT 
+
+find -maxdepth 1 -mindepth 1 -type d -name "UT_[0-9][0-9][0-9]*" > list_folder_UT
+for link_class_UT in `cat list_folder_UT`
+do
+	echo -e "\e[30;48;5;82m $link_class_UT \e[0m"
+	cd $link_class_UT
+	#check test_summary.html
+	test_summary=`find . -type f -name "test_summary.html"`
+	if [[ -f $test_summary ]]
 	then
-		echo -e "Result Summary	: \e[30;48;5;82m === Pass === \e[0m"
+		echo -e "test_summary 	: \e[30;48;5;82m  Yes  \e[0m"
+		
+		c0=`cat $test_summary | grep -i -A 3 "Statement (S)" | grep -i "text-align:center;" | cut -d '>' -f2 | cut -d '%' -f1`
+		c1=`cat $test_summary | grep -i -A 3 "Decision (D)" | grep -i "text-align:center;" | cut -d '>' -f2 | cut -d '%' -f1`
+		mcdc=`cat $test_summary | grep -i -A 3 "MC/DC - unique cause (U)" | grep -i "text-align:center;" | cut -d '>' -f2 | cut -d '%' -f1`
+		
+		echo "C0   (Summary)	: $c0	"
+		echo "C1   (Summary)	: $c1	"
+		echo "MCDC (Summary)	: $mcdc	"
+		
+		
 	else
-		echo -e "Result Summary	: \e[30;48;5;9m === Fail === \e[0m"
+		echo -e "test_summary 	: \e[30;48;5;9m  None  \e[0m"
 	fi
 	#check test_report.html
-	if [ -f $test_report ]
+	test_report=`find . -type f -name "test_report.html"`
+	if [[ -f $test_report ]]
 	then
 		echo -e "test_report 	: \e[30;48;5;82m  Yes  \e[0m"
 	else
 		echo -e "test_report 	: \e[30;48;5;9m  None  \e[0m"
 	fi
-	echo ================================
-	c0=`cat $data_summary | grep -i -A 3 "Statement (S)" | grep -i "text-align:center;" | cut -d '>' -f2 | cut -d '%' -f1`
-	c1=`cat $data_summary | grep -i -A 3 "Decision (D)" | grep -i "text-align:center;" | cut -d '>' -f2 | cut -d '%' -f1`
-	mcdc=`cat $data_summary | grep -i -A 3 "MC/DC - unique cause (U)" | grep -i "text-align:center;" | cut -d '>' -f2 | cut -d '%' -f1`
 	
-	echo "C0   (Summary)	: $c0	"
-	echo "C1   (Summary)	: $c1	"
-	echo "MCDC (Summary)	: $mcdc	"
-	
-	
-}
-####################
-link_current=`pwd` # save dir current
-find . -type f -name "test_summary.html" > list_test_summary
-
-rm -rf list_project fill_MCDC_excel
-
-for link_summary in `cat list_test_summary`
-do
-	#echo ${link_summary%/*}
-	cd ${link_summary%/*}
-	
-	data_summary=`find . -type f -name "test_summary.html"`
-	PRINT_MCDC_SUMMARY
-
-	#check test_report.html
-	test_report=`find . -type f -name "test_summary.html"`
-	#xoa file autotest_generation.txt
-	rm -rf autotest_generation.txt
-	cd $link_current # quay tro lai thu muc ngoai cung	
-	# echo $Project >> list_project # tao file nay de check AR WalkThougth COEM
-	# echo "$c0	$c1	$mcdc" >> fill_MCDC_excel
+	echo =====================================
+	cd $link_current
 done
+
+# for link_summary in `cat list_test_summary`
+# do
+	# #echo ${link_summary%/*}
+	# cd ${link_summary%/*}
+	
+	# data_summary=`find . -type f -name "test_summary.html"`
+	
+	# #check test_report.html
+	# test_report=`find . -type f -name "test_report.html"`
+	
+	# PRINT_MCDC_SUMMARY
+	
+
+	# #xoa file autotest_generation.txt
+	# rm -rf autotest_generation.txt
+	# cd $link_current # quay tro lai thu muc ngoai cung	
+	# # echo $Project >> list_project # tao file nay de check AR WalkThougth COEM
+
+# done
 
 #check delete py sh
 find ./ -type f -name '*.sh' -o -name '*.py' | egrep -v "read_MCDC.sh|auto_zip.sh" > list_clear_scrip
