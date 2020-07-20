@@ -131,6 +131,10 @@ def check_c0c1_mcdc():
             flag_compare_C0 = E_NOT_OK
     elif value_RTRT_C0 != value_TD_C0:
         flag_compare_C0 = E_NOT_OK
+        _value_RTRT_C0 = value_RTRT_C0.split('%')[0]
+        _value_TD_C0 = value_TD_C0.split('%')[0]
+        if float(_value_RTRT_C0) == float(_value_TD_C0):
+            flag_compare_C1 = E_OK
 
     # Check C1 RTRT <-> TD Excel
     if value_RTRT_C1 == '100.0%':
@@ -140,7 +144,10 @@ def check_c0c1_mcdc():
             flag_compare_C1 = E_NOT_OK
     elif value_RTRT_C1 != value_TD_C1:
         flag_compare_C1 = E_NOT_OK
-    
+        _value_RTRT_C1 = value_RTRT_C1.split('%')[0]
+        _value_TD_C1 = value_TD_C1.split('%')[0]
+        if float(_value_RTRT_C1) == float(_value_TD_C1):
+            flag_compare_C1 = E_OK
     # print resuit
     if flag_compare_MCDC == E_NOT_OK:
         print_error(" ====> Error: Failed MCDC. ")
