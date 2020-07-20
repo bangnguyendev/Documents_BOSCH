@@ -13,7 +13,7 @@ rm -rf list_folder_UT
 find -maxdepth 1 -mindepth 1 -type d -name "UT_[0-9][0-9][0-9]*" > list_folder_UT
 for link_class_UT in `cat list_folder_UT`
 do
-	echo -e "\e[30;48;5;82m $link_class_UT \e[0m"
+	echo -e "\e[92m $link_class_UT \e[0m"
 	cd $link_class_UT
 	#check test_summary.html
 	test_summary=`find . -type f -name "test_summary.html"`
@@ -27,9 +27,7 @@ do
 		
 		echo "C0   (Summary)	: $c0	"
 		echo "C1   (Summary)	: $c1	"
-		echo "MCDC (Summary)	: $mcdc	"
-		
-		
+		echo "MCDC (Summary)	: $mcdc	"				
 	else
 		echo -e "test_summary 	: \e[30;48;5;9m  None  \e[0m"
 	fi
@@ -41,7 +39,14 @@ do
 	else
 		echo -e "test_report 	: \e[30;48;5;9m  None  \e[0m"
 	fi
-	
+	file_doc_excel=`find . -type f -name "*_CodeCoverage_or_Fail_Reason.xls"`
+	if [[ -f $file_doc_excel ]]
+	then
+		echo -e "file_doc_excel 	: \e[30;48;5;82m  Yes  \e[0m"
+		python $link_checkpy $file_doc_excel
+	else
+		echo -e "file_doc_excel 	: \e[30;48;5;9m  None  \e[0m"
+	fi
 	echo =====================================
 	cd $link_current
 done
