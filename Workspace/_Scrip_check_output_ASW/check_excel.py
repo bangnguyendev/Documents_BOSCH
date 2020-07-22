@@ -1352,14 +1352,11 @@ def check_descriptions():
     col_end_row_max = 0
     for col in range(1, max_column_table + 1):
         if str(sheet_TCs.cell(Row_Title, col).value) == 'DESCRIPTIONS':
-            col_end_row_max = col
-            break
-
-    for row in range(Row_TC1, max_row_table + 1):
-        if sheet_TCs.cell(row, col).value is None:
-            print_notice("======== CHECK DESCRIPTIONS ")
-            print_error(" ====> Error: Missing Comment DESCRIPTIONS. ")
-            break
+            for row in range(Row_TC1, max_row_table + 1):
+                if sheet_TCs.cell(row, col).value is None:
+                    print_notice("======== CHECK DESCRIPTIONS ")
+                    print_error(" ====> Error: Missing Comment DESCRIPTIONS. ")
+                    break
 # End check DESCRIPTIONS
 
 
