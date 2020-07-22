@@ -43,6 +43,8 @@ E_NOT_OK = False
 #         Cho phep Check het nhung sheet chua TCs.
 #         Group function.
 #22/7/2020:
+#     Updated:
+#         Add check Descriptions.
 #     Fixed:
 #         Bao error khi file RTRT.txt khong co data.
 # """
@@ -768,7 +770,7 @@ def check_imported_parameters():
                                 break
 
                         '''Check xem co phai const hay khong? '''
-                        if value_max == value_min:
+                        if value_max == value_min or value_max - value_min == 1:
                             flag_mid_value = 0
 
                         '''print resuit'''
@@ -1344,6 +1346,23 @@ def check_output():
     return
 
 
+def check_descriptions():
+    # "DESCRIPTIONS"
+    
+    col_end_row_max = 0
+    for col in range(1, max_column_table + 1):
+        if str(sheet_TCs.cell(Row_Title, col).value) == 'DESCRIPTIONS':
+            col_end_row_max = col
+            break
+
+    for row in range(Row_TC1, max_row_table + 1):
+        if sheet_TCs.cell(row, col).value is None:
+            print_notice("======== CHECK DESCRIPTIONS ")
+            print_error(" ====> Error: Missing Comment DESCRIPTIONS. ")
+            break
+# End check DESCRIPTIONS
+
+
 # ''' Neu co file '''
 # """ Lay input tu bash shell """
 try:
@@ -1430,6 +1449,7 @@ for num_sheet in range(Sheet_default, Sheet_TC_End):
     check_local_variable()
     check_parameters()
     check_output()
+    check_descriptions()
 
     print_warning("---------> Check finished: " + sheet_TCs.title + '\n')
     # close file excel.
