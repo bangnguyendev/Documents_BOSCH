@@ -38,10 +38,13 @@ E_NOT_OK = False
 #         Compare C0 C1 MCDC RTRT<->Excel TD
 #     Fixed:
 #         Enum 0 -> 1 thi khong can check mid enum.
-# 18/72020:
+# 18/7/2020:
 #     Updated:
 #         Cho phep Check het nhung sheet chua TCs.
 #         Group function.
+#22/7/2020:
+#     Fixed:
+#         Bao error khi file RTRT.txt khong co data.
 # """
 
 
@@ -1347,10 +1350,6 @@ try:
     # ''' Neu co file '''
     # """ Lay input tu bash shell """
     path_excel = str(sys.argv[1]) # link file TD
-    value_RTRT_C0 = str(sys.argv[2]) # input chua data C0 RTRT
-    value_RTRT_C1 = str(sys.argv[3]) # input chua data C1 RTRT
-    value_RTRT_MCDC = str(sys.argv[4]) # input chua data MCDC RTRT
-
     try:
         # ''' Neu do dai link phu hop '''
         # Open file TD Excel
@@ -1361,6 +1360,13 @@ try:
     except:
         print_error(" ====> Error: Duong dan file dai. ")
         exit() # Exit khoi python
+
+    try:
+        value_RTRT_C0 = str(sys.argv[2]) # input chua data C0 RTRT
+        value_RTRT_C1 = str(sys.argv[3]) # input chua data C1 RTRT
+        value_RTRT_MCDC = str(sys.argv[4]) # input chua data MCDC RTRT
+    except:    
+        print_error(" ====> Error: No Data ReportRTRT.txt.")
 except:
     print_error(" ====> Error: Khong co file TD_*.xlsm. ")
     exit() # Exit khoi python

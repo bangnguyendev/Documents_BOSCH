@@ -17,47 +17,53 @@ E_NOT_OK = False
 
 
 xl = win32com.client.Dispatch('Excel.Application')
-wb = xl.Workbooks.Open('D:\\NguyenBangGitHub\\Documents_BOSCH\\Workspace\\_Scrip_check_MCDC_PSW\OUTPUT_EXCEL\\RBAPLCUST_4D21_EPB_Not_Immobilized_Vehicle_Warning_Read_CodeCoverage_or_Fail_Reason.xls')
+wb = xl.Workbooks.Open('C:\\_BangNguyen\\documents_bosch\\Workspace\\_Scrip_check_MCDC_PSW\\NET_Adaptive_DLC_NIS_CodeCoverage_or_Fail_Reason.xls')
 readData = wb.WorkSheets('Unit_Test_Info')
 allData = readData.UsedRange 
 
 # Get number of rows used on active sheet
 getNumRows = allData.Rows.Count
-print ('Number of rows used in sheet : ',getNumRows)
+# print ('Number of rows used in sheet : ',getNumRows)
 
 #Get number of columns used on active sheet
 getNumCols = allData.Columns.Count
-print ('Number of columns used in sheet : ',getNumCols)
+# print ('Number of columns used in sheet : ',getNumCols)
 
 def get_value(row=0, col=0):
     return allData.Cells(row,col).value
 
 for row in range(1, getNumRows +1):
     for col in range(1, getNumCols +1):
-        if allData.Cells(row,col).value == "Tester":
+        if get_value(row,col) == "Tester":
             row_tester = row
             col_tester = col
-            print(get_value(row,col))
-        elif allData.Cells(row,col).value == "Date":
+            print("Tester: ",get_value(row,col +1))
+        elif get_value(row,col) == "Date":
             row_date = row
             col_date = col
-            print("Date")
-        elif allData.Cells(row,col).value == "Item_Name":
+            print("Date: ", get_value(row,col +1))
+        elif get_value(row,col) == "Item_Name":
             row_Item_Name = row
             col_Item_Name = col
-            print("Item_Name")
-        elif allData.Cells(row,col).value == "C0":
+            print("Item_Name: ", get_value(row,col +1))
+        elif get_value(row,col) == "C0":
             row_C0 = row
             col_C0 = col
-            print("C0")
-        elif allData.Cells(row,col).value == "C1":
+            print(get_value(row,col +1))
+            if float(get_value(row,col +1)) < 100:
+                print("aaaaaaaaaaaaaaaaaaaa11111")
+        elif get_value(row,col) == "C1":
             row_C1 = row
             col_C1 = col
-            print("C1")
-        elif allData.Cells(row,col).value == "MCDC":
+            print(get_value(row,col +1))
+            if float(get_value(row,col +1)) < 100:
+                print("aaaaaaaaaaaaaaaaaaaa2222")
+        elif get_value(row,col) == "MCDC":
             row_MCDC = row
             col_MCDC = col
-            print("MCDC")
+            print(get_value(row,col +1))
+            if float(get_value(row,col +1)) < 100:
+                print("aaaaaaaaaaaaaaaaaaaa333")
 
 # print(allData.Cells(row_tester,col_tester).value)
 
@@ -97,5 +103,5 @@ def print_warning(string=None, col_checking=None):
         print(color_Yellow + string + color_White)
     return
 
-
+wb.Close()
 # 1
