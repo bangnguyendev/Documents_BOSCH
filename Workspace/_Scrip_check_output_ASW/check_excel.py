@@ -1367,6 +1367,7 @@ try:
         value_RTRT_MCDC = str(sys.argv[4]) # input chua data MCDC RTRT
     except:    
         print_error(" ====> Error: No Data ReportRTRT.txt.")
+        exit() # Exit khoi python
 except:
     print_error(" ====> Error: Khong co file TD_*.xlsm. ")
     exit() # Exit khoi python
