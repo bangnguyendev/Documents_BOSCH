@@ -47,9 +47,12 @@ E_NOT_OK = False
 #         Add check Descriptions.
 #     Fixed:
 #         Bao error khi file RTRT.txt khong co data.
+#24/7/2020:
+#     Fixed:
+#         String enum name = "None"
 # """
 
-
+# Print 
 def print_error(string=None, col_checking=None):
     """
     Print red color
@@ -84,7 +87,7 @@ def print_warning(string=None, col_checking=None):
     else:
         print(color_Yellow + string + color_White)
     return
-
+# End # Print 
 
 def check_revision_history():
     """
@@ -92,6 +95,7 @@ def check_revision_history():
     """
     if sheet_Rev_History['D17'].value is None:
         print_warning(" ====> WARNING: Revision History: Fill 'Date' ")
+# End def check_revision_history():
 
 
 def check_c0c1_mcdc():
@@ -174,6 +178,7 @@ def check_c0c1_mcdc():
     print(" Reason : ", sheet_Summary['C6'].value, "\n")
     #end check c0c1 mcdc
     return
+# End def check_c0c1_mcdc():
 
 
 def check_TM_name():
@@ -183,12 +188,14 @@ def check_TM_name():
     else:
         print_error(" ====> Error: [A23] Thieu TM_ name at sheet Testcases")
     return
+# End def check_TM_name():
 
 
 def check_sum_TCs():
     """Check xem co bao nhieu TCs"""
     print_notice("===> Tong so TCs: " + str(max_row_table - Row_Name_Var))
     return
+# End def check_sum_TCs():
 
 
 def check_value_row_max_min():
@@ -225,6 +232,7 @@ def check_value_row_max_min():
                 print_error(" ====> Error: Missing Row Max-Min: ", col)
     """End check_value_row_max_min"""
     return
+# End def check_value_row_max_min():
 
 
 def check_input():
@@ -396,7 +404,7 @@ def check_input():
                         if sheet_TCs.cell(row, col).value is not None:
                             for col_enum in range(TC_No, max_column_table + 1):
                                 if isinstance(sheet_TCs.cell(row, col).value, str):
-                                    name_enum = str(sheet_TCs.cell(row, col).value)
+                                    name_enum = sheet_TCs.cell(row, col).value
                                     if str(sheet_TCs.cell(Row_Enum, col_enum).value) == name_enum:
                                         number_of_enum = float(sheet_TCs.cell(Row_Enum + 1, col_enum).value)
                                         break
@@ -435,6 +443,7 @@ def check_input():
 
     """END check_input"""
     return
+# End def check_input():
 
 
 def check_as_input():
@@ -626,7 +635,7 @@ def check_as_input():
                             if sheet_TCs.cell(row, col).value is not None:
                                 for col_enum in range(TC_No, max_column_table + 1):
                                     if isinstance(sheet_TCs.cell(row, col).value, str):
-                                        name_enum = str(sheet_TCs.cell(row, col).value)
+                                        name_enum = sheet_TCs.cell(row, col).value
                                         if str(sheet_TCs.cell(Row_Enum, col_enum).value) == name_enum:
                                             number_of_enum = float(sheet_TCs.cell(Row_Enum + 1, col_enum).value)
                                             break
@@ -659,6 +668,7 @@ def check_as_input():
 
     """END check_as_input"""
     return
+# End def check_as_input():
 
 
 def check_imported_parameters():
@@ -864,7 +874,7 @@ def check_imported_parameters():
                             if sheet_TCs.cell(row, col).value is not None:
                                 for col_enum in range(TC_No, max_column_table + 1):
                                     if isinstance(sheet_TCs.cell(row, col).value, str):
-                                        name_enum = str(sheet_TCs.cell(row, col).value)
+                                        name_enum = sheet_TCs.cell(row, col).value
                                         if str(sheet_TCs.cell(Row_Enum, col_enum).value) == name_enum:
                                             number_of_enum = float(sheet_TCs.cell(Row_Enum + 1, col_enum).value)
                                             break
@@ -899,6 +909,7 @@ def check_imported_parameters():
 
     """END check IMPORTED PARAMETERS"""
     return
+# End def check_imported_parameters():
 
 
 def check_local_variable():
@@ -1039,6 +1050,7 @@ def check_local_variable():
                     print_error(" ====> Error: Missing row value Max/Min", col)
     '''END check local param'''
     return
+# End def check_local_variable():
 
 
 def check_parameters():
@@ -1176,6 +1188,7 @@ def check_parameters():
                     print_error(" ====> Error: Wrong format Bool  ", col)
     '''END check PARAMETERS'''
     return
+# End def check_parameters():
 
 
 def check_output():
@@ -1349,6 +1362,7 @@ def check_output():
                 print_error(" ====> Error: Thieu Tolerance", col)
     '''End check output'''
     return
+# End def check_output():
 
 
 def check_descriptions():
