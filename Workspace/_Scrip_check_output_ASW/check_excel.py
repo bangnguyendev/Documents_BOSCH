@@ -163,12 +163,13 @@ def check_c0c1_mcdc():
     if flag_compare_C1 == E_NOT_OK:
         print_error(" ====> Error: Failed C1. ")
         print_warning("         RTRT/TD_excel: " + value_RTRT_C1 + "/" +  value_TD_C1)
-    # check Reason
-    if  flag_compare_MCDC == E_NOT_OK or \
-        flag_compare_C0 == E_NOT_OK or \
-        flag_compare_C1 == E_NOT_OK:
-        if str(sheet_Summary['C6'].value) == "NA":
-            print_error(" ====> Error: Reason sheet Summary must not be 'NA'")
+    # # check Reason
+    # if value_RTRT_C0 != "100.0%"\
+    #     or value_RTRT_C1 != "100.0%"\
+    #     or value_RTRT_MCDC != "100.0%":
+    #     if value_RTRT_MCDC != "NA":
+    #         if str(sheet_Summary['C6'].value) == "NA":
+    #             print_error(" ====> Error: Reason sheet Summary must not be 'NA'")
 
     print(" Reason : ", sheet_Summary['C6'].value, "\n")
     #end check c0c1 mcdc
@@ -1349,8 +1350,6 @@ def check_output():
 
 def check_descriptions():
     # "DESCRIPTIONS"
-    
-    col_end_row_max = 0
     for col in range(1, max_column_table + 1):
         if str(sheet_TCs.cell(Row_Title, col).value) == 'DESCRIPTIONS':
             for row in range(Row_TC1, max_row_table + 1):
@@ -1421,7 +1420,8 @@ for num_sheet in range(Sheet_default, Sheet_TC_End):
     # """find number TCs"""
     for row in range(Row_TC1, max_row_table + 1):
         if sheet_TCs.cell(row, TC_No).value is None:
-            max_row_table = row
+            print(sheet_TCs.cell(row, TC_No).value)
+            max_row_table = row - 1 # break tai vi tri none
             break
 
     # """find location range col input"""
