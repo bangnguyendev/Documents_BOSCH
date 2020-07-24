@@ -408,9 +408,10 @@ def check_input():
                             if number_of_enum == value_min:
                                 flag_enum_min = E_OK
                             if value_max > number_of_enum > value_min:
-                                if value_max - value_min != 1:
-                                    # cover for max_enum = 1; min_enum = 0;
-                                    flag_enum_mid = E_OK
+                                flag_enum_mid = E_OK
+                            # cover for max_enum = 1; min_enum = 0;
+                            if value_max - value_min == 1:                               
+                                flag_enum_mid = E_OK
 
                         else:
                             break

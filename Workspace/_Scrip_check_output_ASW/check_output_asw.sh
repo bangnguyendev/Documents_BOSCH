@@ -66,7 +66,7 @@ do
 		
 		{ # try
 			echo -e "\e[37m --> TD_ Excel Reading . . . \e[0m"
-			python $link_check_py $link_excel $value_c0 $value_c1 $value_mcdc
+			/c/Python37/python.exe $link_check_py $link_excel $value_c0 $value_c1 $value_mcdc
 			#save your output
 		} || { # catch
 			# save log for exception 
