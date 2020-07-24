@@ -139,7 +139,7 @@ def check_c0c1_mcdc():
         _value_RTRT_C0 = value_RTRT_C0.split('%')[0]
         _value_TD_C0 = value_TD_C0.split('%')[0]
         if float(_value_RTRT_C0) == float(_value_TD_C0):
-            flag_compare_C1 = E_OK
+            flag_compare_C0 = E_OK
 
     # Check C1 RTRT <-> TD Excel
     if value_RTRT_C1 == '100.0%':
