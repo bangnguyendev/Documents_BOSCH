@@ -877,7 +877,10 @@ def check_imported_parameters():
                                 if number_of_enum == value_min:
                                     flag_enum_min = 1
                                 if value_max > number_of_enum > value_min:
-                                    flag_enum_mid = 1
+                                    flag_enum_mid = E_OK
+                                # cover for max_enum = 1; min_enum = 0;
+                                if value_max - value_min == 1:                               
+                                    flag_enum_mid = E_OK
                             else:
                                 break
 
