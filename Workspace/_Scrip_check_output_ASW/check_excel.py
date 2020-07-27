@@ -50,6 +50,10 @@ E_NOT_OK = False
 #24/7/2020:
 #     Fixed:
 #         String enum name = "None"
+#27/7/2020:
+#     Fixed:
+#         Wrong max value enum => out range max enum.
+#         Del line print "None" scan TCs.
 # """
 
 # Print 
@@ -381,6 +385,7 @@ def check_input():
                 flag_enum_max = E_NOT_OK
                 flag_enum_min = E_NOT_OK
                 flag_enum_mid = E_NOT_OK
+                flag_enum_out_max = E_OK
                 flag_enum_format = E_OK
                 value_max = 0
                 value_min = 0
@@ -421,6 +426,8 @@ def check_input():
                             # cover for max_enum = 1; min_enum = 0;
                             if value_max - value_min == 1:                               
                                 flag_enum_mid = E_OK
+                            if number_of_enum > value_max:
+                                flag_enum_out_max = E_NOT_OK
 
                         else:
                             break
@@ -436,6 +443,9 @@ def check_input():
 
                     if flag_enum_format == E_NOT_OK:
                         print_error(" ====> Error: Wrong format Enum - Not is number ", col)
+
+                    if flag_enum_out_max == E_NOT_OK:
+                        print_error(" ====> Error: Out range max Enum ", col)
 
             else:
                 value_tol = 'None'
@@ -614,6 +624,7 @@ def check_as_input():
                     flag_enum_max = 0
                     flag_enum_min = 0
                     flag_enum_mid = 0
+                    flag_enum_out_max = E_OK
                     flag_enum_format = 0
                     value_max = 0
                     value_min = 0
@@ -651,6 +662,8 @@ def check_as_input():
                                     if value_max - value_min != 1:
                                         # cover for max_enum = 1; min_enum = 0;
                                         flag_enum_mid = E_OK
+                                if number_of_enum > value_max:
+                                    flag_enum_out_max = E_NOT_OK
                             else:
                                 break
 
@@ -662,6 +675,9 @@ def check_as_input():
                             print_error(" ====> Error: Missing Enum mid", col)
                         if flag_enum_format == 1:
                             print_error(" ====> Error: Wrong format Enum - Not is number ", col)
+
+                        if flag_enum_out_max == E_NOT_OK:
+                            print_error(" ====> Error: Out range max Enum ", col)
                 else:
                     value_tol = 'None'
                     print_error(" ====> Error: Thieu Tolerance", col)
@@ -853,6 +869,7 @@ def check_imported_parameters():
                     flag_enum_max = 0
                     flag_enum_min = 0
                     flag_enum_mid = 0
+                    flag_enum_out_max = E_OK
                     flag_enum_format = 0
                     value_max = 0
                     value_min = 0
@@ -891,6 +908,9 @@ def check_imported_parameters():
                                 # cover for max_enum = 1; min_enum = 0;
                                 if value_max - value_min == 1:                               
                                     flag_enum_mid = E_OK
+
+                                if number_of_enum > value_max:
+                                    flag_enum_out_max = E_NOT_OK    
                             else:
                                 break
 
@@ -902,6 +922,9 @@ def check_imported_parameters():
                             print_error(" ====> Error: Missing Enum mid", col)
                         if flag_enum_format == 1:
                             print_error(" ====> Error: Wrong format Enum - Not is number ", col)
+                        
+                        if flag_enum_out_max == E_NOT_OK:
+                            print_error(" ====> Error: Out range max Enum ", col)
 
                 else:
                     value_tol = 'None'
@@ -1331,17 +1354,25 @@ def check_output():
                     value_tol = int(sheet_TCs.cell(Row_Tolerance, col).value)
                 else:
                     print_error(" ====> Error: Row Tolerance must be 'int' ", col)
-
+                # check enum
                 flag_ok_max = 0
                 flag_ok_min = 0
+                flag_enum_max = 0
+                flag_enum_min = 0
+                flag_enum_mid = 0
+                flag_enum_out_max = E_OK
                 flag_enum_format = 0
-
+                value_max = 0
+                value_min = 0
+                number_of_enum = 0
                 if sheet_TCs.cell(Row_Max, col).value is not None:
+                    value_max = float(sheet_TCs.cell(Row_Max, col).value)
                     flag_ok_max = 1
                 else:
                     flag_ok_max = 0
 
                 if sheet_TCs.cell(Row_Min, col).value is not None:
+                    value_min = float(sheet_TCs.cell(Row_Min, col).value)
                     flag_ok_min = 1
                 else:
                     flag_ok_min = 0
@@ -1349,14 +1380,43 @@ def check_output():
                 if flag_ok_min == 1 and flag_ok_max == 1:
                     for row in range(Row_TC1, max_row_table + 1):
                         if sheet_TCs.cell(row, col).value is not None:
-                                if not isinstance(sheet_TCs.cell(row, col).value, str):
+                            for col_enum in range(TC_No, max_column_table + 1):
+                                if isinstance(sheet_TCs.cell(row, col).value, str):
+                                    name_enum = sheet_TCs.cell(row, col).value
+                                    if str(sheet_TCs.cell(Row_Enum, col_enum).value) == name_enum:
+                                        number_of_enum = float(sheet_TCs.cell(Row_Enum + 1, col_enum).value)
+                                        break
+                                else:
                                     """Neu dinh dang sai thi bat co bao"""
                                     flag_enum_format = 1
+
+                            # if number_of_enum == value_max:
+                            #     flag_enum_max = 1
+                            # if number_of_enum == value_min:
+                            #     flag_enum_min = 1
+                            # if value_max > number_of_enum > value_min:
+                            #     flag_enum_mid = E_OK
+                            # # cover for max_enum = 1; min_enum = 0;
+                            # if value_max - value_min == 1:                               
+                            #     flag_enum_mid = E_OK
+
+                            if number_of_enum > value_max:
+                                flag_enum_out_max = E_NOT_OK    
                         else:
                             break
 
+                    # if flag_enum_max == 0:
+                    #     print_error(" ====> Error: Missing Enum max", col)
+                    # if flag_enum_min == 0:
+                    #     print_error(" ====> Error: Missing Enum min", col)
+                    # if flag_enum_mid == 0:
+                    #     print_error(" ====> Error: Missing Enum mid", col)
                     if flag_enum_format == 1:
                         print_error(" ====> Error: Wrong format Enum - Not is number ", col)
+                    
+                    if flag_enum_out_max == E_NOT_OK:
+                        print_error(" ====> Error: Out range max Enum ", col)
+
             else:
                 value_tol = 'None'
                 print_error(" ====> Error: Thieu Tolerance", col)
@@ -1437,7 +1497,6 @@ for num_sheet in range(Sheet_default, Sheet_TC_End):
     # """find number TCs"""
     for row in range(Row_TC1, max_row_table + 1):
         if sheet_TCs.cell(row, TC_No).value is None:
-            print(sheet_TCs.cell(row, TC_No).value)
             max_row_table = row - 1 # break tai vi tri none
             break
 
