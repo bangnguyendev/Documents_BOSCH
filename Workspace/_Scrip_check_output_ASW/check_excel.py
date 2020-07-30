@@ -54,6 +54,9 @@ E_NOT_OK = False
 #     Fixed:
 #         Wrong max value enum => out range max enum.
 #         Del line print "None" scan TCs.
+#30/7/2020:
+#     Fixed:
+#         Fixed check Missing Row 'Type'
 # """
 
 # Print 
@@ -490,6 +493,10 @@ def check_as_input():
                 break
         "Check as input"
         for col in range(col_start_as_input, col_end_as_input):
+            # check Missing Row 'Type'
+            if sheet_TCs.cell(Row_Type, col).value is None:
+                print_error(" ====> Error: Missing Row 'Type' ", col)
+
             "Check cont"
             if str(sheet_TCs.cell(Row_Type, col).value) == 'cont':
                 """Check Tolerance YES/NO"""
@@ -725,6 +732,9 @@ def check_imported_parameters():
         '''Check IMPORTED PARAMETERS '''
         for col in range(col_start_imp_parm, col_end_imp_parm):
             '''Check IMPORTED PARAMETERS cont'''
+            if sheet_TCs.cell(Row_Type, col).value is None:
+                print_error(" ====> Error: Missing Row 'Type' ", col)
+
             if str(sheet_TCs.cell(Row_Type, col).value) == 'cont':
                 if str(sheet_TCs.cell(Row_Min, col).value) == '-inf':
                     pass
