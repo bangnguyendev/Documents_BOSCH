@@ -7,6 +7,21 @@ VERSION: 1.6.6
     - Update check config is correct or not before launching system
 VERSION: 1.7.0
     - Update check Walkthrough: Fill C0 C1 MCDC is correct format
+VERSION: 1.7.3
+    - Fix bug JOEM BB
+    - Fix bug : missing generate deliverables for COEM
+VERSION: 1.7.5
+    - Update check time TPA
+    - Update the format of logging
+    - Update check file Walkthrough is correct name: Walkthrough_Protocol_{function}.docx for PSW and Walkthrough_Protocol_{function}.doc
+VERSION: 1.7.6.1
+    - Update check Test Design
+    - Update check HTM File and Gif File for JOEM
+VERSION: 1.7.6.5
+    - Add color for logger
+VERSION: 1.7.7
+    - Support check ipg.cop
+    - Support check color in PLT file
 
 SETUP (file "./assets/settings.json")
     "file_summary": "//hc-ut40070c/duongnguyen/0000_Project/001_Prj/02_JOEM/Summary_JOEM_COEM_20200701.xlsm",
@@ -25,15 +40,39 @@ SETUP (file "./assets/settings.json")
         ],
 
         + "mode_joem": [ => config for JOEM
-            "check_archives",
-            "make_archives"
+            "check_archives", 
+            "make_archives" => Be carefully due to OVERWRITE
         ],
+
+    - Choose your task id or task group for COEM or JOEM:
+        + "l_taskids_coem": [ => For COEM
+            1554012, 1561039 => It is a LIST
+        ],
+
+        + "l_taskids_joem": {
+            "Package": 20200717, => You can ingore this key
+            "Project": "RN_SUV_BSS80",
+            "BB": "BB80081",
+            "TaskGroup": [
+                "T203" =>  It is a LIST
+            ]
+        },
+
     - Coordinate X/Y in your summary file (optinal):
         + "coordinator": { => default of Summary File
             "begin": 59,
             "end": 1000
         },
-        
+
+    - Select mode :
+        + "debug_mode": true => true: will show everything checking point to your console
+
+    - Optional mode in order to skip checking:
+        "mode_check_by_user": {
+            "check_FileCoverageReasonXLS": true, => For JOEM: true = check, false = skip
+            "check_OPL_Walkthrough": true => For COEM: true = check, false = skip
+        },
+
     - Update info for each user if you want (optional):
         + "users": {
             "hieu.nguyen-trung": {"name": "EXTERNAL Nguyen Trung Hieu (Ban Vien), RBVH/EPS45", "id": "nhi5hc", "reviewer": "huy.nguyen-hoang"},

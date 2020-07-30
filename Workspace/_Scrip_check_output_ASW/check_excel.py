@@ -337,7 +337,7 @@ def check_input():
                 if isinstance(sheet_TCs.cell(Row_Tolerance, col).value, int):
                     value_tol = int(sheet_TCs.cell(Row_Tolerance, col).value)
                 else:
-                    print_error(" ====> Error:Row Tolerance must be 0 or 1", col)
+                    print_error(" ====> Error: Row Tolerance must be 0 or 1", col)
             else:
                 value_tol = 'None'
                 print_error(" ====> Error: Thieu Tolerance", col)
@@ -424,7 +424,7 @@ def check_input():
                             if value_max > number_of_enum > value_min:
                                 flag_enum_mid = E_OK
                             # cover for max_enum = 1; min_enum = 0;
-                            if value_max - value_min == 1:                               
+                            if value_max - value_min == 1:   # for enum                   
                                 flag_enum_mid = E_OK
                             if number_of_enum > value_max:
                                 flag_enum_out_max = E_NOT_OK
@@ -798,7 +798,7 @@ def check_imported_parameters():
                                 break
 
                         '''Check xem co phai const hay khong? '''
-                        if value_max == value_min or value_max - value_min == 1:
+                        if value_max == value_min:# or value_max - value_min == 1:
                             flag_mid_value = 0
 
                         '''print resuit'''

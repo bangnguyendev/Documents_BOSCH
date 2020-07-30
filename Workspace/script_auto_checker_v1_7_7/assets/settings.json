@@ -1,31 +1,33 @@
 {
     "file_summary": "//hc-ut40070c/duongnguyen/0000_Project/001_Prj/02_JOEM/Summary_JOEM_COEM_20200801.xlsm",
     "dir_input_joem": "C:/_OUTPUT",
-    "dir_input_coem": "C:/Users/nhi5hc/Desktop/Input/b",
+    "dir_input_coem": "C:/",
 
-    "dir_output": "C:",
+    "dir_output": "C:/",
 
     "sheetname": "Merged_JOEM",
 
     "reviewer": "bang.nguyen-duy",
 
     "l_folder_package": [
-        20200626
+        20200721
     ],
 
     "l_taskids_coem": [
-        1553109
+        1580061,1590690,
+		1564559,
+		1573621,1573717
     ],
 
     "l_taskids_joem": {
-        "Package": 20200715,
-        "Project": "RN_SUV_BSS80",
-        "BB": "",
+        "Package": 20200721,
+        "Project": "REN_CDV",
+        "BB": "BB82032",
         "TaskGroup": [
-            "T203"
+            "T220"
         ]
     },
-    
+
     "mode_coem": [
         "check_releases",
         "check_archives",
@@ -33,10 +35,6 @@
     ],
 
     "mode_joem": [
-        "check_archives"
-    ],
-
-    "mode_joem_bk": [
         "check_archives",
         "make_archives"
     ],
@@ -55,7 +53,18 @@
         "end": 1000
     },
 
+    "debug_mode": false,
+
+    "mode_check_by_user": {
+        "check_FileCoverageReasonXLS": true,
+        "check_OPL_Walkthrough": true
+    },
+
     "Tool_7z": "C:/Program Files/7-Zip/7z.exe",
+
+    "sever_update": "//hc-ut40070c/duongnguyen/9000_utils/hieu.nguyen-trung/script_auto_checker",
+    "auto_update": true,
+    
     "users": {
         "hieu.nguyen-trung": {"name": "EXTERNAL Nguyen Trung Hieu (Ban Vien), RBVH/EPS45", "id": "nhi5hc", "reviewer": "huy.nguyen-hoang"},
         "hau.nguyen-tai": {"name": "EXTERNAL Nguyen Tai Hau (Ban Vien), RBVH/EPS45", "id": "nah4hc", "reviewer": "khang.duong-chi"},
