@@ -1,0 +1,18 @@
+Start checker: Make Archives JOEM
+*****************************************************************
+T220,MT_204,TCS_UsedMuEst_Y,bang.nguyen-duy,NG_MT_Check_Later
+T220,MT_205,TCS_WheelForceModel,bang.nguyen-duy,NG_MT_Check_Later
+T220,MT_206,TCS_WhlSwapping,bang.nguyen-duy,NG_MT_Check_Later
+T220,MT_207,TCSOpt_BTCDiffwDrvBrakeReq_State,bang.nguyen-duy,NG_MT_Check_Later
+T220,MT_208,VESS_MaxMinPressureMemorisation,bang.nguyen-duy,NG_MT_Check_Later
+T220,MT_209,vhcpThrMaxTransition,bang.nguyen-duy,NG_MT_Check_Later
+T220,MT_210,VSE_VDC20ms_Interface,bang.nguyen-duy,NG_MT_Check_Later
+T220,UT_045,RBMICAPB_BoschInitReset,huy.nguyen-hoang,NG
+T220,UT_051,RBRFP_StandardAct,phuong.nguyen-thanh,NG
+T220,UT_046,RBRFPEC_PreCommutation,phuong.nguyen-thanh,NG
+T220,RBVLV_ValveVoltages,bang.nguyen-duy,OK
+T220,RBVLV_VCRM,huy.nguyen-hoang,OK
+T220,RBWSS_GtmMuxMon,bang.nguyen-duy,OK
+## Total T220: status BAD: Found/Count/Total - 3/11/13
+-----------------------------------------------------------------
+FINISH

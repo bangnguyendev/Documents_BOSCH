@@ -22,8 +22,8 @@ color_White = '\x1b[0m '
 E_OK = True
 E_NOT_OK = False
 
-#"""
-#17/7/2020
+# """
+# 17/7/2020
 #     Updated:    
 #         Check enum.
 #         Print color.
@@ -31,14 +31,14 @@ E_NOT_OK = False
 #         Khong can check tolerance cho imported parameter
 #         Cover them truong hop cho check_value_row_max_min()
 #         Fixed truong hop ngoai le cho file excel [long path, file khong ton tai.]
-#18/7/2020
+# 18/7/2020
 #     Updated:
 #         E_OK = True - Condition OK.
 #         E_NOT_OK = False - Condition NOK.
 #         Compare C0 C1 MCDC RTRT<->Excel TD
 #     Fixed:
 #         Enum 0 -> 1 thi khong can check mid enum.
-#18/7/2020:
+# 18/7/2020:
 #     Updated:
 #         Cho phep Check het nhung sheet chua TCs.
 #         Group function.
@@ -57,9 +57,6 @@ E_NOT_OK = False
 #30/7/2020:
 #     Fixed:
 #         Fixed check Missing Row 'Type'
-#31/7/2020:
-#     Fixed:
-#         Fixed % round(MCDC C0C1)
 # """
 
 # Print 
@@ -132,8 +129,6 @@ def check_c0c1_mcdc():
         # Read data MCDC tu sheet Summary
         value_TD_MCDC = float(sheet_Summary['B6'].value)
         value_TD_MCDC = str(value_TD_MCDC*100)
-        value_TD_MCDC = round(float(value_TD_MCDC),1)
-        value_TD_MCDC = str(value_TD_MCDC)
         value_TD_MCDC = str(value_TD_MCDC + '%')
         if value_RTRT_MCDC != value_TD_MCDC:
                 # failse MCDC
@@ -154,7 +149,7 @@ def check_c0c1_mcdc():
         flag_compare_C0 = E_NOT_OK
         _value_RTRT_C0 = value_RTRT_C0.split('%')[0]
         _value_TD_C0 = value_TD_C0.split('%')[0]
-        if round(float(_value_RTRT_C0),1) == round(float(_value_TD_C0),1):
+        if float(_value_RTRT_C0) == float(_value_TD_C0):
             flag_compare_C0 = E_OK
 
     # Check C1 RTRT <-> TD Excel
@@ -167,7 +162,7 @@ def check_c0c1_mcdc():
         flag_compare_C1 = E_NOT_OK
         _value_RTRT_C1 = value_RTRT_C1.split('%')[0]
         _value_TD_C1 = value_TD_C1.split('%')[0]
-        if round(float(_value_RTRT_C1),1) == round(float(_value_TD_C1),1):
+        if float(_value_RTRT_C1) == float(_value_TD_C1):
             flag_compare_C1 = E_OK
     # print resuit
     if flag_compare_MCDC == E_NOT_OK:
