@@ -7,7 +7,7 @@
 ####################
 link_current=`pwd` # save dir current
 find . -type f -name "test_summary.html" > list_test_summary
-link_checkpy='/c/_BangNguyen/documents_bosch/Workspace/_Scrip_check_MCDC_PSW/check_excel_PSW.py'
+link_checkpy='/d/NguyenBangGitHub/Documents_BOSCH/Workspace/_Scrip_check_MCDC_PSW/check_excel_PSW.py'
 rm -rf list_folder_UT 
 
 find -maxdepth 1 -mindepth 1 -type d -name "UT_[0-9][0-9][0-9]*" > list_folder_UT
@@ -17,6 +17,7 @@ do
 	cd $link_class_UT
 	#check test_summary.html
 	test_summary=`find . -type f -name "test_summary.html"`
+
 	if [[ -f $test_summary ]]
 	then
 		echo -e "test_summary 	: \e[30;48;5;82m  Yes  \e[0m"
@@ -31,19 +32,25 @@ do
 	else
 		echo -e "test_summary 	: \e[30;48;5;9m  None  \e[0m"
 	fi
+
 	#check test_report.html
 	test_report=`find . -type f -name "test_report.html"`
+
 	if [[ -f $test_report ]]
 	then
 		echo -e "test_report 	: \e[30;48;5;82m  Yes  \e[0m"
 	else
 		echo -e "test_report 	: \e[30;48;5;9m  None  \e[0m"
 	fi
-	file_doc_excel=`find . -type f -name "*_CodeCoverage_or_Fail_Reason.xls"`
+
+	#check fiel exxcel
+	file_doc_excel=`find ./ -type f -name "*_CodeCoverage_or_Fail_Reason.xls"`
+	
 	if [[ -f $file_doc_excel ]]
 	then
 		echo -e "file_doc_excel 	: \e[30;48;5;82m  Yes  \e[0m"
-		python $link_checkpy $file_doc_excel
+		file_doc_excel=`realpath $file_doc_excel`
+		python $link_checkpy $file_doc_excel $c0 $c1 $mcdc
 	else
 		echo -e "file_doc_excel 	: \e[30;48;5;9m  None  \e[0m"
 	fi
@@ -51,25 +58,6 @@ do
 	cd $link_current
 done
 
-# for link_summary in `cat list_test_summary`
-# do
-	# #echo ${link_summary%/*}
-	# cd ${link_summary%/*}
-	
-	# data_summary=`find . -type f -name "test_summary.html"`
-	
-	# #check test_report.html
-	# test_report=`find . -type f -name "test_report.html"`
-	
-	# PRINT_MCDC_SUMMARY
-	
-
-	# #xoa file autotest_generation.txt
-	# rm -rf autotest_generation.txt
-	# cd $link_current # quay tro lai thu muc ngoai cung	
-	# # echo $Project >> list_project # tao file nay de check AR WalkThougth COEM
-
-# done
 
 #check delete py sh
 find ./ -type f -name '*.sh' -o -name '*.py' | egrep -v "read_MCDC.sh|auto_zip.sh" > list_clear_scrip

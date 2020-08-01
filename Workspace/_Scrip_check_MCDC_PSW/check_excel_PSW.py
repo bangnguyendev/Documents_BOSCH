@@ -2,6 +2,7 @@ import sys
 import openpyxl
 import win32com.client
 from win32com.client import Dispatch
+from datetime import date
 
 
 # '''variable const'''
@@ -15,11 +16,22 @@ color_White = '\x1b[0m '
 E_OK = True
 E_NOT_OK = False
 
+# """ Lay input tu bash shell """
+path_excel = str(sys.argv[1]) # link file TD
+value_C0   = str(sys.argv[2]) # input chua data C0 RTRT
+value_C1   = str(sys.argv[3]) # input chua data C1 RTRT
+value_MCDC = str(sys.argv[4]) # input chua data MCDC RTRT
 
-xl = win32com.client.Dispatch('Excel.Application')
-wb = xl.Workbooks.Open('C:\\_BangNguyen\\documents_bosch\\Workspace\\_Scrip_check_MCDC_PSW\\NET_Adaptive_DLC_NIS_CodeCoverage_or_Fail_Reason.xls')
-readData = wb.WorkSheets('Unit_Test_Info')
-allData = readData.UsedRange 
+try:
+    xl = win32com.client.Dispatch('Excel.Application')
+    wb = xl.Workbooks.Open(path_excel)
+except:
+    print_error(" ====> Error: Excel")
+    exit() # Exit khoi python
+
+readData  = wb.WorkSheets('Unit_Test_Info')
+writeData = wb.Worksheets('Unit_Test_Info')
+allData   = readData.UsedRange 
 
 # Get number of rows used on active sheet
 getNumRows = allData.Rows.Count
@@ -29,43 +41,60 @@ getNumRows = allData.Rows.Count
 getNumCols = allData.Columns.Count
 # print ('Number of columns used in sheet : ',getNumCols)
 
-def get_value(row=0, col=0):
-    return allData.Cells(row,col).value
+def read_cell(row=0, col=0):
+    try:
+        return allData.Cells(row,col).value
+    except:
+        print_error("Read failed.")
+
+def write_cell(row=0, col=0, msg=None):
+    try:
+        col = col +1
+        writeData.Cells(row,col).Value = msg
+    except:
+        print_error("Write failed.")
 
 for row in range(1, getNumRows +1):
     for col in range(1, getNumCols +1):
-        if get_value(row,col) == "Tester":
+        if read_cell(row,col) == "Tester":
             row_tester = row
             col_tester = col
-            print("Tester: ",get_value(row,col +1))
-        elif get_value(row,col) == "Date":
+            # Write on empty cell of active sheet
+            write_cell(row,col +1,name_user)
+            print("Tester: ",read_cell(row,col +1))
+        elif read_cell(row,col) == "Date":
             row_date = row
             col_date = col
-            print("Date: ", get_value(row,col +1))
-        elif get_value(row,col) == "Item_Name":
+            today = date.today()
+            d1 = today.strftime("%m/%d/%Y")
+            write_cell(row, col +1, d1)
+            print("Date: ", read_cell(row,col +1))
+        elif read_cell(row,col) == "Item_Name":
             row_Item_Name = row
             col_Item_Name = col
-            print("Item_Name: ", get_value(row,col +1))
-        elif get_value(row,col) == "C0":
+            print("Item_Name: ", read_cell(row,col +1))
+        elif read_cell(row,col) == "C0":
             row_C0 = row
             col_C0 = col
-            print(get_value(row,col +1))
-            if float(get_value(row,col +1)) < 100:
+            write_cell(row, col +1, value_C0)
+            print(read_cell(row,col +1))
+            if float(read_cell(row,col +1)) < 100:
                 print("aaaaaaaaaaaaaaaaaaaa11111")
-        elif get_value(row,col) == "C1":
+        elif read_cell(row,col) == "C1":
             row_C1 = row
             col_C1 = col
-            print(get_value(row,col +1))
-            if float(get_value(row,col +1)) < 100:
+            write_cell(row, col +1, value_C1)
+            print(read_cell(row,col +1))
+            if float(read_cell(row,col +1)) < 100:
                 print("aaaaaaaaaaaaaaaaaaaa2222")
-        elif get_value(row,col) == "MCDC":
+        elif read_cell(row,col) == "MCDC":
             row_MCDC = row
             col_MCDC = col
-            print(get_value(row,col +1))
-            if float(get_value(row,col +1)) < 100:
+            write_cell(row, col +1, value_MCDC)
+            print(read_cell(row,col +1))
+            if float(read_cell(row,col +1)) < 100:
                 print("aaaaaaaaaaaaaaaaaaaa333")
 
-# print(allData.Cells(row_tester,col_tester).value)
 
 
 def print_error(string=None, col_checking=None):
@@ -103,5 +132,11 @@ def print_warning(string=None, col_checking=None):
         print(color_Yellow + string + color_White)
     return
 
+# Save excel doc
+wb.Save()
+# Save As current excel doc
+#wb.SaveAs('updatedSample.xlsx')
+
 wb.Close()
-# 1
+xl.Quit()
+xl = None
