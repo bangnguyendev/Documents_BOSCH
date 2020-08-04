@@ -1,7 +1,7 @@
 link_project=`pwd`
 #link file check.py
 link_check_py="/c/_BangNguyen/documents_bosch/Workspace/_Scrip_check_output_ASW/check_excel.py"
-# link_check_py="/d/NguyenBangGitHub/Documents_BOSCH/Workspace/_Scrip_check_output_ASW/check_excel.py"
+link_python="/c/Python37/python.exe"
 
 find ./ -maxdepth 1 -mindepth 1 -type d | grep "MT_[0-9]\{1,3\}" > list_MT
 
@@ -66,7 +66,7 @@ do
 		
 		{ # try
 			echo -e "\e[37m --> TD_ Excel Reading . . . \e[0m"
-			/c/Python37/python.exe $link_check_py $link_excel $value_c0 $value_c1 $value_mcdc
+			$link_python $link_check_py $link_excel $value_c0 $value_c1 $value_mcdc
 			#save your output
 		} || { # catch
 			# save log for exception 
