@@ -22,8 +22,8 @@ color_White = '\x1b[0m '
 E_OK = True
 E_NOT_OK = False
 
-# """
-# 17/7/2020
+#"""
+#17/7/2020
 #     Updated:    
 #         Check enum.
 #         Print color.
@@ -31,14 +31,14 @@ E_NOT_OK = False
 #         Khong can check tolerance cho imported parameter
 #         Cover them truong hop cho check_value_row_max_min()
 #         Fixed truong hop ngoai le cho file excel [long path, file khong ton tai.]
-# 18/7/2020
+#18/7/2020
 #     Updated:
 #         E_OK = True - Condition OK.
 #         E_NOT_OK = False - Condition NOK.
 #         Compare C0 C1 MCDC RTRT<->Excel TD
 #     Fixed:
 #         Enum 0 -> 1 thi khong can check mid enum.
-# 18/7/2020:
+#18/7/2020:
 #     Updated:
 #         Cho phep Check het nhung sheet chua TCs.
 #         Group function.
@@ -57,6 +57,10 @@ E_NOT_OK = False
 #30/7/2020:
 #     Fixed:
 #         Fixed check Missing Row 'Type'
+#05/8/2020:
+#     Updated:
+#         Fixed check khong can tolerance IMPORTED PARAMETERS
+#         Check location LOCAL AS INPUT
 # """
 
 # Print 
@@ -480,12 +484,23 @@ def check_as_input():
     "Flag check xem sheet co LOCAL VARIABLES AS INPUT hay khong?"
     col_start_as_input = 0
     col_end_as_input = 0
+    col_start_outputs = 0
+    # Tim cot LOCAL VARIABLES AS INPUT
     for col in range(1, max_column_table + 1):
         if str(sheet_TCs.cell(Row_Title, col).value) == 'LOCAL VARIABLES AS INPUT':
             flag_yes_as_input = E_OK
             col_start_as_input = col
+
+    # Tim cot OUTPUTS
+    for col in range(1, max_column_table + 1):
+        if str(sheet_TCs.cell(Row_Title, col).value) == 'OUTPUTS':
+            col_start_outputs = col
             break
-    if flag_yes_as_input == E_OK:
+    # neu cot as input nam ngoai outputs thi bao error
+    if col_start_outputs < col_start_as_input:
+        print_error(" ====> Error: Check location for LOCAL VARIABLES AS INPUT ")
+
+    if flag_yes_as_input == E_OK and col_start_outputs > col_start_as_input:
         print_notice("======== CHECK AS INPUT ")
         for col in range(col_start_as_input + 1, max_column_table + 1):
             if sheet_TCs.cell(Row_Title, col).value is not None:
@@ -711,7 +726,7 @@ def check_imported_parameters():
             Check fomat "TRUE/FALSE", not 1/0
         enum
             Print warning
-            Check Tolerance
+            Check none Tolerance
     :return:
     """
     flag_yes_imp_parm = 0
@@ -731,10 +746,16 @@ def check_imported_parameters():
                 break
         '''Check IMPORTED PARAMETERS '''
         for col in range(col_start_imp_parm, col_end_imp_parm):
-            '''Check IMPORTED PARAMETERS cont'''
+            # '''Check IMPORTED PARAMETERS cont'''
             if sheet_TCs.cell(Row_Type, col).value is None:
                 print_error(" ====> Error: Missing Row 'Type' ", col)
 
+            # """Check Tolerance YES/NO"""
+            if sheet_TCs.cell(Row_Tolerance, col).value is not None:
+                print_error(" ====> Error: Khong can Tolerance", col)
+            else:
+                value_tol = 'None'
+            #  Check 'cont'
             if str(sheet_TCs.cell(Row_Type, col).value) == 'cont':
                 if str(sheet_TCs.cell(Row_Min, col).value) == '-inf':
                     pass
@@ -743,13 +764,8 @@ def check_imported_parameters():
                 elif str(sheet_TCs.cell(Row_Min, col).value) == '-Inf':
                     pass
                 else:
-                    # """Check Tolerance YES/NO"""
-                    # if sheet_TCs.cell(Row_Tolerance, col).value is not None:
-                    # value_tol = float(sheet_TCs.cell(Row_Tolerance, col).value)
-                    # else:
-                    # value_tol = 'None'
-                    # print_error(" ====> Error: Thieu Tolerance", col)
 
+                    
                     """Check must be out max"""
                     flag_ok_max = 0
                     flag_ok_min = 0
