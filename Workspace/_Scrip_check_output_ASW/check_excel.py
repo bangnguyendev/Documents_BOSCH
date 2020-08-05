@@ -841,18 +841,8 @@ def check_imported_parameters():
                     else:
                         print_error(" ====> Error: Missing row value Max/Min", col)
 
-            "Check log"
+            # "Check log"
             if str(sheet_TCs.cell(Row_Type, col).value) == 'log':
-                """Check Tolerance YES/NO and must be 0 or 1"""
-                if sheet_TCs.cell(Row_Tolerance, col).value is not None:
-                    value_tol = float(sheet_TCs.cell(Row_Tolerance, col).value)
-                    if value_tol == 0 or value_tol == 1:
-                        pass
-                    else:
-                        print_error(" ====> Error: Row Tolerance must be 0 or 1", col)
-                else:
-                    value_tol = 'None'
-                    print_error(" ====> Error: Thieu Tolerance", col)
 
                 flag_true = 0
                 "Check must be has TRUE & FALSE"
@@ -880,81 +870,72 @@ def check_imported_parameters():
                     print_error(" ====> Error: Thieu TRUE/FALSE: ", col)
                 if flag_format == 1:
                     print_error(" ====> Error: Wrong format Bool  ", col)
-            '''Check input enum'''
+            
+            # '''Check input enum'''
             if str(sheet_TCs.cell(Row_Type, col).value) == 'enum':
-                """Check Tolerance YES/NO and must be int"""
-                if sheet_TCs.cell(Row_Tolerance, col).value is not None:
-                    if isinstance(sheet_TCs.cell(Row_Tolerance, col).value, int):
-                        value_tol = int(sheet_TCs.cell(Row_Tolerance, col).value)
-                    else:
-                        print_error(" ====> Error: Row Tolerance must be 'int' ", col)
-
-                    """Check max enum"""
-                    flag_ok_max = 0
-                    flag_ok_min = 0
-                    flag_enum_max = 0
-                    flag_enum_min = 0
-                    flag_enum_mid = 0
-                    flag_enum_out_max = E_OK
-                    flag_enum_format = 0
-                    value_max = 0
-                    value_min = 0
-                    number_of_enum = 0
-                    if sheet_TCs.cell(Row_Max, col).value is not None:
-                        value_max = float(sheet_TCs.cell(Row_Max, col).value)
-                        flag_ok_max = 1
-                    else:
-                        flag_ok_max = 0
-
-                    if sheet_TCs.cell(Row_Min, col).value is not None:
-                        value_min = float(sheet_TCs.cell(Row_Min, col).value)
-                        flag_ok_min = 1
-                    else:
-                        flag_ok_min = 0
-                    '''Check enum max min mid'''
-                    if flag_ok_min == 1 and flag_ok_max == 1:
-                        for row in range(Row_TC1, max_row_table + 1):
-                            if sheet_TCs.cell(row, col).value is not None:
-                                for col_enum in range(TC_No, max_column_table + 1):
-                                    if isinstance(sheet_TCs.cell(row, col).value, str):
-                                        name_enum = sheet_TCs.cell(row, col).value
-                                        if str(sheet_TCs.cell(Row_Enum, col_enum).value) == name_enum:
-                                            number_of_enum = float(sheet_TCs.cell(Row_Enum + 1, col_enum).value)
-                                            break
-                                    else:
-                                        """Neu dinh dang sai thi bat co bao"""
-                                        flag_enum_format = 1
-
-                                if number_of_enum == value_max:
-                                    flag_enum_max = 1
-                                if number_of_enum == value_min:
-                                    flag_enum_min = 1
-                                if value_max > number_of_enum > value_min:
-                                    flag_enum_mid = E_OK
-                                # cover for max_enum = 1; min_enum = 0;
-                                if value_max - value_min == 1:                               
-                                    flag_enum_mid = E_OK
-
-                                if number_of_enum > value_max:
-                                    flag_enum_out_max = E_NOT_OK    
-                            else:
-                                break
-
-                        if flag_enum_max == 0:
-                            print_error(" ====> Error: Missing Enum max", col)
-                        if flag_enum_min == 0:
-                            print_error(" ====> Error: Missing Enum min", col)
-                        if flag_enum_mid == 0:
-                            print_error(" ====> Error: Missing Enum mid", col)
-                        if flag_enum_format == 1:
-                            print_error(" ====> Error: Wrong format Enum - Not is number ", col)
-                        
-                        if flag_enum_out_max == E_NOT_OK:
-                            print_error(" ====> Error: Out range max Enum ", col)
-
+                """Check max enum"""
+                flag_ok_max = 0
+                flag_ok_min = 0
+                flag_enum_max = 0
+                flag_enum_min = 0
+                flag_enum_mid = 0
+                flag_enum_out_max = E_OK
+                flag_enum_format = 0
+                value_max = 0
+                value_min = 0
+                number_of_enum = 0
+                if sheet_TCs.cell(Row_Max, col).value is not None:
+                    value_max = float(sheet_TCs.cell(Row_Max, col).value)
+                    flag_ok_max = 1
                 else:
-                    value_tol = 'None'
-                    print_error(" ====> Error: Thieu Tolerance", col)
+                    flag_ok_max = 0
+
+                if sheet_TCs.cell(Row_Min, col).value is not None:
+                    value_min = float(sheet_TCs.cell(Row_Min, col).value)
+                    flag_ok_min = 1
+                else:
+                    flag_ok_min = 0
+                '''Check enum max min mid'''
+                if flag_ok_min == 1 and flag_ok_max == 1:
+                    for row in range(Row_TC1, max_row_table + 1):
+                        if sheet_TCs.cell(row, col).value is not None:
+                            for col_enum in range(TC_No, max_column_table + 1):
+                                if isinstance(sheet_TCs.cell(row, col).value, str):
+                                    name_enum = sheet_TCs.cell(row, col).value
+                                    if str(sheet_TCs.cell(Row_Enum, col_enum).value) == name_enum:
+                                        number_of_enum = float(sheet_TCs.cell(Row_Enum + 1, col_enum).value)
+                                        break
+                                else:
+                                    """Neu dinh dang sai thi bat co bao"""
+                                    flag_enum_format = 1
+
+                            if number_of_enum == value_max:
+                                flag_enum_max = 1
+                            if number_of_enum == value_min:
+                                flag_enum_min = 1
+                            if value_max > number_of_enum > value_min:
+                                flag_enum_mid = E_OK
+                            # cover for max_enum = 1; min_enum = 0;
+                            if value_max - value_min == 1:                               
+                                flag_enum_mid = E_OK
+
+                            if number_of_enum > value_max:
+                                flag_enum_out_max = E_NOT_OK    
+                        else:
+                            break
+
+                    if flag_enum_max == 0:
+                        print_error(" ====> Error: Missing Enum max", col)
+                    if flag_enum_min == 0:
+                        print_error(" ====> Error: Missing Enum min", col)
+                    if flag_enum_mid == 0:
+                        print_error(" ====> Error: Missing Enum mid", col)
+                    if flag_enum_format == 1:
+                        print_error(" ====> Error: Wrong format Enum - Not is number ", col)
+                    
+                    if flag_enum_out_max == E_NOT_OK:
+                        print_error(" ====> Error: Out range max Enum ", col)
+
 
     """END check IMPORTED PARAMETERS"""
     return
