@@ -63,16 +63,17 @@ do
 			value_mcdc="NA"
 		fi
 
-		
-		{ # try
-			echo -e "\e[37m --> TD_ Excel Reading . . . \e[0m"
-			$link_python $link_check_py $link_excel $value_c0 $value_c1 $value_mcdc
-			#save your output
-		} || { # catch
-			# save log for exception 
-			echo -e "\e[91m === Link check_excel.py gap van de === \e[0m"
-		}
-		
+		if [[ -f $link_excel ]]
+		then
+			{ # try
+				echo -e "\e[37m --> TD_ Excel Reading . . . \e[0m"
+				$link_python $link_check_py $link_excel $value_c0 $value_c1 $value_mcdc
+				#save your output
+			} || { # catch
+				# save log for exception 
+				echo -e "\e[91m === Link check_excel.py gap van de === \e[0m"
+			}
+		fi
 	else
 		echo -e "\e[91m ===Khong co ReportRTRT=== \e[0m"
 	fi	
