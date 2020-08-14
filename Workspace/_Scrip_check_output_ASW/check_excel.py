@@ -57,6 +57,9 @@ E_NOT_OK = False
 #30/7/2020:
 #     Fixed:
 #         Fixed check Missing Row 'Type'
+#31/7/2020:
+#     Fixed:
+#         Fixed % round(MCDC C0C1)
 #05/8/2020:
 #     Updated:
 #         Fixed check khong can tolerance IMPORTED PARAMETERS
@@ -133,6 +136,8 @@ def check_c0c1_mcdc():
         # Read data MCDC tu sheet Summary
         value_TD_MCDC = float(sheet_Summary['B6'].value)
         value_TD_MCDC = str(value_TD_MCDC*100)
+        value_TD_MCDC = round(float(value_TD_MCDC),1)
+        value_TD_MCDC = str(value_TD_MCDC)
         value_TD_MCDC = str(value_TD_MCDC + '%')
         if value_RTRT_MCDC != value_TD_MCDC:
                 # failse MCDC
@@ -153,7 +158,7 @@ def check_c0c1_mcdc():
         flag_compare_C0 = E_NOT_OK
         _value_RTRT_C0 = value_RTRT_C0.split('%')[0]
         _value_TD_C0 = value_TD_C0.split('%')[0]
-        if float(_value_RTRT_C0) == float(_value_TD_C0):
+        if round(float(_value_RTRT_C0),1) == round(float(_value_TD_C0),1):
             flag_compare_C0 = E_OK
 
     # Check C1 RTRT <-> TD Excel
@@ -166,7 +171,7 @@ def check_c0c1_mcdc():
         flag_compare_C1 = E_NOT_OK
         _value_RTRT_C1 = value_RTRT_C1.split('%')[0]
         _value_TD_C1 = value_TD_C1.split('%')[0]
-        if float(_value_RTRT_C1) == float(_value_TD_C1):
+        if round(float(_value_RTRT_C1),1) == round(float(_value_TD_C1),1):
             flag_compare_C1 = E_OK
     # print resuit
     if flag_compare_MCDC == E_NOT_OK:
