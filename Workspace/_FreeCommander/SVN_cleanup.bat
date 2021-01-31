@@ -1,0 +1,1 @@
+TortoiseProc /command:cleanup /path:./
