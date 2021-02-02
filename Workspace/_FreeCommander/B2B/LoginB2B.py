@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 id_B2B = "a5124171"
-link_IEDriverServer = "D:\\Tool\\FreeCommander\\IEDriverServer.exe"
+link_IEDriverServer = "D:\\Git_NDB\\Documents\\Workspace\\_FreeCommander\\B2B\\IEDriverServer.exe"
 link_B2B = "https://b2b-gateway.renesas.com/login/ssl"
 arr = ["SMX_BTN_16", "SMX_BTN_20", "SMX_BTN_24", "SMX_BTN_28", "SMX_BTN_29", "SMX_BTN_30", "SMX_BTN_31", "SMX_BTN_44"]
 
