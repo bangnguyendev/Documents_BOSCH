@@ -25,12 +25,13 @@ try:
 	button = driver.find_element_by_class_name("btnCustom").click()
 	print("Waiting...")
 
+	element = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, "table_LoginPage_5")))    
+	print("Please connect VPN.")
+	print("Could not connect to B2b. Please try again")
+except:
 	element = WebDriverWait(driver, 70).until(EC.presence_of_element_located((By.ID, "table_welcome_2")))    
 	print("Welcome to the Secure Access SSL VPN, " + driver.find_element_by_class_name("cssSmall").text)
-except:
-	print("Could not connect to B2b. Please try again")
-	element = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, "table_LoginPage_5")))    
-	print("You are not allowed to sign in. Please contact your administrator. ")
-finally:
 	print("Quit IE.")
 	driver.quit()
+finally:
+	print("Done.")
