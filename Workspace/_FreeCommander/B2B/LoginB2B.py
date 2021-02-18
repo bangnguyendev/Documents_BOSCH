@@ -22,7 +22,7 @@ try:
 		password += pass_temp
 	driver.find_element_by_name("PASSWORD").send_keys(password)
 	print("Pass : " + password)
-	button = driver.find_element_by_class_name("btnCustom").click()
+	driver.find_element_by_class_name("btnCustom").click()
 	print("Waiting...")
 
 	element = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, "table_LoginPage_5")))    
