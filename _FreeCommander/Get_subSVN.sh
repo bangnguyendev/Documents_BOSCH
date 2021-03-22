@@ -1,7 +1,7 @@
 #!bin/bash 
 i=1;
 j=$#;
-#set -x
+# set -x
 rm -rf temp.tempNDB
 while [ $i -le $j ] 
 do
@@ -15,4 +15,4 @@ do
 done
 cat temp.tempNDB | clip
 rm -rf temp.tempNDB
-#set +x
+# set +x
