@@ -9,7 +9,7 @@ toaster = ToastNotifier()
 options = Options()
 options.headless = True
 options.add_argument("--window-size=1920,1200")
-DRIVER_PATH = "D:\Git_NDB\Documents\_Script_GetData_Binance\Check_Value_USDT_VND.py"
+DRIVER_PATH = "D:\Git_NDB\Documents\_Script_GetData_Binance\chromedriver.exe"
 
 driver = webdriver.Chrome(options=options, executable_path=DRIVER_PATH)
 driver.get("https://p2p.binance.com/vi/trade/buy/")
@@ -28,14 +28,14 @@ driver.implicitly_wait(10)
 driver.find_element_by_xpath('/html/body/div[1]/div[2]/main/div[4]/div/div[2]/div/div[1]/button').click()
 driver.find_element_by_xpath('/html/body/div[1]/div[2]/main/div[4]/div/div[2]/div/div[2]/div/div[2]').click()
 # Chờ load trang web
-print("<Nguyen Duy Bang> Loading ...\n")
+print("<Nguyen Duy Bang>\nLoading ...\n")
 time.sleep(1.5) 
 while True:
     # Thoi gian hien tai
     now = datetime.now()
     # dd/mm/YY H:M:S
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-    print("Ngay va gio hien tai: ", dt_string)	
+    print("Ngày giờ hiện tại: ", dt_string)	
     try:
         # name
         driver.implicitly_wait(30)
@@ -52,14 +52,14 @@ while True:
         price2float_price = price.replace(",", "")
         float_price = float(price2float_price)
         # Thông tin báo lên màn hình Win10 
-        msg_notification = "Gia hien tai là: " + price + " " + fiat
+        msg_notification = "Giá hiện tại là: " + price + " " + fiat
         # nếu giá thấp hơn 24.100 VND
         if float_price <= 24100:
             toaster.show_toast(
                 "Mua USDT",
                 msg_notification,
                 icon_path=None,
-                duration=20
+                duration=10
             )
         # nếu giá cao hơn 24.450 VND
         if float_price > 24450:
@@ -67,7 +67,7 @@ while True:
                 "Bán USDT",
                 msg_notification,
                 icon_path=None,
-                duration=20
+                duration=10
             )
         print("==============\n")
 
